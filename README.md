@@ -1,6 +1,6 @@
 # tipik_figma
 
-A new Flutter project.
+Project For sending tips to companies or donating money to charities.
 
 ## Getting Started
 

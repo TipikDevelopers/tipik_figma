@@ -62,6 +62,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_linear_datepicker:
+    dependency: "direct main"
+    description:
+      name: flutter_linear_datepicker
+      sha256: "5a799a2ffdffd6831e2af9d08fb6045b6535f90b17d8c881581cf0754fc58247"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.4"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -145,6 +153,14 @@ packages:
       url: "https://github.com/Tkko/Flutter_Pinput"
     source: git
     version: "2.2.12"
+  shamsi_date:
+    dependency: transitive
+    description:
+      name: shamsi_date
+      sha256: "938bd68e6f99fab7f93c04a0fc4248a09355f67eca90510f0ee7579f6014b56c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   sky_engine:
     dependency: transitive
     description: flutter

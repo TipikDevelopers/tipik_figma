@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
+import 'package:tipik_figma/login/signUp_screen.dart';
 import './sms_screen.dart';
+import '../mainPage/home_screen.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -48,8 +50,16 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             ),
             // give the tab bar a height [can change height to preferred height]
             Container(
+              padding: EdgeInsets.all(5),
               height: 80,
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      color: Color.fromARGB(64, 0, 0, 0),
+                      blurRadius: 25,
+                      spreadRadius: -12,
+                      blurStyle: BlurStyle.outer)
+                ],
                 color: Color.fromRGBO(217, 217, 217, 1),
                 borderRadius: BorderRadius.circular(
                   25.0,
@@ -191,10 +201,15 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   if (_tabController.index == 0) {
                     print("username: " + userNameController.text);
                     print("password: " + passwordController.text);
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   } else {
                     print("phone: " + countryCode + phoneController.text);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SMSScreen(countryCode + phoneController.text)));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SMSScreen(countryCode + phoneController.text)));
                   }
                 },
                 style: ElevatedButton.styleFrom(
@@ -208,7 +223,10 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                 style: TextButton.styleFrom(
                     foregroundColor: Color.fromRGBO(90, 89, 89, 1)),
                 onPressed: () {
-                  print("pressed");
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SignUp("+905389742647")));
                 },
                 child: Text(
                   "Yeni Hesap Yarat",
