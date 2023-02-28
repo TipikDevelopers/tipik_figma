@@ -2,20 +2,35 @@ import 'package:flutter/material.dart';
 import '../model/Comment.dart';
 
 class CommentWidget extends StatelessWidget {
-  List<Comment> comments;
-  CommentWidget(this.comments);
+  final List<Comment> comments;
+  CommentWidget(this.comments) {
+    print("built and the size of comments is " + comments.length.toString());
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width-2,
+      height: 150,
       child: ListView.builder(
+        scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Container(
             height: 120,
             width: 80,
             child: Column(children: [
-              CircleAvatar(
-                radius: 33,
-                //child: comments[index].img == null ? Icon(Icons.person): Image(image: comments[index].img)
+              Container(
+                width: 70,
+                height: 70,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: NetworkImage(comments[index].address,scale: 1),
+                        fit: BoxFit.fill)),
+              ),
+              Container(
+                width: 70,
+                height: 30,
+                child: Text(comments[index].companyName),
               )
             ]),
           );
