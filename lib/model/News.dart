@@ -1,5 +1,6 @@
 class News {
-  String? title;
-  String? urlImage;
-  News({this.title, this.urlImage});
+  late String title;
+  String description;
+  String urlImage;
+  News({required this.title, required this.urlImage, this.description = " "});
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:tipik_figma/mainPage/NewsList.dart';
 import 'package:tipik_figma/mainPage/comments.dart';
 import '../model/Comment.dart';
+import '../model/News.dart';
+import './comments.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,51 +13,7 @@ class HomePage extends StatelessWidget {
     MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
     List<Comment> comments = [
       Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
-          companyName: "BlueJay",
-          rating: 3),
-      Comment(
-          address: "https://images.app.goo.gl/rGXPXRUXPNyDLoM3A",
+          address: "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
           companyName: "BlueJay",
           rating: 3),
       Comment(
@@ -62,6 +21,15 @@ class HomePage extends StatelessWidget {
               "https://lh5.googleusercontent.com/p/AF1QipPlnu4X5V3X_jVQc50KUWx8xRohUlRcTl1GgX1T",
           companyName: "Aspava",
           rating: 5)
+    ];
+    List<News> newsList = [
+      News(title: "Geçmiş Olsun Türkiye",
+       urlImage: "https://www.wpdurum.com/uploads/thumbs/milli-yas-kardelen-resmi.jpg",
+       description: "Gelirlerimizi 1 ay boyunca bağışlayacağız"
+       ),
+       News(title: "AFAD & ahbap", 
+       urlImage: "https://www.cumhuriyet.com.tr/Archive/2023/2/6/103012133-thumbsbcf9dd53875d50c944a1fde.jpg",
+       description: "Her bahşiş ve bağış etiketine AFAD ve ahpab'a bağış seçeneği ekledik")
     ];
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -76,10 +44,10 @@ class HomePage extends StatelessWidget {
         children: [
           Positioned(
               top: -50,
-              left: -25,
+              left: -45,
               child: Container(
-                height: 280,
-                width: 440,
+                height: 230,
+                width: 480,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(220),
@@ -97,7 +65,7 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               SizedBox(
-                height: 125,
+                height: 110,
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 10),
@@ -116,7 +84,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 12),
               ),
               SizedBox(
-                height: 55,
+                height: 20,
               ),
               Container(
                 margin: EdgeInsets.all(15),
@@ -140,10 +108,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
+                  margin: EdgeInsets.only(left:15,right: 15),
                   width: MediaQuery.of(context).size.width - 2,
                   child: CommentWidget(comments)),
               Container(
-                  margin: EdgeInsets.only(bottom:15),
+                  margin: EdgeInsets.only(bottom: 0, top:0,left: 15,right: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -162,6 +131,7 @@ class HomePage extends StatelessWidget {
                           ))
                     ],
                   )),
+              Container(child: NewsList(newsList: newsList),height: 230,)
             ],
           )
         ],
