@@ -169,13 +169,11 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20,bottom: 60),
+              margin: EdgeInsets.only(top: 20,bottom: 30),
               color: Colors.green,
               child: Material(
                 child: CheckboxListTile(
-                  activeColor: Colors.transparent,
                   tileColor: Colors.transparent,
-                  side:BorderSide(width: 0),
                   title: const Text('Kullanım Koşullarını okudum ve kabul ediyorum.'),
                   value: kullanim,
                   controlAffinity: ListTileControlAffinity.leading,

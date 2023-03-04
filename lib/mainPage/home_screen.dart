@@ -27,9 +27,13 @@ class HomePage extends StatelessWidget {
        urlImage: "https://www.wpdurum.com/uploads/thumbs/milli-yas-kardelen-resmi.jpg",
        description: "Gelirlerimizi 1 ay boyunca bağışlayacağız"
        ),
-       News(title: "AFAD & ahbap", 
+      News(title: "AFAD & ahbap", 
        urlImage: "https://www.cumhuriyet.com.tr/Archive/2023/2/6/103012133-thumbsbcf9dd53875d50c944a1fde.jpg",
-       description: "Her bahşiş ve bağış etiketine AFAD ve ahpab'a bağış seçeneği ekledik")
+       description: "Her bahşiş ve bağış etiketine AFAD ve ahpab'a bağış seçeneği ekledik"),
+      News(title: "Yunanistan Tren Kazası", 
+      urlImage: "https://static.euronews.com/articles/stories/07/43/46/88/320x180_cmsv2_2fc4fd76-ea6b-5001-9076-faf85d3b8329-7434688.jpg"
+      ),
+      News(title: "Altılı Masa'da Ayrılık!", urlImage: "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1998000/1999305_2.jpg")
     ];
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -62,78 +66,103 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               )),
-          Column(
-            children: [
-              SizedBox(
-                height: 110,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 10),
-                width: double.infinity,
-                child: Text(
-                  "172,50 TL",
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
+          Container(
+            height: MediaQuery.of(context).size.height-2,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 110,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Text(
-                "Bu ay bağışladınız",
-                style: TextStyle(color: Colors.white, fontSize: 12),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                margin: EdgeInsets.all(15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Değerlendirmeleriniz",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                    ),
-                    TextButton(
-                        onPressed: () => print("Tuna is the best"),
-                        child: Text(
-                          "Hepsini Gör",
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color.fromRGBO(243, 115, 53, 1)),
-                        ))
-                  ],
-                ),
-              ),
-              Container(
-                  margin: EdgeInsets.only(left:15,right: 15),
-                  width: MediaQuery.of(context).size.width - 2,
-                  child: CommentWidget(comments)),
-              Container(
-                  margin: EdgeInsets.only(bottom: 0, top:0,left: 15,right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Haberler & Kampanyalar",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    width: double.infinity,
+                    child: Text(
+                      "172,50 TL",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
                       ),
-                      TextButton(
-                          onPressed: () => print("Tuna is the best"),
-                          child: Text(
-                            "Hepsini Gör",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Text(
+                    "Bu ay bağışladınız",
+                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Değerlendirmeleriniz",
+                          style:
+                              TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                        ),
+                        TextButton(
+                            onPressed: () => print("Tuna is the best"),
+                            child: Text(
+                              "Hepsini Gör",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color.fromRGBO(243, 115, 53, 1)),
+                            ))
+                      ],
+                    ),
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left:15,right: 15,bottom:0),
+                      width: MediaQuery.of(context).size.width - 2,
+                      child: CommentWidget(comments)),
+                  Container(
+                      margin: EdgeInsets.only(bottom: 0, top:0,left: 15,right: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Haberler & Kampanyalar",
                             style: TextStyle(
-                                fontSize: 12,
-                                color: Color.fromRGBO(243, 115, 53, 1)),
-                          ))
-                    ],
-                  )),
-              Container(child: NewsList(newsList: newsList),height: 230,)
-            ],
-          )
+                                fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                          TextButton(
+                              onPressed: () => print("Tuna is the best"),
+                              child: Text(
+                                "Hepsini Gör",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color.fromRGBO(243, 115, 53, 1)),
+                              ))
+                        ],
+                      )),
+                  Container(child: NewsList(newsList: newsList),height: 210,),
+                  Container(
+                      margin: EdgeInsets.only(bottom: 0, top:0,left: 15,right: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Son İşlemleriniz",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                          TextButton(
+                              onPressed: () => print("Tuna is the best"),
+                              child: Text(
+                                "Hepsini Gör",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color.fromRGBO(243, 115, 53, 1)),
+                              ))
+                        ],
+                      )),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

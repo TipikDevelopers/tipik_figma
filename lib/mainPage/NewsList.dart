@@ -20,12 +20,13 @@ class NewsList extends StatelessWidget {
             image: DecorationImage(
                         image: NetworkImage(newsList![index].urlImage,scale: 1),
                         fit: BoxFit.fill)),
-          child: Center(child:Column(
+          child: Container(
+            padding: EdgeInsets.only(left:5,right: 5),
+            child:Column(
             children: [
               SizedBox(height: 110,),
               Text(newsList![index].title,style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),textAlign: TextAlign.left,),
               Container(
-                padding: EdgeInsets.only(left:5,right: 5),
                 child: Text(newsList![index].description,style: TextStyle(fontWeight: FontWeight.w300,color: Colors.white),textAlign: TextAlign.left,))
             ],
           )),

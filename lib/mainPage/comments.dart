@@ -10,14 +10,17 @@ class CommentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width-2,
-      height: 150,
+      height: 120,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Container(
             height: 120,
             width: 80,
-            child: Column(children: [
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
               Container(
                 width: 70,
                 height: 70,
@@ -30,7 +33,7 @@ class CommentWidget extends StatelessWidget {
               Container(
                 width: 70,
                 height: 30,
-                child: Text(comments[index].companyName),
+                child: Center(child: Text(comments[index].companyName)),
               )
             ]),
           );
