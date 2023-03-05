@@ -85,6 +85,9 @@ class HomePage extends StatelessWidget {
                 AppBar(
                   leading: Icon(Icons.menu_rounded),
                   centerTitle: true,
+                  actions: [
+                    IconButton(onPressed: null, icon:Icon(Icons.credit_card_rounded, color: Colors.white,))
+                  ],
                   title: Text("Merhaba Arda"),
                   elevation: 0,
                   backgroundColor: Colors.transparent,

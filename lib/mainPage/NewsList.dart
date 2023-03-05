@@ -16,10 +16,15 @@ class NewsList extends StatelessWidget {
           width: 160,
           height: 210,
           decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromRGBO(184, 184, 184, 0.75),
+              Color.fromRGBO(168, 255, 128, 0.75)
+            ]
+            ),
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(
                         image: NetworkImage(newsList![index].urlImage,scale: 1),
-                        fit: BoxFit.fill)),
+                        fit: BoxFit.cover)),
           child: Container(
             padding: EdgeInsets.only(left:5,right: 5),
             child:Column(
