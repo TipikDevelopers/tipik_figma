@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tipik_figma/mainPage/NewsList.dart';
 import 'package:tipik_figma/mainPage/comments.dart';
+import '../creditCard/cardScreen.dart';
 import '../model/Comment.dart';
 import '../model/News.dart';
 import '../model/Transactions.dart';
@@ -47,147 +48,169 @@ class HomePage extends StatelessWidget {
               "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1998000/1999305_2.jpg")
     ];
     List<Transaction> transactionList = [
-      Transaction(companyName: "Aspava", amount: 15, date: DateTime.now(), cardNoDigits: 40,
-      imgURL: "https://lh5.googleusercontent.com/p/AF1QipPlnu4X5V3X_jVQc50KUWx8xRohUlRcTl1GgX1T"
-      ),
-      Transaction(companyName: "Blue Jay", amount: 22, date: DateTime.now(), cardNoDigits: 40, 
-      imgURL: "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
+      Transaction(
+          companyName: "Aspava",
+          amount: 15,
+          date: DateTime.now(),
+          cardNoDigits: 40,
+          imgURL:
+              "https://lh5.googleusercontent.com/p/AF1QipPlnu4X5V3X_jVQc50KUWx8xRohUlRcTl1GgX1T"),
+      Transaction(
+          companyName: "Blue Jay",
+          amount: 22,
+          date: DateTime.now(),
+          cardNoDigits: 40,
+          imgURL:
+              "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
     ];
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: Container(
-        height: MediaQuery.of(context).size.height-2,
-        child: SingleChildScrollView(
-          child:Stack(
-          children: [
-            Positioned(
-                top: -50,
-                left: -45,
-                child: Container(
-                  height: 230,
-                  width: 480,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(220),
-                        bottomRight: Radius.circular(220)),
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(253, 200, 48, 1),
-                        Color.fromRGBO(234, 115, 53, 1)
-                      ],
-                    ),
-                  ),
-                )),
-            Column(
+          height: MediaQuery.of(context).size.height - 2,
+          child: SingleChildScrollView(
+            child: Stack(
               children: [
-                AppBar(
-                  leading: Icon(Icons.menu_rounded),
-                  centerTitle: true,
-                  title: Text("Merhaba Arda"),
-                  elevation: 0,
-                  backgroundColor: Colors.transparent,
-                ),
-                SizedBox(
-                  height: 33,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  width: double.infinity,
-                  child: Text(
-                    "172,50 TL",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Text(
-                  "Bu ay bağışladınız",
-                  style: TextStyle(color: Colors.white, fontSize: 12),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  margin: EdgeInsets.all(15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Değerlendirmeleriniz",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                Positioned(
+                    top: -50,
+                    left: -45,
+                    child: Container(
+                      height: 230,
+                      width: 480,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(220),
+                            bottomRight: Radius.circular(220)),
+                        gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromRGBO(253, 200, 48, 1),
+                            Color.fromRGBO(234, 115, 53, 1)
+                          ],
+                        ),
                       ),
-                      TextButton(
-                          onPressed: () => print("Tuna is the best"),
-                          child: Text(
-                            "Hepsini Gör",
+                    )),
+                Column(
+                  children: [
+                    AppBar(
+                      leading: Icon(Icons.menu_rounded),
+                      centerTitle: true,
+                      title: Text("Merhaba Arda"),
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
+                      actions: [
+                        IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => cardScreen()));
+                            },
+                            icon: Icon(
+                              Icons.credit_card_rounded,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
+                    SizedBox(
+                      height: 33,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 10),
+                      width: double.infinity,
+                      child: Text(
+                        "172,50 TL",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Text(
+                      "Bu ay bağışladınız",
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Değerlendirmeleriniz",
                             style: TextStyle(
-                                fontSize: 12,
-                                color: Color.fromRGBO(243, 115, 53, 1)),
-                          ))
-                    ],
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.only(left: 15, right: 15, bottom: 0),
-                    width: MediaQuery.of(context).size.width - 2,
-                    child: CommentWidget(comments)),
-                Container(
-                    margin: EdgeInsets.only(
-                        bottom: 0, top: 0, left: 15, right: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Haberler & Kampanyalar",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600),
-                        ),
-                        TextButton(
-                            onPressed: () => print("Tuna is the best"),
-                            child: Text(
-                              "Hepsini Gör",
+                                fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                          TextButton(
+                              onPressed: () => print("Tuna is the best"),
+                              child: Text(
+                                "Hepsini Gör",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color.fromRGBO(243, 115, 53, 1)),
+                              ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(left: 15, right: 15, bottom: 0),
+                        width: MediaQuery.of(context).size.width - 2,
+                        child: CommentWidget(comments)),
+                    Container(
+                        margin: EdgeInsets.only(
+                            bottom: 0, top: 0, left: 15, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Haberler & Kampanyalar",
                               style: TextStyle(
-                                  fontSize: 12,
-                                  color: Color.fromRGBO(243, 115, 53, 1)),
-                            ))
-                      ],
-                    )),
-                Container(
-                  child: NewsList(newsList: newsList),
-                  height: 210,
-                ),
-                Container(
-                    margin: EdgeInsets.only(
-                        bottom: 0, top: 0, left: 15, right: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Son İşlemleriniz",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600),
-                        ),
-                        TextButton(
-                            onPressed: () => print("Tuna is the best"),
-                            child: Text(
-                              "Hepsini Gör",
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                            TextButton(
+                                onPressed: () => print("Tuna is the best"),
+                                child: Text(
+                                  "Hepsini Gör",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromRGBO(243, 115, 53, 1)),
+                                ))
+                          ],
+                        )),
+                    Container(
+                      child: NewsList(newsList: newsList),
+                      height: 210,
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(
+                            bottom: 0, top: 0, left: 15, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Son İşlemleriniz",
                               style: TextStyle(
-                                  fontSize: 12,
-                                  color: Color.fromRGBO(243, 115, 53, 1)),
-                            ))
-                      ],
-                    )),
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                            TextButton(
+                                onPressed: () => print("Tuna is the best"),
+                                child: Text(
+                                  "Hepsini Gör",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromRGBO(243, 115, 53, 1)),
+                                ))
+                          ],
+                        )),
                     TransactionInfo(transactionList: transactionList)
+                  ],
+                ),
               ],
             ),
-          ],
-        ),)
-      ),
+          )),
     );
   }
 }
