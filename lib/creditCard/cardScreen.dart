@@ -137,7 +137,7 @@ class cardScreen extends StatelessWidget {
                   color: Colors.black,
                   fontSize: 32.0,
                   fontFamily: 'Quicksand',
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w900),
             ),
           ),
           Positioned(
@@ -151,7 +151,61 @@ class cardScreen extends StatelessWidget {
                 color: Colors.black,
                 fontSize: 20.0,
                 fontFamily: 'Quicksand',
+                fontWeight: FontWeight.w600,
               ),
+            ),
+          ),
+          Positioned(
+            top: 500,
+            height: 80,
+            width: 280,
+            child: IconButton(
+              color: Colors.black,
+              icon: Icon(
+                Icons.arrow_forward,
+              ),
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      height: 600,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            const Text(
+                              'Kayıtlı telefon numaranıza ait Masterpass hesabı bulunmaktadır.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Quicksand',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.green,
+                              ),
+                              child: const Text(
+                                'Kullan',
+                                style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              onPressed: () => Navigator.pop(context),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
           ),
         ]),
