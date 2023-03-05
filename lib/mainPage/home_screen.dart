@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
                       height: 33,
                     ),
                     Container(
-                      margin: EdgeInsets.only(bottom: 10),
+                      margin: EdgeInsets.only(bottom: 0),
                       width: double.infinity,
                       child: Text(
                         "172,50 TL",
