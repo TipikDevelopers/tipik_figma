@@ -30,14 +30,18 @@ class NewsList extends StatelessWidget {
                       Text(
                         newsList![index].title,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'Comfortaa'),
                         textAlign: TextAlign.left,
                       ),
                       Container(
                           child: Text(
                         newsList![index].description,
                         style: TextStyle(
-                            fontWeight: FontWeight.w300, color: Colors.white),
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white,
+                            fontFamily: 'Comfortaa'),
                         textAlign: TextAlign.left,
                       ))
                     ],

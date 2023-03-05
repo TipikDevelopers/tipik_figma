@@ -95,7 +95,12 @@ class HomePage extends StatelessWidget {
                     AppBar(
                       leading: Icon(Icons.menu_rounded),
                       centerTitle: true,
-                      title: Text("Merhaba Arda"),
+                      title: Text(
+                        "Merhaba Arda",
+                        style: TextStyle(
+                            fontFamily: 'Comfortaa',
+                            fontWeight: FontWeight.bold),
+                      ),
                       elevation: 0,
                       backgroundColor: Colors.transparent,
                       actions: [
@@ -123,13 +128,17 @@ class HomePage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 25,
                           color: Colors.white,
+                          fontFamily: 'Poppins Bold',
                         ),
                         textAlign: TextAlign.center,
                       ),
                     ),
                     Text(
                       "Bu ay bağışladınız",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontFamily: 'Comfortaa'),
                     ),
                     SizedBox(
                       height: 20,
@@ -142,7 +151,9 @@ class HomePage extends StatelessWidget {
                           Text(
                             "Değerlendirmeleriniz",
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w600),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Comfortaa'),
                           ),
                           TextButton(
                               onPressed: () => print("Tuna is the best"),
@@ -150,7 +161,8 @@ class HomePage extends StatelessWidget {
                                 "Hepsini Gör",
                                 style: TextStyle(
                                     fontSize: 12,
-                                    color: Color.fromRGBO(243, 115, 53, 1)),
+                                    color: Color.fromRGBO(243, 115, 53, 1),
+                                    fontFamily: 'Comfortaa'),
                               ))
                         ],
                       ),
@@ -168,7 +180,9 @@ class HomePage extends StatelessWidget {
                             Text(
                               "Haberler & Kampanyalar",
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Comfortaa'),
                             ),
                             TextButton(
                                 onPressed: () => print("Tuna is the best"),
@@ -176,7 +190,8 @@ class HomePage extends StatelessWidget {
                                   "Hepsini Gör",
                                   style: TextStyle(
                                       fontSize: 12,
-                                      color: Color.fromRGBO(243, 115, 53, 1)),
+                                      color: Color.fromRGBO(243, 115, 53, 1),
+                                      fontFamily: 'Comfortaa'),
                                 ))
                           ],
                         )),
@@ -193,7 +208,9 @@ class HomePage extends StatelessWidget {
                             Text(
                               "Son İşlemleriniz",
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Comfortaa'),
                             ),
                             TextButton(
                                 onPressed: () => print("Tuna is the best"),
@@ -201,7 +218,8 @@ class HomePage extends StatelessWidget {
                                   "Hepsini Gör",
                                   style: TextStyle(
                                       fontSize: 12,
-                                      color: Color.fromRGBO(243, 115, 53, 1)),
+                                      color: Color.fromRGBO(243, 115, 53, 1),
+                                      fontFamily: 'Comfortaa'),
                                 ))
                           ],
                         )),

@@ -89,6 +89,15 @@ flutter:
      - family: Quicksand
        fonts:
          - asset: fonts/Quicksand-VariableFont_wght.ttf
+     - family: Comfortaa
+       fonts:
+        - asset: fonts/Comfortaa-VariableFont_wght.ttf
+     - family: Poppins Bold
+       fonts:
+         - asset: fonts/Poppins-Bold.ttf
+     - family: Poppins Medium
+       fonts:
+         - asset: fonts/Poppins-Medium.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

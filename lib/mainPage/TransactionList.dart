@@ -14,7 +14,6 @@ class TransactionInfo extends StatelessWidget {
         children: [
           ...transactionList.map((e) {
             return Container(
-              
               height: 70,
               width: 360,
               margin: EdgeInsets.all(15),
@@ -22,16 +21,20 @@ class TransactionInfo extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 elevation: 3,
                 child: ListTile(
-                  
                   title: Text(e.companyName),
                   leading: Container(
                     height: 70,
                     width: 70,
-                    decoration: BoxDecoration(image:DecorationImage(
-                        image: NetworkImage(e.imgURL,scale: 1),
-                        fit: BoxFit.fill)),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(e.imgURL, scale: 1),
+                            fit: BoxFit.fill)),
                   ),
-                  subtitle: Text(DateFormat.yMMMMd().format(e.date)),
+                  subtitle: Text(
+                    DateFormat.yMMMMd().format(e.date),
+                    style: TextStyle(
+                        fontFamily: 'Quicksand', fontWeight: FontWeight.bold),
+                  ),
                   trailing: Container(
                     height: 70,
                     width: 70,
@@ -42,10 +45,20 @@ class TransactionInfo extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FaIcon(FontAwesomeIcons.ccVisa),
-                            Text("**${e.cardNoDigits}",style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold))
+                            Text("**${e.cardNoDigits}",
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Poppins Medium'))
                           ],
                         ),
-                        Text("${e.amount}₺",style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),)
+                        Text(
+                          "${e.amount}₺",
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppins Medium'),
+                        )
                       ],
                     ),
                   ),
