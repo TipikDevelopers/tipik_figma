@@ -117,8 +117,36 @@ class HomePage extends StatelessWidget {
                             ))
                       ],
                     ),
+<<<<<<< HEAD
                     SizedBox(
                       height: 33,
+=======
+                  ),
+                )),
+            Column(
+              children: [
+                AppBar(
+                  leading: Icon(Icons.menu_rounded),
+                  centerTitle: true,
+                  actions: [
+                    IconButton(onPressed: null, icon:Icon(Icons.credit_card_rounded, color: Colors.white,))
+                  ],
+                  title: Text("Merhaba Arda"),
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                ),
+                SizedBox(
+                  height: 33,
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  width: double.infinity,
+                  child: Text(
+                    "172,50 TL",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+>>>>>>> master
                     ),
                     Container(
                       margin: EdgeInsets.only(bottom: 10),

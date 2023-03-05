@@ -41,31 +41,31 @@ class CommentWidget extends StatelessWidget {
                       alignment: Alignment(-1.4, -0.6),
                       child:Icon(
                         comments[index].rating <1 ? Icons.star_border: Icons.star,
-                       color: Colors.yellow,)
+                       color: Color.fromRGBO(253, 200, 48, 1),)
                     ),
                     Align(
                       alignment: Alignment(-0.8, -1.4),
                       child:Icon(
                         comments[index].rating <2 ? Icons.star_border: Icons.star,
-                       color: Colors.yellow)
+                       color: Color.fromRGBO(253, 200, 48, 1))
                     ),
                     Align(
                       alignment: Alignment(0,-1.8),
                       child:Icon(
                         comments[index].rating <3 ? Icons.star_border: Icons.star,
-                       color: Colors.yellow)
+                       color: Color.fromRGBO(253, 200, 48, 1))
                     ),
                     Align(
                       alignment: Alignment(0.8, -1.4),
                       child:Icon(
                         comments[index].rating <4 ? Icons.star_border: Icons.star,
-                       color: Colors. yellow)
+                       color: Color.fromRGBO(253, 200, 48, 1))
                     ),
                     Align(
                       alignment: Alignment(1.4, -0.6),
                       child: Icon(
                         comments[index].rating <5 ? Icons.star_border: Icons.star,
-                       color: Colors.yellow)
+                       color: Color.fromRGBO(253, 200, 48, 1))
                     ),
                   ],
                 ),
