@@ -45,6 +45,7 @@ dependencies:
   intl: ^0.18.0
   font_awesome_flutter: ^10.4.0
   dio: ^5.0.1
+  sidebar: ^0.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -39,6 +39,9 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -46,12 +49,13 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
         child: Column(
           children: [
             SizedBox(
-              height: 70,
+              height: (screenHeight * 9) / 100,
             ),
             // give the tab bar a height [can change height to preferred height]
             Container(
               padding: EdgeInsets.all(5),
-              height: 80,
+              height: (screenHeight * 9) / 100,
+              width: (screenWidth * 360) / 390,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -90,6 +94,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
               ),
             ),
             Container(
+                height: (screenHeight * 13) / 100,
+                width: (screenWidth * 320) / 390,
                 margin: EdgeInsets.all(40),
                 child: const Center(
                     child: Text(
@@ -107,7 +113,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       child: Column(
                     children: [
                       Container(
-                          width: 320,
+                          height: (screenHeight * 80) / 844,
+                          width: (screenWidth * 320) / 390,
                           padding: EdgeInsets.all(10),
                           child: TextField(
                             controller: userNameController,
@@ -119,6 +126,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                     color: Color.fromRGBO(90, 89, 89, 1)),
                                 filled: true,
                                 fillColor: Color.fromRGBO(217, 217, 217, 1),
+                                contentPadding:
+                                    EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
@@ -132,8 +141,9 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 FocusManager.instance.primaryFocus?.unfocus(),
                           )),
                       Container(
-                          margin: EdgeInsets.only(bottom: 50),
-                          width: 320,
+                          //margin: EdgeInsets.only(bottom: 50),
+                          height: (screenHeight * 80) / 844,
+                          width: (screenWidth * 320) / 390,
                           padding: EdgeInsets.all(10),
                           child: TextField(
                             controller: passwordController,
@@ -145,6 +155,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                     color: Color.fromRGBO(90, 89, 89, 1)),
                                 filled: true,
                                 fillColor: Color.fromRGBO(217, 217, 217, 1),
+                                contentPadding:
+                                    EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
@@ -164,8 +176,9 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   //phone number part
                   Center(
                     child: Container(
+                        height: (screenHeight * 120) / 844,
                         margin: EdgeInsets.only(top: 0),
-                        width: 400,
+                        width: (screenWidth * 320) / 390,
                         padding: EdgeInsets.all(10),
                         child: IntlPhoneField(
                           onCountryChanged: (country) =>
@@ -177,6 +190,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                   color: Color.fromRGBO(90, 89, 89, 1)),
                               filled: true,
                               fillColor: Color.fromRGBO(217, 217, 217, 1),
+                              contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
                                   borderSide: BorderSide(
@@ -193,8 +207,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
               ),
             ),
             Container(
-              width: 120,
-              height: 60,
+              width: (screenWidth * 150) / 390,
+              height: (screenHeight * 7) / 100,
               child: ElevatedButton(
                 child: Icon(Icons.arrow_forward),
                 onPressed: () {
@@ -217,7 +231,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: (screenHeight * 150) / 844,
             ),
             TextButton(
                 style: TextButton.styleFrom(

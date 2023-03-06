@@ -9,6 +9,7 @@ import '../model/News.dart';
 import '../model/Transactions.dart';
 import './TransactionList.dart';
 import './comments.dart';
+import 'NavBar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -64,6 +65,7 @@ class HomePage extends StatelessWidget {
               "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
     ];
     return Scaffold(
+      drawer: NavBar(),
       extendBodyBehindAppBar: true,
       body: Container(
           height: MediaQuery.of(context).size.height - 2,
