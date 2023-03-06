@@ -44,6 +44,7 @@ dependencies:
   flutter_linear_datepicker: ^2.0.4
   intl: ^0.18.0
   font_awesome_flutter: ^10.4.0
+  dio: ^5.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
