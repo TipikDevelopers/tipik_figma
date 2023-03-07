@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../creditCard/cardScreen.dart';
 import '../login/login_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -27,33 +28,24 @@ class NavBar extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.network(
-                  //'elif.jpg', TODO: solve the issue here image below will temporarily fill the blank
-                  //'https://www.clipartmax.com/png/middle/257-2572603_user-man-social-avatar-profile-icon-man-avatar-in-circle.png',
-                  'http://www.fen.bilkent.edu.tr/~cvmath/tekman.jpg',
-                  fit: BoxFit.cover,
-                  scale: 1,
-                  width: 90,
-                  height: 90,
-                ),
+            currentAccountPicture: Container(
+              child: SvgPicture.asset(
+                'assets/images/tipik.svg',
+                fit: BoxFit.cover,
+                width: 90,
+                height: 90,
               ),
             ),
             decoration: BoxDecoration(
               color: Color.fromRGBO(253, 200, 48, 1),
-              //image: DecorationImage(
-              //fit: BoxFit.fill,
-              //image: NetworkImage('elif.jpg'), TODO: Solve the error
-              //image: NetworkImage(
-              //'elif.jpg', TODO: solve the issue here image below will temporarily fill the blank
-              //'https://www.clipartmax.com/png/middle/257-2572603_user-man-social-avatar-profile-icon-man-avatar-in-circle.png',
-              //),
-              //),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: NetworkImage('assets/images/tipik.svg'),
+              ),
             ),
           ),
           ListTile(
-            leading: Icon(Icons.credit_card_rounded),
+            leading: SvgPicture.asset('assets/images/kartlar.svg'),
             title: Text(
               "Kartlarım",
               style: TextStyle(
