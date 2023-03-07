@@ -156,29 +156,43 @@ class cardScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 500,
-            height: 80,
-            width: 280,
-            child: IconButton(
-              color: Colors.black,
-              icon: Icon(
-                Icons.arrow_forward,
+            top: 530,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromRGBO(86, 194, 95, 1),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+              ),
+              child: const Text(
+                '->',
+                style: TextStyle(
+                    fontFamily: 'Quicksand', fontWeight: FontWeight.bold),
               ),
               onPressed: () {
                 showModalBottomSheet<void>(
                   context: context,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(40.0),
+                    ),
+                  ),
                   builder: (BuildContext context) {
-                    return Container(
+                    return SizedBox(
                       height: 600,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
                       child: Center(
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      'https://www.masterpassturkiye.com/files/01.png'),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
                             const Text(
                               'Kayıtlı telefon numaranıza ait Masterpass hesabı bulunmaktadır.',
                               textAlign: TextAlign.center,
@@ -187,15 +201,23 @@ class cardScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
+                            SizedBox(height: 10),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.green,
-                              ),
-                              child: const Text(
-                                'Kullan',
-                                style: TextStyle(
-                                    fontFamily: 'Quicksand',
-                                    fontWeight: FontWeight.bold),
+                                  backgroundColor:
+                                      Color.fromRGBO(86, 194, 95, 1),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(10.0))),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: const Text(
+                                  'Kullan',
+                                  style: TextStyle(
+                                      fontSize: 30,
+                                      fontFamily: 'Quicksand',
+                                      fontWeight: FontWeight.w700),
+                                ),
                               ),
                               onPressed: () => Navigator.pop(context),
                             ),
