@@ -63,7 +63,7 @@ class NavBar extends StatelessWidget {
           ),
           Divider(color: Colors.white),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: SvgPicture.asset('assets/images/ayarlar.svg'),
             title: Text(
               "Ayarlar",
               style: TextStyle(
@@ -76,7 +76,7 @@ class NavBar extends StatelessWidget {
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.question_mark_outlined),
+            leading: SvgPicture.asset('assets/images/Yardım.svg'),
             title: Text(
               "Yardım",
               style: TextStyle(
@@ -89,7 +89,7 @@ class NavBar extends StatelessWidget {
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.star_border),
+            leading: SvgPicture.asset('assets/images/Deger.svg'),
             title: Text(
               "Değerlendirmeler",
               style: TextStyle(
@@ -118,7 +118,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.newspaper),
+            leading: SvgPicture.asset('assets/images/News.svg'),
             title: Text(
               "Haberler/Kampanyalar",
               style: TextStyle(
@@ -131,7 +131,7 @@ class NavBar extends StatelessWidget {
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.wifi_outlined),
+            leading: SvgPicture.asset('assets/images/Islemler.svg'),
             title: Text(
               "Tüm İşlemlerim",
               style: TextStyle(
@@ -148,7 +148,7 @@ class NavBar extends StatelessWidget {
           ),
           Divider(color: Colors.white),
           ListTile(
-            leading: Icon(Icons.logout_sharp),
+            leading: SvgPicture.asset('assets/images/Cikis.svg'),
             title: Text(
               "Çıkış Yap",
               style: TextStyle(

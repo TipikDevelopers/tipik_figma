@@ -76,6 +76,13 @@ flutter:
     #- images/a_dot_ham.jpeg
     - assets/images/tipik.svg
     - assets/images/kartlar.svg
+    - assets/images/ayarlar.svg
+    - assets/images/Cikis.svg
+    - assets/images/Deger.svg
+    - assets/images/Islemler.svg
+    - assets/images/Kapat.svg
+    - assets/images/Yardım.svg
+    - assets/images/News.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
