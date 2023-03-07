@@ -95,7 +95,7 @@ class HomePage extends StatelessWidget {
                 Column(
                   children: [
                     AppBar(
-                      leading: Icon(Icons.menu_rounded),
+                      //leading: Icon(Icons.menu_rounded),
                       centerTitle: true,
                       title: Text(
                         "Merhaba Arda",

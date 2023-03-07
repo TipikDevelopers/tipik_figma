@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../creditCard/cardScreen.dart';
+import '../login/login_screen.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -28,8 +30,10 @@ class NavBar extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
-                  'elif.jpg',
+                  //'elif.jpg', TODO: solve the issue here image below will temporarily fill the blank
+                  'https://www.clipartmax.com/png/middle/257-2572603_user-man-social-avatar-profile-icon-man-avatar-in-circle.png',
                   fit: BoxFit.cover,
+                  scale: 1,
                   width: 90,
                   height: 90,
                 ),
@@ -37,14 +41,18 @@ class NavBar extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: Color.fromRGBO(253, 200, 48, 1),
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage('elif.jpg'),
-              ),
+              //image: DecorationImage(
+              //fit: BoxFit.fill,
+              //image: NetworkImage('elif.jpg'), TODO: Solve the error
+              //image: NetworkImage(
+              //'elif.jpg', TODO: solve the issue here image below will temporarily fill the blank
+              //'https://www.clipartmax.com/png/middle/257-2572603_user-man-social-avatar-profile-icon-man-avatar-in-circle.png',
+              //),
+              //),
             ),
           ),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.credit_card_rounded),
             title: Text(
               "Kartlarım",
               style: TextStyle(
@@ -54,11 +62,15 @@ class NavBar extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: () => null,
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => cardScreen()));
+            },
           ),
-          Divider(),
+          Divider(color: Colors.white),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.settings),
             title: Text(
               "Ayarlar",
               style: TextStyle(
@@ -71,7 +83,7 @@ class NavBar extends StatelessWidget {
             onTap: () => null,
           ),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.question_mark_outlined),
             title: Text(
               "Yardım",
               style: TextStyle(
@@ -84,7 +96,7 @@ class NavBar extends StatelessWidget {
             onTap: () => null,
           ),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.star_border),
             title: Text(
               "Değerlendirmeler",
               style: TextStyle(
@@ -113,7 +125,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.newspaper),
             title: Text(
               "Haberler/Kampanyalar",
               style: TextStyle(
@@ -126,7 +138,7 @@ class NavBar extends StatelessWidget {
             onTap: () => null,
           ),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.wifi_outlined),
             title: Text(
               "Tüm İşlemlerim",
               style: TextStyle(
@@ -141,9 +153,9 @@ class NavBar extends StatelessWidget {
           SizedBox(
             height: 70,
           ),
-          Divider(),
+          Divider(color: Colors.white),
           ListTile(
-            leading: Text(":)"),
+            leading: Icon(Icons.logout_sharp),
             title: Text(
               "Çıkış Yap",
               style: TextStyle(
@@ -153,7 +165,11 @@ class NavBar extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: () => null,
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Login()));
+            },
           ),
         ],
       ),
