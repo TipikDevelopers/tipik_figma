@@ -31,7 +31,8 @@ class NavBar extends StatelessWidget {
               child: ClipOval(
                 child: Image.network(
                   //'elif.jpg', TODO: solve the issue here image below will temporarily fill the blank
-                  'https://www.clipartmax.com/png/middle/257-2572603_user-man-social-avatar-profile-icon-man-avatar-in-circle.png',
+                  //'https://www.clipartmax.com/png/middle/257-2572603_user-man-social-avatar-profile-icon-man-avatar-in-circle.png',
+                  'http://www.fen.bilkent.edu.tr/~cvmath/tekman.jpg',
                   fit: BoxFit.cover,
                   scale: 1,
                   width: 90,
