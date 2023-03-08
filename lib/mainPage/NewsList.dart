@@ -19,7 +19,7 @@ class NewsList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
                       image: NetworkImage(newsList![index].urlImage, scale: 1),
-                      fit: BoxFit.fill)),
+                      fit: BoxFit.cover)),
               child: Container(
                   padding: EdgeInsets.only(left: 5, right: 5),
                   child: Column(
