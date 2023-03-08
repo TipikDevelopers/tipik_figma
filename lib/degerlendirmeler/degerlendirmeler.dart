@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tipik_figma/degerlendirmeler/commentList.dart';
 
 class degerlendirmeler extends StatelessWidget {
   @override
@@ -38,6 +39,9 @@ class degerlendirmeler extends StatelessWidget {
           elevation: 0, //shadow
           centerTitle: true,
         ),
+      ),
+      body: Container(
+        child: CommentList(comments: []),
       ),
     );
   }
