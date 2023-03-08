@@ -28,7 +28,7 @@ class TransactionInfo extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(e.imgURL, scale: 1),
-                            fit: BoxFit.fill)),
+                            fit: BoxFit.cover)),
                   ),
                   subtitle: Text(
                     DateFormat.yMMMMd().format(e.date),

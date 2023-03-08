@@ -17,11 +17,15 @@ class HomePage extends StatelessWidget {
     MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
     List<Comment> comments = [
       Comment(
+          time: DateTime.now(),
           address:
               "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
           companyName: "BlueJay",
+          location: "ANkara/Çankaya",
           rating: 3),
       Comment(
+          time: DateTime.now(),
+          location: "ANkara/Çankaya",
           address:
               "https://lh5.googleusercontent.com/p/AF1QipPlnu4X5V3X_jVQc50KUWx8xRohUlRcTl1GgX1T",
           companyName: "Aspava",

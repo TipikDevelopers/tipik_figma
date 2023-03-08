@@ -4,6 +4,15 @@ class Comment {
   int rating;
   String companyName;
   String address;
+  DateTime time;
+  bool responded;
+  String location;
   Comment(
-      {required this.rating, required this.companyName, required this.address});
+      {
+      this.responded = false,
+      required this.location,
+      required this.time,
+      required this.rating,
+      required this.companyName,
+      required this.address});
 }
