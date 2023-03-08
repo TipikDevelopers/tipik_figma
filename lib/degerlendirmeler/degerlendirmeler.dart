@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tipik_figma/degerlendirmeler/commentList.dart';
+import 'package:tipik_figma/model/Comment.dart';
 
 class degerlendirmeler extends StatelessWidget {
+  List<Comment> commentList;
+  degerlendirmeler({required this.commentList});
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;

@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
               "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
     ];
     return Scaffold(
-      drawer: NavBar(),
+      drawer: NavBar(commentList: comments, newsList: newsList,),
       extendBodyBehindAppBar: true,
       body: Container(
           height: MediaQuery.of(context).size.height - 2,

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:tipik_figma/degerlendirmeler/degerlendirmeler.dart';
+import 'package:tipik_figma/model/Comment.dart';
+import 'package:tipik_figma/model/News.dart';
 import '../creditCard/cardScreen.dart';
 import '../login/login_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/src/painting/border_radius.dart';
 
 class NavBar extends StatelessWidget {
+  List<Comment> commentList;
+  List<News> newsList;
+  NavBar({required this.commentList, required this.newsList});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -117,7 +122,7 @@ class NavBar extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => degerlendirmeler()));
+                        builder: (context) => degerlendirmeler(commentList: commentList,)));
               },
               trailing: ClipOval(
                 child: Container(
