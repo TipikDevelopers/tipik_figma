@@ -9,6 +9,7 @@ import '../model/News.dart';
 import '../model/Transactions.dart';
 import './TransactionList.dart';
 import './comments.dart';
+import '../haberler/haberler.dart';
 import 'NavBar.dart';
 
 class HomePage extends StatelessWidget {
@@ -191,7 +192,7 @@ class HomePage extends StatelessWidget {
                                   fontFamily: 'Comfortaa'),
                             ),
                             TextButton(
-                                onPressed: () => print("Tuna is the best"),
+                                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Habers(newsList: newsList))),
                                 child: Text(
                                   "Hepsini Gör",
                                   style: TextStyle(
