@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tipik_figma/degerlendirmeler/degerlendirmeler.dart';
 import '../creditCard/cardScreen.dart';
 import '../login/login_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -111,7 +112,13 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => null,
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => degerlendirmeler()));
+              },
               trailing: ClipOval(
                 child: Container(
                   color: Colors.white,
