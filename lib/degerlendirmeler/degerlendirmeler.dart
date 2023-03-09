@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tipik_figma/degerlendirmeler/commentList.dart';
 import 'package:tipik_figma/model/Comment.dart';
 
 class degerlendirmeler extends StatelessWidget {
   List<Comment> commentList;
+  final controller = TextEditingController();
   degerlendirmeler({required this.commentList});
   @override
   Widget build(BuildContext context) {
@@ -43,9 +45,37 @@ class degerlendirmeler extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      body: Container(
-        child: CommentList(comments: []),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.grey,
+            margin: EdgeInsets.all(20),
+            child: TextField(
+              controller: controller,
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search),
+                hintText: "Ara",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onChanged: searchComment,
+            ),
+          ),
+          Container(
+            height: 200,
+            child: CommentList(comments: commentList),
+          ),
+        ],
       ),
     );
+  }
+
+  void searchComment(String query) {
+    final suggestions = commentList.where((Comment) {
+      final title = Comment.companyName.toLowerCase();
+      final input = query.toLowerCase();
+      return title.contains(input);
+    }).toList();
   }
 }
