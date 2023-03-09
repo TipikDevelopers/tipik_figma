@@ -75,8 +75,12 @@ class NavBar extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cardScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => cardScreen(
+                              cardList: [],
+                            )));
               },
             ),
             Divider(color: Colors.white),
@@ -122,7 +126,9 @@ class NavBar extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => degerlendirmeler(commentList: commentList,)));
+                        builder: (context) => degerlendirmeler(
+                              commentList: commentList,
+                            )));
               },
               trailing: ClipOval(
                 child: Container(

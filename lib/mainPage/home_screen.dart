@@ -70,7 +70,10 @@ class HomePage extends StatelessWidget {
               "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
     ];
     return Scaffold(
-      drawer: NavBar(commentList: comments, newsList: newsList,),
+      drawer: NavBar(
+        commentList: comments,
+        newsList: newsList,
+      ),
       extendBodyBehindAppBar: true,
       body: Container(
           height: MediaQuery.of(context).size.height - 2,
@@ -116,7 +119,8 @@ class HomePage extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => cardScreen()));
+                                      builder: (context) =>
+                                          cardScreen(cardList: [])));
                             },
                             icon: Icon(
                               Icons.credit_card_rounded,
@@ -192,7 +196,10 @@ class HomePage extends StatelessWidget {
                                   fontFamily: 'Comfortaa'),
                             ),
                             TextButton(
-                                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Habers(newsList: newsList))),
+                                onPressed: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            Habers(newsList: newsList))),
                                 child: Text(
                                   "Hepsini Gör",
                                   style: TextStyle(
