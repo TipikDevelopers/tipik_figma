@@ -3,7 +3,7 @@ import '../model/News.dart';
 
 class NewsList extends StatelessWidget {
   final List<News>? newsList;
-  NewsList({this.newsList});
+  const NewsList({this.newsList});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,24 +12,27 @@ class NewsList extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: 160,
               height: 210,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                      image: NetworkImage(newsList![index].urlImage, scale: 1),
+                      image: NetworkImage(newsList![index].urlImage, 
+                      scale: 1,
+                      ),
+                      colorFilter: ColorFilter.mode( Color.fromRGBO(87, 237, 120, 1).withOpacity(0.6), BlendMode.srcOver),
                       fit: BoxFit.cover)),
               child: Container(
-                  padding: EdgeInsets.only(left: 5, right: 5),
+                  padding: const EdgeInsets.only(left: 5, right: 5),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 110,
                       ),
                       Text(
                         newsList![index].title,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontFamily: 'Comfortaa'),
@@ -38,7 +41,7 @@ class NewsList extends StatelessWidget {
                       Container(
                           child: Text(
                         newsList![index].description,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w300,
                             color: Colors.white,
                             fontFamily: 'Comfortaa'),

@@ -8,22 +8,29 @@ class HaberList extends StatelessWidget {
   HaberList({required this.newsList});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 20),
-      height: 400,
+    return Expanded(
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 200,
-              childAspectRatio: 3 / 2,
+              childAspectRatio: 3 / 3,
               crossAxisSpacing: 20,
               mainAxisSpacing: 20),
           itemCount: newsList.length,
           itemBuilder: (BuildContext ctx, index) {
             return Container(
-              alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: Colors.amber, borderRadius: BorderRadius.circular(15)),
-              child: Text(newsList[index].title),
+                  color: Colors.amber, borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(image: NetworkImage(newsList[index].urlImage,scale: 1),
+                    colorFilter: ColorFilter.mode(Colors.green.shade300.withOpacity(0.75),BlendMode.srcOver),
+                    fit: BoxFit.cover
+                  ),
+                  ),
+              child: Column(
+                children: [
+                  Text(newsList[index].title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800,color:Colors.white,fontFamily: "Manrope"),),
+                  Text(newsList[index].description, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800,color:Colors.white,fontFamily: "Manrope"))
+                ],
+              ),
             );
           }),
     );
