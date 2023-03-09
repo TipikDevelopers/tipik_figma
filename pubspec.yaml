@@ -113,6 +113,9 @@ flutter:
      - family: Poppins Medium
        fonts:
          - asset: fonts/Poppins-Medium.ttf
+     - family: Manrope
+       fonts:
+         - asset: fonts/Manrope-VariableFont_wght.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
