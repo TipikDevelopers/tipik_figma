@@ -165,7 +165,7 @@ class HomePage extends StatelessWidget {
                                 fontFamily: 'Comfortaa'),
                           ),
                           TextButton(
-                              onPressed: () => print("Tuna is the best"),
+                              onPressed: () => {}, //TODO
                               child: const Text(
                                 "Hepsini Gör",
                                 style: TextStyle(
@@ -225,7 +225,7 @@ class HomePage extends StatelessWidget {
                                   fontFamily: 'Comfortaa'),
                             ),
                             TextButton(
-                                onPressed: () => print("Tuna is the best"),
+                                onPressed: () {}, //TODO
                                 child: const Text(
                                   "Hepsini Gör",
                                   style: TextStyle(

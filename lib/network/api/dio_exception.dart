@@ -7,7 +7,7 @@ DioExceptions.fromDioError(DioError dioError) {
     case DioErrorType.cancel:
       message = "Request to API server was cancelled";
       break;
-    case DioErrorType.connectionTimeout as DioErrorType :
+    case DioErrorType.connectionTimeout:
       message = "Connection timeout with API server";
       break;
     case DioErrorType.receiveTimeout:

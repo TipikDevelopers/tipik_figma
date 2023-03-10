@@ -6,7 +6,7 @@ class NewsList extends StatelessWidget {
   const NewsList({this.newsList});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: MediaQuery.of(context).size.width - 2,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -21,7 +21,7 @@ class NewsList extends StatelessWidget {
                       image: NetworkImage(newsList![index].urlImage, 
                       scale: 1,
                       ),
-                      colorFilter: ColorFilter.mode( Color.fromRGBO(87, 237, 120, 1).withOpacity(0.6), BlendMode.srcOver),
+                      colorFilter: ColorFilter.mode(const Color.fromRGBO(87, 237, 120, 1).withOpacity(0.6), BlendMode.srcOver),
                       fit: BoxFit.cover)),
               child: Container(
                   padding: const EdgeInsets.only(left: 5, right: 5),
@@ -38,7 +38,7 @@ class NewsList extends StatelessWidget {
                             fontFamily: 'Comfortaa'),
                         textAlign: TextAlign.left,
                       ),
-                      Container(
+                      SizedBox(
                           child: Text(
                         newsList![index].description,
                         style: const TextStyle(

@@ -13,7 +13,7 @@ class CommentList extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -26,11 +26,16 @@ class CommentList extends StatelessWidget {
           return GestureDetector(
             onTap: () {},
             child: Container(
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.circular(12.0),
+                //borderRadius: Radius.circular(40.0),
+              ),
               child: Column(
                 children: [
                   ClipOval(
                     child: SizedBox.fromSize(
-                      size: Size.fromRadius(60),
+                      size: const Size.fromRadius(60),
                       child: Image.network(comments[index].address,
                           fit: BoxFit.cover),
                     ),
@@ -40,7 +45,7 @@ class CommentList extends StatelessWidget {
                     child: Column(children: [
                       Text(
                         comments[index].companyName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontFamily: 'QuickSand',
                           fontSize: 20,
@@ -49,7 +54,7 @@ class CommentList extends StatelessWidget {
                       ),
                       Text(
                         comments[index].location,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontFamily: 'Quicksand',
                           fontSize: 12,
@@ -63,10 +68,10 @@ class CommentList extends StatelessWidget {
                               ? Colors.orange
                               : Colors.white,
                           child: comments[index].responded
-                              ? Text("İşletme Cevabı İçin Dokunun")
+                              ? const Text("İşletme Cevabı İçin Dokunun")
                               : Text(
                                   comments[index].time.toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontFamily: 'Quicksand',
                                     fontSize: 12,
                                     color: Colors.black,
@@ -77,11 +82,6 @@ class CommentList extends StatelessWidget {
                     ]),
                   ),
                 ],
-              ),
-              decoration: BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.circular(12.0),
-                //borderRadius: Radius.circular(40.0),
               ),
             ),
           );

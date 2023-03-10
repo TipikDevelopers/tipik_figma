@@ -5,12 +5,11 @@ import 'package:tipik_figma/model/News.dart';
 import '../creditCard/cardScreen.dart';
 import '../login/login_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/src/painting/border_radius.dart';
 import '../haberler/haberler.dart';
 class NavBar extends StatelessWidget {
-  List<Comment> commentList;
-  List<News> newsList;
-  NavBar({required this.commentList, required this.newsList});
+  final List<Comment> commentList;
+  final List<News> newsList;
+  const NavBar({required this.commentList, required this.newsList});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -79,7 +78,7 @@ class NavBar extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => cardScreen(
-                              cardList: [],
+                              cardList: const [],
                             )));
               },
             ),
@@ -95,7 +94,7 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => null,
+              onTap: () {}, //TODO
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Yardım.svg'),
@@ -108,7 +107,7 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => null,
+              onTap: () => {}, // TODO
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Deger.svg'),
@@ -171,7 +170,7 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => null,
+              onTap: () => {}, //TODO
             ),
             const SizedBox(
               height: 50,

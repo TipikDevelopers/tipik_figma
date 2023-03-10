@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:intl_phone_field/phone_number.dart';
 import 'package:tipik_figma/login/signUp_screen.dart';
 import './sms_screen.dart';
 import '../mainPage/home_screen.dart';
@@ -53,18 +51,18 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             ),
             // give the tab bar a height [can change height to preferred height]
             Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               height: (screenHeight * 9) / 100,
               width: (screenWidth * 360) / 390,
               decoration: BoxDecoration(
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       color: Color.fromARGB(64, 0, 0, 0),
                       blurRadius: 25,
                       spreadRadius: -12,
                       blurStyle: BlurStyle.outer)
                 ],
-                color: Color.fromRGBO(217, 217, 217, 1),
+                color: const Color.fromRGBO(217, 217, 217, 1),
                 borderRadius: BorderRadius.circular(
                   25.0,
                 ),
@@ -80,7 +78,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                 ),
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.black,
-                tabs: [
+                tabs: const [
                   // first tab [you can add an icon using the icon property]
                   Tab(
                     text: 'E-Posta & Şifre',
@@ -96,7 +94,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             Container(
                 height: (screenHeight * 13) / 100,
                 width: (screenWidth * 320) / 390,
-                margin: EdgeInsets.all(40),
+                margin: const EdgeInsets.all(40),
                 child: const Center(
                     child: Text(
                   "Var Olan Hesabınıza Giriş Yapın",
@@ -115,27 +113,27 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       Container(
                           height: (screenHeight * 80) / 844,
                           width: (screenWidth * 320) / 390,
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: TextField(
                             controller: userNameController,
                             decoration: InputDecoration(
                                 iconColor: Colors.amber,
-                                icon: Icon(Icons.mail_outline_rounded),
+                                icon: const Icon(Icons.mail_outline_rounded),
                                 hintText: "E-posta addresiniz",
-                                hintStyle: TextStyle(
+                                hintStyle: const TextStyle(
                                     color: Color.fromRGBO(90, 89, 89, 1)),
                                 filled: true,
-                                fillColor: Color.fromRGBO(217, 217, 217, 1),
+                                fillColor: const Color.fromRGBO(217, 217, 217, 1),
                                 contentPadding:
-                                    EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                    const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Color.fromRGBO(90, 89, 89, 1),
                                         width: 1)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(12),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Colors.black, width: 2))),
                             onTapOutside: (event) =>
                                 FocusManager.instance.primaryFocus?.unfocus(),
@@ -144,27 +142,27 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           //margin: EdgeInsets.only(bottom: 50),
                           height: (screenHeight * 80) / 844,
                           width: (screenWidth * 320) / 390,
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: TextField(
                             controller: passwordController,
                             decoration: InputDecoration(
                                 iconColor: Colors.amber,
-                                icon: Icon(Icons.fingerprint),
+                                icon: const Icon(Icons.fingerprint),
                                 hintText: "Şifreniz",
-                                hintStyle: TextStyle(
+                                hintStyle: const TextStyle(
                                     color: Color.fromRGBO(90, 89, 89, 1)),
                                 filled: true,
-                                fillColor: Color.fromRGBO(217, 217, 217, 1),
+                                fillColor: const Color.fromRGBO(217, 217, 217, 1),
                                 contentPadding:
-                                    EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                    const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Color.fromRGBO(90, 89, 89, 1),
                                         width: 1)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(12),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Colors.black, width: 2))),
                             onTapOutside: (event) =>
                                 FocusManager.instance.primaryFocus?.unfocus(),
@@ -177,28 +175,28 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   Center(
                     child: Container(
                         height: (screenHeight * 120) / 844,
-                        margin: EdgeInsets.only(top: 0),
+                        margin: const EdgeInsets.only(top: 0),
                         width: (screenWidth * 320) / 390,
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: IntlPhoneField(
                           onCountryChanged: (country) =>
-                              countryCode = "+" + country.dialCode,
+                              countryCode = "+${country.dialCode}",
                           controller: phoneController,
                           decoration: InputDecoration(
                               hintText: "Telefon Numaranız",
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                   color: Color.fromRGBO(90, 89, 89, 1)),
                               filled: true,
-                              fillColor: Color.fromRGBO(217, 217, 217, 1),
-                              contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              fillColor: const Color.fromRGBO(217, 217, 217, 1),
+                              contentPadding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                       color: Color.fromRGBO(90, 89, 89, 1),
                                       width: 1)),
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                       color: Colors.black, width: 2))),
                           initialCountryCode: 'TR',
                         )),
@@ -206,19 +204,18 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               width: (screenWidth * 150) / 390,
               height: (screenHeight * 7) / 100,
               child: ElevatedButton(
-                child: Icon(Icons.arrow_forward),
                 onPressed: () {
                   if (_tabController.index == 0) {
-                    print("username: " + userNameController.text);
-                    print("password: " + passwordController.text);
+                    print("username: ${userNameController.text}");
+                    print("password: ${passwordController.text}");
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   } else {
-                    print("phone: " + countryCode + phoneController.text);
+                    print("phone: $countryCode${phoneController.text}");
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -227,7 +224,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                    shape: StadiumBorder(), backgroundColor: Colors.amber),
+                    shape: const StadiumBorder(), backgroundColor: Colors.amber),
+                child: const Icon(Icons.arrow_forward),
               ),
             ),
             SizedBox(
@@ -235,14 +233,14 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             ),
             TextButton(
                 style: TextButton.styleFrom(
-                    foregroundColor: Color.fromRGBO(90, 89, 89, 1)),
+                    foregroundColor: const Color.fromRGBO(90, 89, 89, 1)),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SignUp("+905389742647")));
+                          builder: (context) => const SignUp("+905389742647")));
                 },
-                child: Text(
+                child: const Text(
                   "Yeni Hesap Yarat",
                   style: TextStyle(decoration: TextDecoration.underline),
                 ))

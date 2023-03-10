@@ -4,19 +4,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../model/Transactions.dart';
 
 class TransactionInfo extends StatelessWidget {
-  List<Transaction> transactionList;
-  TransactionInfo({required this.transactionList});
+  final List<Transaction> transactionList;
+  const TransactionInfo({required this.transactionList});
   @override
   Widget build(BuildContext context) {
-    print("transactionList have size of ${transactionList.length}");
-    return Container(
+    //print("transactionList have size of ${transactionList.length}");
+    return SizedBox(
       child: Column(
         children: [
           ...transactionList.map((e) {
             return Container(
               height: 70,
               width: 360,
-              margin: EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               child: Material(
                 borderRadius: BorderRadius.circular(10),
                 elevation: 3,
@@ -32,10 +32,10 @@ class TransactionInfo extends StatelessWidget {
                   ),
                   subtitle: Text(
                     DateFormat.yMMMMd().format(e.date),
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontFamily: 'Quicksand', fontWeight: FontWeight.bold),
                   ),
-                  trailing: Container(
+                  trailing: SizedBox(
                     height: 70,
                     width: 70,
                     child: Row(
@@ -44,9 +44,9 @@ class TransactionInfo extends StatelessWidget {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            FaIcon(FontAwesomeIcons.ccVisa),
+                            const FaIcon(FontAwesomeIcons.ccVisa),
                             Text("**${e.cardNoDigits}",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 10,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Poppins Medium'))
@@ -54,7 +54,7 @@ class TransactionInfo extends StatelessWidget {
                         ),
                         Text(
                           "${e.amount}₺",
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 21,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'Poppins Medium'),

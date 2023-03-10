@@ -36,9 +36,9 @@ class UserApi {
 //------------- For Deletion I Do not know what the f we do with that method but just in case-------------------
   Future<void> deleteUserApi(int id) async {
     try {
-      await dioClient.delete(Endpoints.users + "/$id");
+      await dioClient.delete("${Endpoints.users}/$id");
     } catch (e) {
-      print(e.toString());
+      //print(e.toString());
       rethrow;
     }
   }

@@ -1,11 +1,10 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// ignore: file_names
 import 'package:flutter/material.dart';
 import '../model/News.dart';
 
 class HaberList extends StatelessWidget {
-  List<News> newsList;
-  HaberList({required this.newsList});
+  final List<News> newsList;
+  const HaberList({required this.newsList});
   @override
   Widget build(BuildContext context) {
     return Expanded(

@@ -5,7 +5,7 @@ import 'package:tipik_figma/degerlendirmeler/commentList.dart';
 import 'package:tipik_figma/model/Comment.dart';
 
 class degerlendirmeler extends StatelessWidget {
-  List<Comment> commentList;
+  final List<Comment> commentList;
   final controller = TextEditingController();
   degerlendirmeler({required this.commentList});
   @override
@@ -50,11 +50,11 @@ class degerlendirmeler extends StatelessWidget {
           Container(
             color: Colors.grey,
             height: 25,
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             child: TextField(
               controller: controller,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 hintText: "Ara",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

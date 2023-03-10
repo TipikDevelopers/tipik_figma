@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tipik_figma/haberler/haberList.dart';
 import '../model/News.dart';
 
 class Habers extends StatefulWidget {
-  List<News> newsList;
-  Habers({required this.newsList});
+  final List<News> newsList;
+  const Habers({required this.newsList});
 
   @override
   State<Habers> createState() => _HabersState();
@@ -23,8 +21,8 @@ class _HabersState extends State<Habers> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -32,7 +30,7 @@ class _HabersState extends State<Habers> with SingleTickerProviderStateMixin {
           color: Colors.white,
           icon: SvgPicture.asset('assets/images/geri.svg'),
         ),
-        title: Text(
+        title: const Text(
           'Haberler ve Kampanyalar',
           style: TextStyle(
             color: Colors.white,
@@ -63,45 +61,45 @@ class _HabersState extends State<Habers> with SingleTickerProviderStateMixin {
                 unselectedLabelColor: Colors.black,
                 indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Color.fromRGBO(183, 94, 51, 1)),
+                    color: const Color.fromRGBO(183, 94, 51, 1)),
                 tabs: [
                   Tab(
                     child: Container(
-                      margin: EdgeInsets.only(right: 15),
+                      margin: const EdgeInsets.only(right: 15),
                       alignment: Alignment.center,
-                      child: Center(child: Text("Tümü")),
                       decoration:
                           BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                      child: const Center(child: Text("Tümü")),
                     ),
                   ),
                   Tab(
                     child: Container(
-                      margin: EdgeInsets.only(right: 15),
+                      margin: const EdgeInsets.only(right: 15),
                       alignment: Alignment.center,
-                      child: Center(child: Text("Kampanyalar")),
                       decoration:
                           BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                      child: const Center(child: Text("Kampanyalar")),
                     ),
                   ),
                   Tab(
                     child: Container(
-                      margin: EdgeInsets.only(right: 15),
+                      margin: const EdgeInsets.only(right: 15),
                       alignment: Alignment.center,
-                      child: Center(child: Text("Haberler")),
                       decoration:
                           BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                      child: const Center(child: Text("Haberler")),
                     ),
                   )
                 ]),
           ),
-          Container(
+          SizedBox(
             height: 450,
             child: TabBarView(
               controller: _controller,
               children: [
-              Container(child: HaberList(newsList: widget.newsList), width: MediaQuery.of(context).size.width,),
-              Center(child: Text("TODO"),),
-              Center(child: Text("TODO"),)
+              SizedBox(width: MediaQuery.of(context).size.width,child: HaberList(newsList: widget.newsList),),
+              const Center(child: Text("TODO"),),
+              const Center(child: Text("TODO"),)
             ]),
           )
         ],

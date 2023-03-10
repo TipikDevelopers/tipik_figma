@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
+  final String telNo;
+  const SignUp(this.telNo);
   @override
-  String telNo;
-  SignUp(this.telNo);
   State<SignUp> createState() => _SignUpState();
 }
 
@@ -24,117 +24,117 @@ class _SignUpState extends State<SignUp> {
             Container(
               height: 30,
               alignment: Alignment.centerLeft,
-              child: IconButton(onPressed: ()=>Navigator.pop(context),icon: Icon(Icons.arrow_back,),),
+              child: IconButton(onPressed: ()=>Navigator.pop(context),icon: const Icon(Icons.arrow_back,),),
             ),
             Container(
-              margin: EdgeInsets.all(20),
-              child: Text(
+              margin: const EdgeInsets.all(20),
+              child: const Text(
                 "Son Birkaç Adım Daha ...",
                 style: TextStyle(fontSize: 32),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 55),
-              margin: EdgeInsets.only(top: 0, bottom: 0),
+              padding: const EdgeInsets.only(left: 55),
+              margin: const EdgeInsets.only(top: 0, bottom: 0),
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: const Text(
                 "İsim ve Soyisim",
                 style:
                     TextStyle(fontSize: 15, color: Color.fromRGBO(90, 89, 89, 1)),
               ),
             ),
             Container(
-                margin: EdgeInsets.only(top: 0, bottom: 10),
+                margin: const EdgeInsets.only(top: 0, bottom: 10),
                 width: 320,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: TextField(
                   controller: nameController,
                   decoration: InputDecoration(
-                      hintStyle: TextStyle(color: Color.fromRGBO(90, 89, 89, 1)),
+                      hintStyle: const TextStyle(color: Color.fromRGBO(90, 89, 89, 1)),
                       filled: true,
-                      fillColor: Color.fromRGBO(217, 217, 217, 1),
+                      fillColor: const Color.fromRGBO(217, 217, 217, 1),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                               color: Color.fromRGBO(90, 89, 89, 1), width: 1)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.black, width: 2))),
+                          borderSide: const BorderSide(color: Colors.black, width: 2))),
                   onTapOutside: (event) =>
                       FocusManager.instance.primaryFocus?.unfocus(),
                 )),
             Container(
-              padding: EdgeInsets.only(left: 55),
-              margin: EdgeInsets.only(top: 20, bottom: 0),
+              padding: const EdgeInsets.only(left: 55),
+              margin: const EdgeInsets.only(top: 20, bottom: 0),
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: const Text(
                 "TC Kimlik No",
                 style:
                     TextStyle(fontSize: 15, color: Color.fromRGBO(90, 89, 89, 1)),
               ),
             ),
             Container(
-                margin: EdgeInsets.only(top: 0, bottom: 27),
+                margin: const EdgeInsets.only(top: 0, bottom: 27),
                 width: 320,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: TextField(
                   controller: tcController,
                   decoration: InputDecoration(
-                      hintStyle: TextStyle(color: Color.fromRGBO(90, 89, 89, 1)),
+                      hintStyle: const TextStyle(color: Color.fromRGBO(90, 89, 89, 1)),
                       filled: true,
-                      fillColor: Color.fromRGBO(217, 217, 217, 1),
+                      fillColor: const Color.fromRGBO(217, 217, 217, 1),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                               color: Color.fromRGBO(90, 89, 89, 1), width: 1)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.black, width: 2))),
+                          borderSide: const BorderSide(color: Colors.black, width: 2))),
                   onTapOutside: (event) =>
                       FocusManager.instance.primaryFocus?.unfocus(),
                 )),
-            Container(
+            SizedBox(
               width: 280,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Doğum Tarihi", style: TextStyle(fontSize: 15)),
+                  const Text("Doğum Tarihi", style: TextStyle(fontSize: 15)),
                   TextButton(
                     onPressed: () => print("tuna is the best"),
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.black,
                     ),
                     child: Text(date.substring(0, 11),
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style: const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               width: 280,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Telefon Numarası",
                     style: TextStyle(fontSize: 15),
                   ),
                   Container(
                       height: 30,
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(173, 173, 173, 1),
+                          color: const Color.fromRGBO(173, 173, 173, 1),
                           borderRadius: BorderRadius.circular(10)),
                       child: Text(widget.telNo,
-                          style: TextStyle(fontSize: 15, color: Colors.black)))
+                          style: const TextStyle(fontSize: 15, color: Colors.black)))
                 ],
                 
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               child: Material(
                 child: CheckboxListTile(
                   tileColor: Colors.transparent,
@@ -151,7 +151,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               color: Colors.green,
               child: Material(
                 child: CheckboxListTile(
@@ -169,7 +169,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20,bottom: 30),
+              margin: const EdgeInsets.only(top: 20,bottom: 30),
               color: Colors.green,
               child: Material(
                 child: CheckboxListTile(
@@ -186,7 +186,7 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            ElevatedButton(onPressed:null, child: Text("SignUp"))
+            const ElevatedButton(onPressed:null, child: Text("SignUp"))
                   ],
                 ),
           )),
