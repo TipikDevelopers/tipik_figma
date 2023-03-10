@@ -30,7 +30,7 @@ class CommentList extends StatelessWidget {
                 children: [
                   ClipOval(
                     child: SizedBox.fromSize(
-                      size: Size.fromRadius(48),
+                      size: Size.fromRadius(60),
                       child: Image.network(comments[index].address,
                           fit: BoxFit.cover),
                     ),

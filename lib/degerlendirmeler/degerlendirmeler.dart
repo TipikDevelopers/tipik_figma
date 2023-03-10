@@ -23,7 +23,7 @@ class degerlendirmeler extends StatelessWidget {
             icon: SvgPicture.asset('assets/images/geri.svg'),
           ),
           toolbarHeight: (screenHeight * 123) / 844,
-          title: Text(
+          title: const Text(
             'Değerlendirmeleriniz',
             style: TextStyle(
               color: Colors.white,
@@ -49,6 +49,7 @@ class degerlendirmeler extends StatelessWidget {
         children: [
           Container(
             color: Colors.grey,
+            height: 25,
             margin: EdgeInsets.all(20),
             child: TextField(
               controller: controller,
@@ -77,5 +78,7 @@ class degerlendirmeler extends StatelessWidget {
       final input = query.toLowerCase();
       return title.contains(input);
     }).toList();
+
+    //setState(())
   }
 }

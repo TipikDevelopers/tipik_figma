@@ -20,9 +20,10 @@ class HomePage extends StatelessWidget {
       Comment(
           time: DateTime.now(),
           address:
-              "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
-          companyName: "BlueJay",
-          location: "ANkara/Çankaya",
+              // "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
+              "https://www.egmo.org/people/person92/photo3.jpg",
+          companyName: "Bluejay",
+          location: "Ankara/Çankaya",
           rating: 3),
       Comment(
           time: DateTime.now(),
@@ -135,7 +136,7 @@ class HomePage extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 0),
                       width: double.infinity,
                       child: Text(
-                        "172,50 TL",
+                        "172,50 ₺",
                         style: TextStyle(
                           fontSize: 25,
                           color: Colors.white,
