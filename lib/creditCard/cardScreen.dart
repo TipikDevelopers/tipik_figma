@@ -14,12 +14,12 @@ class cardScreen extends StatelessWidget {
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
             color: Colors.black,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
             ),
           ),
           toolbarHeight: 70.0,
-          title: Text(
+          title: const Text(
             'tipik',
             style: TextStyle(
                 color: Colors.black,
@@ -33,7 +33,7 @@ class cardScreen extends StatelessWidget {
       ),
       body: Container(
         height: MediaQuery.of(context).size.height - 2,
-        color: Color.fromRGBO(235, 235, 235, 1),
+        color: const Color.fromRGBO(235, 235, 235, 1),
         child: Stack(alignment: Alignment.center, children: <Widget>[
           Positioned(
             top: 50,
@@ -51,9 +51,9 @@ class cardScreen extends StatelessWidget {
                 child: Container(
                     height: 210,
                     width: 358,
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(163, 163, 163, 0.4)),
-                    padding: EdgeInsets.all(20.0),
+                    decoration: const BoxDecoration(
+                        color:Color.fromRGBO(163, 163, 163, 0.4)),
+                    padding: const EdgeInsets.all(20.0),
                     alignment: Alignment.centerLeft,
                     child: Container()),
               ),
@@ -75,9 +75,9 @@ class cardScreen extends StatelessWidget {
                 child: Container(
                     height: 210,
                     width: 358,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color.fromRGBO(163, 163, 163, 0.65)),
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                     alignment: Alignment.centerLeft,
                     child: Container()),
               ),
@@ -99,7 +99,7 @@ class cardScreen extends StatelessWidget {
                 child: Container(
                     height: 210,
                     width: 358,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topRight,
                         end: Alignment.bottomRight,
@@ -109,7 +109,7 @@ class cardScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                     alignment: Alignment.centerLeft,
                     child: Container()),
               ),
@@ -128,7 +128,7 @@ class cardScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             top: 380,
             height: 60,
             width: 349,
@@ -142,7 +142,7 @@ class cardScreen extends StatelessWidget {
                   fontWeight: FontWeight.w900),
             ),
           ),
-          Positioned(
+          const Positioned(
             top: 440,
             height: 80,
             width: 349,
@@ -163,7 +163,7 @@ class cardScreen extends StatelessWidget {
             height: 58,
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(86, 194, 95, 1),
+                  backgroundColor: const Color.fromRGBO(86, 194, 95, 1),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(22.0)),
                 ),
@@ -173,7 +173,7 @@ class cardScreen extends StatelessWidget {
                       fontFamily: 'Quicksand', fontWeight: FontWeight.bold),
                 ),
                 onPressed: () {
-                  if (cardList.length != 0) {
+                  if (cardList.isNotEmpty) {
                     showModalBottomSheet<void>(
                         context: context,
                         isScrollControlled: true,
@@ -205,7 +205,7 @@ class cardScreen extends StatelessWidget {
                                     left: 40,
                                     right: 40,
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     'Kayıtlı telefon numaranıza ait Masterpass hesabı bulunmaktadır.',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
@@ -214,7 +214,7 @@ class cardScreen extends StatelessWidget {
                                         fontSize: 20),
                                   ),
                                 ),
-                                SizedBox(height: 50),
+                                const SizedBox(height: 50),
                                 SizedBox(
                                   height: 75,
                                   width: 198,
@@ -225,9 +225,9 @@ class cardScreen extends StatelessWidget {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(22.0))),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: const Text(
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Text(
                                         'Kullan',
                                         style: TextStyle(
                                             fontSize: 30,
@@ -238,14 +238,14 @@ class cardScreen extends StatelessWidget {
                                     onPressed: () => Navigator.pop(context),
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Container(
                                   margin: const EdgeInsets.only(
                                     top: 35,
                                     left: 25,
                                     right: 25,
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     'Telefon numaranıza kayıtlı kredi kartlarını uygulamaya aktarmak için Kullan butonuna basın.',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
@@ -260,7 +260,7 @@ class cardScreen extends StatelessWidget {
                                     left: 25,
                                     right: 25,
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     'Tipik, kredi kartı bilgilerinize sahip değildir. Kart bilgileriniz, MasterPass altyapısı üzerinden şifreli ve kısıtlı biçimde aktarılır.',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
@@ -279,7 +279,7 @@ class cardScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => myCardsNoMasterpass()));
+                            builder: (context) => MyCardsNoMasterpass()));
                   }
                 }),
           ),

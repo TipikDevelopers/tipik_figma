@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class myCardsNoMasterpass extends StatelessWidget {
+class MyCardsNoMasterpass extends StatelessWidget {
   final cardNickname = TextEditingController();
   @override
   Widget build(BuildContext context) {

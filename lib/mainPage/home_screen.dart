@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tipik_figma/mainPage/NewsList.dart';
 import 'package:tipik_figma/mainPage/comments.dart';
 import '../creditCard/cardScreen.dart';
@@ -8,7 +6,6 @@ import '../model/Comment.dart';
 import '../model/News.dart';
 import '../model/Transactions.dart';
 import './TransactionList.dart';
-import './comments.dart';
 import '../haberler/haberler.dart';
 import 'NavBar.dart';
 
@@ -76,7 +73,7 @@ class HomePage extends StatelessWidget {
         newsList: newsList,
       ),
       extendBodyBehindAppBar: true,
-      body: Container(
+      body: SizedBox(
           height: MediaQuery.of(context).size.height - 2,
           child: SingleChildScrollView(
             child: Stack(
@@ -87,7 +84,7 @@ class HomePage extends StatelessWidget {
                     child: Container(
                       height: 230,
                       width: 480,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(220),
                             bottomRight: Radius.circular(220)),
@@ -106,7 +103,7 @@ class HomePage extends StatelessWidget {
                     AppBar(
                       //leading: Icon(Icons.menu_rounded),
                       centerTitle: true,
-                      title: Text(
+                      title: const Text(
                         "Merhaba Arda",
                         style: TextStyle(
                             fontFamily: 'Comfortaa',
@@ -121,21 +118,21 @@ class HomePage extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          cardScreen(cardList: [])));
+                                          cardScreen(cardList: const [])));
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.credit_card_rounded,
                               color: Colors.white,
                             ))
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 33,
                     ),
                     Container(
-                      margin: EdgeInsets.only(bottom: 0),
+                      margin: const EdgeInsets.only(bottom: 0),
                       width: double.infinity,
-                      child: Text(
+                      child: const Text(
                         "172,50 ₺",
                         style: TextStyle(
                           fontSize: 25,
@@ -145,22 +142,22 @@ class HomePage extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Bu ay bağışladınız",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,
                           fontFamily: 'Comfortaa'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
-                      margin: EdgeInsets.all(15),
+                      margin: const EdgeInsets.all(15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Değerlendirmeleriniz",
                             style: TextStyle(
                                 fontSize: 20,
@@ -169,7 +166,7 @@ class HomePage extends StatelessWidget {
                           ),
                           TextButton(
                               onPressed: () => print("Tuna is the best"),
-                              child: Text(
+                              child: const Text(
                                 "Hepsini Gör",
                                 style: TextStyle(
                                     fontSize: 12,
@@ -180,16 +177,16 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        margin: EdgeInsets.only(left: 15, right: 15, bottom: 0),
+                        margin: const EdgeInsets.only(left: 15, right: 15, bottom: 0),
                         width: MediaQuery.of(context).size.width - 2,
                         child: CommentWidget(comments)),
                     Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                             bottom: 0, top: 0, left: 15, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Haberler & Kampanyalar",
                               style: TextStyle(
                                   fontSize: 20,
@@ -201,7 +198,7 @@ class HomePage extends StatelessWidget {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             Habers(newsList: newsList))),
-                                child: Text(
+                                child:const Text(
                                   "Hepsini Gör",
                                   style: TextStyle(
                                       fontSize: 12,
@@ -210,17 +207,17 @@ class HomePage extends StatelessWidget {
                                 ))
                           ],
                         )),
-                    Container(
-                      child: NewsList(newsList: newsList),
+                    SizedBox(
                       height: 210,
+                      child: NewsList(newsList: newsList),
                     ),
                     Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                             bottom: 0, top: 0, left: 15, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Son İşlemleriniz",
                               style: TextStyle(
                                   fontSize: 20,
@@ -229,7 +226,7 @@ class HomePage extends StatelessWidget {
                             ),
                             TextButton(
                                 onPressed: () => print("Tuna is the best"),
-                                child: Text(
+                                child: const Text(
                                   "Hepsini Gör",
                                   style: TextStyle(
                                       fontSize: 12,

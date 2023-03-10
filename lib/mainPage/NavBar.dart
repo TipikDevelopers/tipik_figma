@@ -6,7 +6,7 @@ import '../creditCard/cardScreen.dart';
 import '../login/login_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/src/painting/border_radius.dart';
-
+import '../haberler/haberler.dart';
 class NavBar extends StatelessWidget {
   List<Comment> commentList;
   List<News> newsList;
@@ -14,7 +14,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(
+      borderRadius: const BorderRadius.only(
         topRight: Radius.circular(60.0),
         bottomRight: Radius.circular(60.0),
       ),
@@ -25,12 +25,12 @@ class NavBar extends StatelessWidget {
             bottomRight: Radius.circular(60.0),
           ),
         ),
-        backgroundColor: Color.fromRGBO(253, 200, 48, 1),
+        backgroundColor: const Color.fromRGBO(253, 200, 48, 1),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(
+              accountName: const Text(
                 "Arda Okyay",
                 style: TextStyle(
                   fontFamily: 'Comfortaa',
@@ -38,7 +38,7 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              accountEmail: Text(
+              accountEmail: const Text(
                 "+90 5396635403",
                 style: TextStyle(
                   fontFamily: 'Comfortaa',
@@ -46,7 +46,7 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              currentAccountPicture: Container(
+              currentAccountPicture: SizedBox(
                 child: SvgPicture.asset(
                   'assets/images/tipik.svg',
                   fit: BoxFit.cover,
@@ -54,7 +54,7 @@ class NavBar extends StatelessWidget {
                   height: 90,
                 ),
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromRGBO(253, 200, 48, 1),
                 image: DecorationImage(
                   fit: BoxFit.fill,
@@ -64,7 +64,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/kartlar.svg'),
-              title: Text(
+              title: const Text(
                 "Kartlarım",
                 style: TextStyle(
                   fontFamily: 'Manrope',
@@ -83,10 +83,10 @@ class NavBar extends StatelessWidget {
                             )));
               },
             ),
-            Divider(color: Colors.white),
+            const Divider(color: Colors.white),
             ListTile(
               leading: SvgPicture.asset('assets/images/ayarlar.svg'),
-              title: Text(
+              title: const Text(
                 "Ayarlar",
                 style: TextStyle(
                   fontFamily: 'Manrope',
@@ -99,7 +99,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Yardım.svg'),
-              title: Text(
+              title: const Text(
                 "Yardım",
                 style: TextStyle(
                   fontFamily: 'Manrope',
@@ -112,7 +112,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Deger.svg'),
-              title: Text(
+              title: const Text(
                 "Değerlendirmeler",
                 style: TextStyle(
                   fontFamily: 'Manrope',
@@ -135,7 +135,7 @@ class NavBar extends StatelessWidget {
                   color: Colors.white,
                   width: 20,
                   height: 20,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       '2',
                       style: TextStyle(
@@ -149,7 +149,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/News.svg'),
-              title: Text(
+              title: const Text(
                 "Haberler/Kampanyalar",
                 style: TextStyle(
                   fontFamily: 'Manrope',
@@ -158,11 +158,11 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => null,
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Habers(newsList: newsList))),
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Islemler.svg'),
-              title: Text(
+              title: const Text(
                 "Tüm İşlemlerim",
                 style: TextStyle(
                   fontFamily: 'Manrope',
@@ -173,13 +173,13 @@ class NavBar extends StatelessWidget {
               ),
               onTap: () => null,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Divider(color: Colors.white),
+            const Divider(color: Colors.white),
             ListTile(
               leading: SvgPicture.asset('assets/images/Cikis.svg'),
-              title: Text(
+              title: const Text(
                 "Çıkış Yap",
                 style: TextStyle(
                   fontFamily: 'Manrope',
