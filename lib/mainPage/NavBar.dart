@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:tipik_figma/degerlendirmeler/degerlendirmeler.dart';
 import 'package:tipik_figma/model/Comment.dart';
 import 'package:tipik_figma/model/News.dart';
+import 'package:tipik_figma/yard%C4%B1m/yardim.dart';
 import '../creditCard/cardScreen.dart';
 import '../login/login_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../haberler/haberler.dart';
+
 class NavBar extends StatelessWidget {
   final List<Comment> commentList;
   final List<News> newsList;
@@ -97,6 +99,11 @@ class NavBar extends StatelessWidget {
               onTap: () {}, //TODO
             ),
             ListTile(
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => yardim()));
+              },
               leading: SvgPicture.asset('assets/images/Yardım.svg'),
               title: const Text(
                 "Yardım",
@@ -107,7 +114,6 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => {}, // TODO
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Deger.svg'),
@@ -157,7 +163,8 @@ class NavBar extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Habers(newsList: newsList))),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Habers(newsList: newsList))),
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Islemler.svg'),

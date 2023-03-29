@@ -5,6 +5,8 @@ class MyCardsNoMasterpass extends StatelessWidget {
   final cardNickname = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(70.0),

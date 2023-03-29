@@ -123,7 +123,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 hintStyle: const TextStyle(
                                     color: Color.fromRGBO(90, 89, 89, 1)),
                                 filled: true,
-                                fillColor: const Color.fromRGBO(217, 217, 217, 1),
+                                fillColor:
+                                    const Color.fromRGBO(217, 217, 217, 1),
                                 contentPadding:
                                     const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 enabledBorder: OutlineInputBorder(
@@ -152,7 +153,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 hintStyle: const TextStyle(
                                     color: Color.fromRGBO(90, 89, 89, 1)),
                                 filled: true,
-                                fillColor: const Color.fromRGBO(217, 217, 217, 1),
+                                fillColor:
+                                    const Color.fromRGBO(217, 217, 217, 1),
                                 contentPadding:
                                     const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 enabledBorder: OutlineInputBorder(
@@ -188,7 +190,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                   color: Color.fromRGBO(90, 89, 89, 1)),
                               filled: true,
                               fillColor: const Color.fromRGBO(217, 217, 217, 1),
-                              contentPadding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              contentPadding:
+                                  const EdgeInsets.fromLTRB(10, 0, 0, 0),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
                                   borderSide: const BorderSide(
@@ -224,7 +227,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                    shape: const StadiumBorder(), backgroundColor: Colors.amber),
+                    shape: const StadiumBorder(),
+                    backgroundColor: Colors.amber),
                 child: const Icon(Icons.arrow_forward),
               ),
             ),

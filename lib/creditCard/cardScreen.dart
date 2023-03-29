@@ -7,6 +7,8 @@ class cardScreen extends StatelessWidget {
   cardScreen({required this.cardList});
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0),
@@ -52,7 +54,7 @@ class cardScreen extends StatelessWidget {
                     height: 210,
                     width: 358,
                     decoration: const BoxDecoration(
-                        color:Color.fromRGBO(163, 163, 163, 0.4)),
+                        color: Color.fromRGBO(163, 163, 163, 0.4)),
                     padding: const EdgeInsets.all(20.0),
                     alignment: Alignment.centerLeft,
                     child: Container()),
