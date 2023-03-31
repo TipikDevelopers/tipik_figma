@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 
 class MyCardsNoMasterpass extends StatelessWidget {
   final cardNickname = TextEditingController();
+  final cardNumber = TextEditingController();
+  final cardLastUsage = TextEditingController();
+  final cardCVV = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -145,7 +149,7 @@ class MyCardsNoMasterpass extends StatelessWidget {
                     ),
                     alignment: Alignment.topLeft,
                     child: TextField(
-                      controller: cardNickname,
+                      controller: cardNumber,
                       decoration: InputDecoration(),
                       onTapOutside: (event) =>
                           FocusManager.instance.primaryFocus?.unfocus(),
@@ -202,7 +206,7 @@ class MyCardsNoMasterpass extends StatelessWidget {
                         ),
                         alignment: Alignment.topLeft,
                         child: TextField(
-                          controller: cardNickname,
+                          controller: cardLastUsage,
                           decoration: InputDecoration(),
                           onTapOutside: (event) =>
                               FocusManager.instance.primaryFocus?.unfocus(),
@@ -216,7 +220,7 @@ class MyCardsNoMasterpass extends StatelessWidget {
                         ),
                         alignment: Alignment.topLeft,
                         child: TextField(
-                          controller: cardNickname,
+                          controller: cardCVV,
                           decoration: InputDecoration(),
                           onTapOutside: (event) =>
                               FocusManager.instance.primaryFocus?.unfocus(),

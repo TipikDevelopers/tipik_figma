@@ -7,11 +7,13 @@ class cardScreen extends StatelessWidget {
   cardScreen({required this.cardList});
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width; //411
+    double screenHeight = MediaQuery.of(context).size.height; //683
+    print(screenHeight);
+    print(screenWidth);
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
+        preferredSize: Size.fromHeight(screenHeight / 683 * 70),
         child: AppBar(
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
@@ -20,7 +22,7 @@ class cardScreen extends StatelessWidget {
               Icons.arrow_back,
             ),
           ),
-          toolbarHeight: 70.0,
+          toolbarHeight: screenHeight / 683 * 70,
           title: const Text(
             'tipik',
             style: TextStyle(

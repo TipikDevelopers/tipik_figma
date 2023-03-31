@@ -165,7 +165,160 @@ class HomePage extends StatelessWidget {
                                 fontFamily: 'Comfortaa'),
                           ),
                           TextButton(
-                              onPressed: () => {}, //TODO
+                              onPressed: () => {
+                                    showModalBottomSheet<void>(
+                                        context: context,
+                                        isScrollControlled: true,
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(40.0),
+                                          ),
+                                        ),
+                                        builder: (BuildContext context) {
+                                          return Container(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.90,
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Stack(
+                                                    alignment: Alignment.center,
+                                                    children: <Widget>[
+                                                      Positioned(
+                                                          child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(40.0),
+                                                        child: Stack(
+                                                          children: [
+                                                            SizedBox(
+                                                              height: 320,
+                                                              child:
+                                                                  Image.network(
+                                                                'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                            Positioned.fill(
+                                                              child:
+                                                                  DecoratedBox(
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    begin: Alignment
+                                                                        .topCenter,
+                                                                    end: Alignment
+                                                                        .bottomCenter,
+                                                                    colors: [
+                                                                      Colors
+                                                                          .transparent,
+                                                                      Colors
+                                                                          .black
+                                                                          .withOpacity(
+                                                                              1),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      )),
+                                                      Positioned(
+                                                        top: 60,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            const CircleAvatar(
+                                                              radius:
+                                                                  50, // set the radius of the circle
+                                                              backgroundImage:
+                                                                  NetworkImage(
+                                                                      'https://pbs.twimg.com/media/FRM4vdsWYAQojQq?format=png&name=900x900'), // replace with the URL of your image
+                                                            ),
+                                                            Container(
+                                                              margin:
+                                                                  const EdgeInsets
+                                                                      .only(
+                                                                top: 10,
+                                                                left: 40,
+                                                                right: 40,
+                                                              ),
+                                                              child: const Text(
+                                                                'Bilkent \nYork',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Quicksand',
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        45,
+                                                                    color: Colors
+                                                                        .white),
+                                                              ),
+                                                            ),
+                                                            Container(
+                                                              margin:
+                                                                  const EdgeInsets
+                                                                      .only(
+                                                                left: 40,
+                                                                right: 40,
+                                                              ),
+                                                              child: const Text(
+                                                                'Ankara/Çankaya',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Quicksand',
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w300,
+                                                                    fontSize:
+                                                                        16,
+                                                                    color: Colors
+                                                                        .white),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ]),
+                                                SizedBox(height: 10),
+                                                //SleekCircularSlider(),
+                                                Container(
+                                                  margin: const EdgeInsets.only(
+                                                    left: 40,
+                                                    right: 40,
+                                                  ),
+                                                  child: const Text(
+                                                    '5.0TL.',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        fontFamily: 'Quicksand',
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        fontSize: 20),
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 50),
+                                              ],
+                                            ),
+                                          );
+                                        })
+                                  }, //TODO
                               child: const Text(
                                 "Hepsini Gör",
                                 style: TextStyle(
@@ -177,7 +330,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        margin: const EdgeInsets.only(left: 15, right: 15, bottom: 0),
+                        margin: const EdgeInsets.only(
+                            left: 15, right: 15, bottom: 0),
                         width: MediaQuery.of(context).size.width - 2,
                         child: CommentWidget(comments)),
                     Container(
@@ -198,7 +352,7 @@ class HomePage extends StatelessWidget {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             Habers(newsList: newsList))),
-                                child:const Text(
+                                child: const Text(
                                   "Hepsini Gör",
                                   style: TextStyle(
                                       fontSize: 12,
