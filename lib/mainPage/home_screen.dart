@@ -298,21 +298,22 @@ class HomePage extends StatelessWidget {
                                                     ]),
                                                 SizedBox(height: 10),
                                                 //SleekCircularSlider(),
-                                                Container(
+                                                /*Container(
                                                   margin: const EdgeInsets.only(
                                                     left: 40,
                                                     right: 40,
                                                   ),
                                                   child: const Text(
-                                                    '5.0TL.',
+                                                    '5',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
-                                                        fontFamily: 'Quicksand',
+                                                        fontFamily:
+                                                            'Poppins Bold',
                                                         fontWeight:
                                                             FontWeight.w700,
-                                                        fontSize: 20),
+                                                        fontSize: 50),
                                                   ),
-                                                ),
+                                                ),*/
                                                 const SizedBox(height: 50),
                                               ],
                                             ),
