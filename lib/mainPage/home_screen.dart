@@ -17,8 +17,8 @@ class HomePage extends StatelessWidget {
       Comment(
           time: DateTime.now(),
           address:
-              // "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
-              "https://www.egmo.org/people/person92/photo3.jpg",
+              "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
+              //"https://www.egmo.org/people/person92/photo3.jpg",
           companyName: "Bluejay",
           location: "Ankara/Çankaya",
           rating: 3),

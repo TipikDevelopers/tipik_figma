@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../model/News.dart';
 
 class NewsList extends StatelessWidget {
@@ -27,7 +28,7 @@ class NewsList extends StatelessWidget {
                         ],
                         stops: [
                           0.0,
-                          0.3,
+                          //0.3,
                           0.45
                         ]).createShader(bound);
                   } else if (index == 1) {
@@ -40,7 +41,7 @@ class NewsList extends StatelessWidget {
                         ],
                         stops: [
                           0.0,
-                          0.3,
+                          //0.3,
                           0.45
                         ]).createShader(bound);
                   } else {
@@ -53,7 +54,7 @@ class NewsList extends StatelessWidget {
                         ],
                         stops: [
                           0.0,
-                          0.3,
+                          //0.3,
                           0.45
                         ]).createShader(bound);
                   }
@@ -65,9 +66,14 @@ class NewsList extends StatelessWidget {
                 child: Container(
                     height: double.infinity,
                     width: double.infinity,
-                    child: Image.asset(newsList![index].urlImage)),
+                    child: CachedNetworkImage(
+                      imageUrl: newsList![index].urlImage,
+                      fit: BoxFit.cover,
+                      placeholder: (context, url) => CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                    ),
               ),
-            );
+            ));
           },
           /*gradient: (index == 0)
                     ? LinearGradient(

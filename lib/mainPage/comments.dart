@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../model/Comment.dart';
 
 class CommentWidget extends StatelessWidget {
@@ -28,12 +29,12 @@ class CommentWidget extends StatelessWidget {
                         Container(
                           width: 70,
                           height: 70,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: NetworkImage(comments[index].address,
-                                      scale: 1),
-                                  fit: BoxFit.fill)),
+                          child: CachedNetworkImage(
+                        imageUrl: comments[index].address,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => const CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                    ),
                         ),
                         //stars
                         Align(
@@ -42,7 +43,7 @@ class CommentWidget extends StatelessWidget {
                               comments[index].rating < 1
                                   ? Icons.star_border_rounded
                                   : Icons.star_rounded,
-                              color: Color.fromRGBO(253, 200, 48, 1),
+                              color: const Color.fromRGBO(253, 200, 48, 1),
                             )),
                         Align(
                             alignment: const Alignment(-0.9, -1.2),
@@ -50,28 +51,28 @@ class CommentWidget extends StatelessWidget {
                                 comments[index].rating < 2
                                     ? Icons.star_border_rounded
                                     : Icons.star_rounded,
-                                color: Color.fromRGBO(253, 200, 48, 1))),
+                                color: const Color.fromRGBO(253, 200, 48, 1))),
                         Align(
                             alignment: const Alignment(0, -1.6),
                             child: Icon(
                                 comments[index].rating < 3
                                     ? Icons.star_border_rounded
                                     : Icons.star_rounded,
-                                color: Color.fromRGBO(253, 200, 48, 1))),
+                                color: const Color.fromRGBO(253, 200, 48, 1))),
                         Align(
                             alignment: const Alignment(0.9, -1.2),
                             child: Icon(
                                 comments[index].rating < 4
                                     ? Icons.star_border_rounded
                                     : Icons.star_rounded,
-                                color: Color.fromRGBO(253, 200, 48, 1))),
+                                color: const Color.fromRGBO(253, 200, 48, 1))),
                         Align(
                             alignment: const Alignment(1.4, -0.6),
                             child: Icon(
                                 comments[index].rating < 5
                                     ? Icons.star_border_rounded
                                     : Icons.star_rounded,
-                                color: Color.fromRGBO(253, 200, 48, 1))),
+                                color: const Color.fromRGBO(253, 200, 48, 1))),
                       ],
                     ),
                   ),
