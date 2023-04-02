@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
           time: DateTime.now(),
           address:
               "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg",
-              //"https://www.egmo.org/people/person92/photo3.jpg",
+          //"https://www.egmo.org/people/person92/photo3.jpg",
           companyName: "Bluejay",
           location: "Ankara/Çankaya",
           rating: 3),
@@ -105,10 +105,11 @@ class HomePage extends StatelessWidget {
 
                       centerTitle: true,
                       title: const Text(
-                        "Merhaba Arda",
+                        "Merhaba, Arda",
                         style: TextStyle(
+                            fontSize: 17,
                             fontFamily: 'Comfortaa',
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.w300),
                       ),
                       elevation: 0,
                       backgroundColor: Colors.transparent,
@@ -124,11 +125,25 @@ class HomePage extends StatelessWidget {
                             icon: const Icon(
                               Icons.credit_card_rounded,
                               color: Colors.white,
-                            ))
+                            )),
                       ],
                     ),
+                    // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!!
+                    Container(
+                      padding: EdgeInsets.only(top: 1),
+                      alignment: Alignment.centerRight,
+                      child: const Text(
+                        "Kartlarım",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontFamily: "Manrope",
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     const SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Container(
                       margin: const EdgeInsets.only(bottom: 0),
@@ -367,30 +382,33 @@ class HomePage extends StatelessWidget {
                       height: 210,
                       child: NewsList(newsList: newsList),
                     ),
+                    SizedBox(height: 25),
                     Container(
-                        margin: const EdgeInsets.only(
-                            bottom: 0, top: 0, left: 15, right: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "Son İşlemleriniz",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'Comfortaa'),
-                            ),
-                            TextButton(
-                                onPressed: () {}, //TODO
-                                child: const Text(
-                                  "Hepsini Gör",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color.fromRGBO(243, 115, 53, 1),
-                                      fontFamily: 'Comfortaa'),
-                                ))
-                          ],
-                        )),
+                      margin: const EdgeInsets.only(
+                          bottom: 0, top: 0, left: 15, right: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Son İşlemleriniz",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Comfortaa'),
+                          ),
+                          TextButton(
+                              onPressed: () {}, //TODO
+                              child: const Text(
+                                "Hepsini Gör",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color.fromRGBO(243, 115, 53, 1),
+                                    fontFamily: 'Comfortaa'),
+                              ))
+                        ],
+                      ),
+                    ),
+
                     TransactionInfo(transactionList: transactionList)
                   ],
                 ),

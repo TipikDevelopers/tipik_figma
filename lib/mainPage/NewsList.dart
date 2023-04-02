@@ -10,70 +10,77 @@ class NewsList extends StatelessWidget {
     return SizedBox(
         width: MediaQuery.of(context).size.width - 2,
         child: ListView.builder(
+          padding: EdgeInsets.only(left: 10),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Container(
-              margin: const EdgeInsets.only(left: 10, right: 10),
+              //padding: EdgeInsets.only(left: 10),
+              margin: const EdgeInsets.only(left: 5, right: 5),
               width: 160,
               height: 210,
-              child: ShaderMask(
-                shaderCallback: (bound) {
-                  if (index == 0) {
-                    return LinearGradient(
-                        end: FractionalOffset.topRight,
-                        begin: FractionalOffset.bottomLeft,
-                        colors: [
-                          Colors.black,
-                          Colors.black,
-                        ],
-                        stops: [
-                          0.0,
-                          //0.3,
-                          0.45
-                        ]).createShader(bound);
-                  } else if (index == 1) {
-                    return LinearGradient(
-                        end: FractionalOffset.topRight,
-                        begin: FractionalOffset.bottomLeft,
-                        colors: [
-                          Color.fromRGBO(168, 255, 120, 0.75),
-                          Color.fromRGBO(120, 255, 214, 0.75),
-                        ],
-                        stops: [
-                          0.0,
-                          //0.3,
-                          0.45
-                        ]).createShader(bound);
-                  } else {
-                    return LinearGradient(
-                        end: FractionalOffset.topRight,
-                        begin: FractionalOffset.bottomLeft,
-                        colors: [
-                          Color.fromRGBO(173, 83, 137, 0.75),
-                          Color.fromRGBO(60, 16, 83, 0.75),
-                        ],
-                        stops: [
-                          0.0,
-                          //0.3,
-                          0.45
-                        ]).createShader(bound);
-                  }
-                },
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                child: ShaderMask(
+                  shaderCallback: (bound) {
+                    if (index == 0) {
+                      return LinearGradient(
+                          end: FractionalOffset.topRight,
+                          begin: FractionalOffset.bottomLeft,
+                          colors: [
+                            Colors.black,
+                            Colors.black,
+                          ],
+                          stops: [
+                            0.0,
+                            //0.3,
+                            0.45
+                          ]).createShader(bound);
+                    } else if (index == 1) {
+                      return LinearGradient(
+                          end: FractionalOffset.topRight,
+                          begin: FractionalOffset.bottomLeft,
+                          colors: [
+                            Color.fromRGBO(168, 255, 120, 0.75),
+                            Color.fromRGBO(120, 255, 214, 0.75),
+                          ],
+                          stops: [
+                            0.0,
+                            //0.3,
+                            0.45
+                          ]).createShader(bound);
+                    } else {
+                      return LinearGradient(
+                          end: FractionalOffset.topRight,
+                          begin: FractionalOffset.bottomLeft,
+                          colors: [
+                            Color.fromRGBO(173, 83, 137, 0.75),
+                            Color.fromRGBO(60, 16, 83, 0.75),
+                          ],
+                          stops: [
+                            0.0,
+                            //0.3,
+                            0.45
+                          ]).createShader(bound);
+                    }
+                  },
 
-                blendMode: BlendMode.srcOver,
+                  blendMode: BlendMode.srcOver,
 
-                // your widget  ------------------------
-                child: Container(
+                  // your widget  ------------------------
+                  child: Container(
                     height: double.infinity,
                     width: double.infinity,
                     child: CachedNetworkImage(
                       imageUrl: newsList![index].urlImage,
                       fit: BoxFit.cover,
-                      placeholder: (context, url) => CircularProgressIndicator(),
+                      placeholder: (context, url) =>
+                          CircularProgressIndicator(),
                       errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
+                  ),
+                ),
               ),
-            ));
+            );
           },
           /*gradient: (index == 0)
                     ? LinearGradient(

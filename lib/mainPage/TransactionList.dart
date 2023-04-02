@@ -16,10 +16,11 @@ class TransactionInfo extends StatelessWidget {
             return Container(
               height: 70,
               width: 360,
-              margin: const EdgeInsets.all(15),
+              margin: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
               child: Material(
+                shadowColor: Color.fromRGBO(0, 0, 0, 0.25),
                 borderRadius: BorderRadius.circular(10),
-                elevation: 3,
+                elevation: 13,
                 child: ListTile(
                   title: Text(e.companyName),
                   leading: Container(
@@ -33,7 +34,7 @@ class TransactionInfo extends StatelessWidget {
                   subtitle: Text(
                     DateFormat.yMMMMd().format(e.date),
                     style: const TextStyle(
-                        fontFamily: 'Quicksand', fontWeight: FontWeight.bold),
+                        fontFamily: 'Quicksand', fontWeight: FontWeight.w900),
                   ),
                   trailing: SizedBox(
                     height: 70,
@@ -51,6 +52,9 @@ class TransactionInfo extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Poppins Medium'))
                           ],
+                        ),
+                        SizedBox(
+                          width: 0.4,
                         ),
                         Text(
                           "${e.amount}₺",

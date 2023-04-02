@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return MaterialApp(home: SafeArea(child: Login()));
+    return MaterialApp(
+      home: SafeArea(child: Login()),
+      theme: new ThemeData(
+          scaffoldBackgroundColor: const Color.fromRGBO(246, 246, 246, 1)),
+    );
   }
 }
