@@ -128,7 +128,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Container(
                       margin: const EdgeInsets.only(bottom: 0),
@@ -315,7 +315,7 @@ class HomePage extends StatelessWidget {
                                                         fontSize: 50),
                                                   ),
                                                 ),*/
-                                                const SizedBox(height: 50),
+                                                const SizedBox(height: 10),
                                               ],
                                             ),
                                           );
@@ -338,7 +338,7 @@ class HomePage extends StatelessWidget {
                         child: CommentWidget(comments)),
                     Container(
                         margin: const EdgeInsets.only(
-                            bottom: 0, top: 0, left: 15, right: 10),
+                            bottom: 0, top: 20, left: 15, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
