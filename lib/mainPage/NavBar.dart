@@ -26,7 +26,7 @@ class NavBar extends StatelessWidget {
             bottomRight: Radius.circular(60.0),
           ),
         ),
-        backgroundColor: const Color.fromRGBO(253, 200, 48, 1),
+        backgroundColor: const Color.fromRGBO(255, 173, 51, 1),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -56,7 +56,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
               decoration: const BoxDecoration(
-                color: Color.fromRGBO(253, 200, 48, 1),
+                color: Color.fromRGBO(255, 173, 51, 1),
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage('assets/images/tipik.svg'),
@@ -144,7 +144,7 @@ class NavBar extends StatelessWidget {
                     child: Text(
                       '2',
                       style: TextStyle(
-                        color: Color.fromRGBO(234, 115, 53, 1),
+                        color: Color.fromRGBO(255, 173, 51, 1),
                         fontSize: 12,
                       ),
                     ),

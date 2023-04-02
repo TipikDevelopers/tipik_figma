@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
           rating: 3),
       Comment(
           time: DateTime.now(),
-          location: "ANkara/Çankaya",
+          location: "Ankara/Çankaya",
           address:
               "https://lh5.googleusercontent.com/p/AF1QipPlnu4X5V3X_jVQc50KUWx8xRohUlRcTl1GgX1T",
           companyName: "Aspava",
@@ -102,6 +102,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     AppBar(
                       //leading: Icon(Icons.menu_rounded),
+
                       centerTitle: true,
                       title: const Text(
                         "Merhaba Arda",
@@ -127,7 +128,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(
-                      height: 33,
+                      height: 20,
                     ),
                     Container(
                       margin: const EdgeInsets.only(bottom: 0),
@@ -135,7 +136,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         "172,50 ₺",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 35,
                           color: Colors.white,
                           fontFamily: 'Poppins Bold',
                         ),
@@ -150,7 +151,7 @@ class HomePage extends StatelessWidget {
                           fontFamily: 'Comfortaa'),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
                     Container(
                       margin: const EdgeInsets.all(15),

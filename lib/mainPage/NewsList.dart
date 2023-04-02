@@ -15,14 +15,85 @@ class NewsList extends StatelessWidget {
               margin: const EdgeInsets.only(left: 10, right: 10),
               width: 160,
               height: 210,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                      image: NetworkImage(newsList![index].urlImage, 
-                      scale: 1,
-                      ),
-                      colorFilter: ColorFilter.mode(const Color.fromRGBO(87, 237, 120, 1).withOpacity(0.6), BlendMode.srcOver),
-                      fit: BoxFit.cover)),
+              child: ShaderMask(
+                shaderCallback: (bound) {
+                  if (index == 0) {
+                    return LinearGradient(
+                        end: FractionalOffset.topRight,
+                        begin: FractionalOffset.bottomLeft,
+                        colors: [
+                          Colors.black,
+                          Colors.black,
+                        ],
+                        stops: [
+                          0.0,
+                          0.3,
+                          0.45
+                        ]).createShader(bound);
+                  } else if (index == 1) {
+                    return LinearGradient(
+                        end: FractionalOffset.topRight,
+                        begin: FractionalOffset.bottomLeft,
+                        colors: [
+                          Color.fromRGBO(168, 255, 120, 0.75),
+                          Color.fromRGBO(120, 255, 214, 0.75),
+                        ],
+                        stops: [
+                          0.0,
+                          0.3,
+                          0.45
+                        ]).createShader(bound);
+                  } else {
+                    return LinearGradient(
+                        end: FractionalOffset.topRight,
+                        begin: FractionalOffset.bottomLeft,
+                        colors: [
+                          Color.fromRGBO(173, 83, 137, 0.75),
+                          Color.fromRGBO(60, 16, 83, 0.75),
+                        ],
+                        stops: [
+                          0.0,
+                          0.3,
+                          0.45
+                        ]).createShader(bound);
+                  }
+                },
+
+                blendMode: BlendMode.srcOver,
+
+                // your widget  ------------------------
+                child: Container(
+                    height: double.infinity,
+                    width: double.infinity,
+                    child: Image.asset(newsList![index].urlImage)),
+              ),
+            );
+          },
+          /*gradient: (index == 0)
+                    ? LinearGradient(
+                      
+                        begin: FractionalOffset.bottomLeft,
+                        end: FractionalOffset.topRight,
+                        colors: [
+                            Color.fromRGBO(0, 0, 0, 1),
+                            Color.fromRGBO(0, 0, 0, 1),
+                          ])
+                    : (index == 1)
+                        ? LinearGradient(
+                            begin: FractionalOffset.bottomLeft,
+                            end: FractionalOffset.topRight,
+                            colors: [
+                                Color.fromRGBO(168, 255, 120, 0.75),
+                                Color.fromRGBO(120, 255, 214, 0.75),
+                              ])
+                        : LinearGradient(
+                            begin: FractionalOffset.bottomLeft,
+                            end: FractionalOffset.topRight,
+                            colors: [
+                                Color.fromRGBO(173, 83, 137, 0.75),
+                                Color.fromRGBO(60, 16, 83, 0.75),
+                              ]),
+              ),
               child: Container(
                   padding: const EdgeInsets.only(left: 5, right: 5),
                   child: Column(
@@ -48,9 +119,7 @@ class NewsList extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ))
                     ],
-                  )),
-            );
-          },
+                  )),*/
           itemCount: newsList?.length,
         ));
   }
