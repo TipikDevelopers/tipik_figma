@@ -33,11 +33,12 @@ class CommentList extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  ClipOval(
-                    child: SizedBox.fromSize(
-                      size: const Size.fromRadius(60),
-                      child: Image.network(comments[index].address,
-                          fit: BoxFit.cover),
+                  Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(comments[index].address),
+                          fit: BoxFit.fill),
+                      shape: BoxShape.circle,
                     ),
                   ),
                   Padding(

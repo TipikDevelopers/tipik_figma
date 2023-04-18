@@ -18,6 +18,7 @@ class NewsList extends StatelessWidget {
               margin: const EdgeInsets.only(left: 5, right: 5),
               width: 160,
               height: 210,
+
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 child: ShaderMask(
@@ -67,7 +68,7 @@ class NewsList extends StatelessWidget {
                   blendMode: BlendMode.srcOver,
 
                   // your widget  ------------------------
-                  child: Container(
+                  child: SizedBox(
                     height: double.infinity,
                     width: double.infinity,
                     child: CachedNetworkImage(
@@ -82,6 +83,7 @@ class NewsList extends StatelessWidget {
               ),
             );
           },
+
           /*gradient: (index == 0)
                     ? LinearGradient(
                       

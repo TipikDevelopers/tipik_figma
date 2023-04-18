@@ -27,18 +27,27 @@ class CommentWidget extends StatelessWidget {
                     child: Stack(
                       children: [
                         Container(
-                          width: 70,
-                          height: 70,
-                          child: CachedNetworkImage(
+                            width: 70,
+                            height: 70,
+                            /*child: CachedNetworkImage(
                         imageUrl: comments[index].address,
                         fit: BoxFit.cover,
                         placeholder: (context, url) => const CircularProgressIndicator(),
                         errorWidget: (context, url, error) => const Icon(Icons.error),
-                    ),
-                        ),
+                    ),*/
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        NetworkImage(comments[index].address),
+                                    fit: BoxFit.cover),
+                                color: Colors.transparent,
+                                shape: BoxShape.circle,
+                              ),
+                            )),
                         //stars
                         Align(
-                            alignment: const Alignment(-1.42, -0.6),
+                            alignment: const Alignment(-1.42, -0.75),
                             child: Icon(
                               comments[index].rating < 1
                                   ? Icons.star_border_rounded
@@ -53,7 +62,7 @@ class CommentWidget extends StatelessWidget {
                                     : Icons.star_rounded,
                                 color: const Color.fromRGBO(253, 200, 48, 1))),
                         Align(
-                            alignment: const Alignment(0, -1.55),
+                            alignment: const Alignment(0, -1.58),
                             child: Icon(
                                 comments[index].rating < 3
                                     ? Icons.star_border_rounded
@@ -67,7 +76,7 @@ class CommentWidget extends StatelessWidget {
                                     : Icons.star_rounded,
                                 color: const Color.fromRGBO(253, 200, 48, 1))),
                         Align(
-                            alignment: const Alignment(1.42, -0.6),
+                            alignment: const Alignment(1.42, -0.75),
                             child: Icon(
                                 comments[index].rating < 5
                                     ? Icons.star_border_rounded

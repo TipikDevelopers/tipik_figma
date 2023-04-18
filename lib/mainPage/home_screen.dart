@@ -169,7 +169,8 @@ class HomePage extends StatelessWidget {
                       height: 30,
                     ),
                     Container(
-                      margin: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.only(
+                          right: 15, left: 15, top: 5, bottom: 5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

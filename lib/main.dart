@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: SafeArea(child: Login()),
       theme: new ThemeData(
-          scaffoldBackgroundColor: const Color.fromRGBO(246, 246, 246, 1)),
+          scaffoldBackgroundColor: Color.fromRGBO(246, 246, 246, 1)),
     );
   }
 }
