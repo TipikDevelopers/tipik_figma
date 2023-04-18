@@ -59,7 +59,7 @@ class TransactionInfo extends StatelessWidget {
                         Text(
                           "${e.amount}₺",
                           style: const TextStyle(
-                              fontSize: 21,
+                              fontSize: 20,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'Poppins Medium'),
                         )
