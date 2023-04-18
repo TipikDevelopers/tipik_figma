@@ -313,7 +313,7 @@ class HomePage extends StatelessWidget {
                                                         ),
                                                       ),
                                                     ]),
-                                                SizedBox(height: 10),
+                                                const SizedBox(height: 10),
                                                 //SleekCircularSlider(),
                                                 /*Container(
                                                   margin: const EdgeInsets.only(

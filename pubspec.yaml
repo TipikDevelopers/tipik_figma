@@ -44,13 +44,14 @@ dependencies:
     git:
       url: https://github.com/Tkko/Flutter_Pinput
       ref: dev
-  flutter_linear_datepicker: ^2.0.4
   intl: ^0.18.0
   font_awesome_flutter: ^10.4.0
   dio: ^5.0.1
   sidebar: ^0.0.1
   vector_graphics: ^1.1.1
   cached_network_image: ^3.2.3
+  provider: ^6.0.5
+  flutter_secure_storage: ^8.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

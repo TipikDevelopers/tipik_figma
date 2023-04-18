@@ -3,13 +3,14 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:tipik_figma/login/signUp_screen.dart';
 import './sms_screen.dart';
 import '../mainPage/home_screen.dart';
+import './LoginViewModel.dart';
 
 class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
+class _LoginState extends LoginViewModel with SingleTickerProviderStateMixin {
   late TabController _tabController;
   late TextEditingController userNameController;
   late TextEditingController passwordController;
@@ -215,6 +216,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   if (_tabController.index == 0) {
                     print("username: ${userNameController.text}");
                     print("password: ${passwordController.text}");
+                    fetchLogin(
+                        userNameController.text, passwordController.text);
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   } else {
