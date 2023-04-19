@@ -8,17 +8,18 @@ class AuthManager extends CacheManager {
   bool initial;
   AuthManager(this.ctx, {this.isLogin = false, this.initial = true}) {
     fetchInit();
-    fetchLogin();
+    fetchUserToken();
   }
-  void fetchLogin() async {
+  Future<void> fetchUserToken() async {
     final token = await getToken();
     if (token != null) {
       isLogin = true;
     }
   }
 
-  void fetchInit() async {
+  Future<void> fetchInit() async {
     final init = await getInitial();
+    print(init);
     if (init != null) {
       initial = false;
     }

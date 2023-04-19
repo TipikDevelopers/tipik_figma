@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:provider/provider.dart';
+import 'package:tipik_figma/Core/AuthManager.dart';
 import 'package:tipik_figma/login/signUp_screen.dart';
 import './sms_screen.dart';
 import '../mainPage/home_screen.dart';
@@ -15,6 +17,7 @@ class _LoginState extends LoginViewModel with SingleTickerProviderStateMixin {
   late TextEditingController userNameController;
   late TextEditingController passwordController;
   late TextEditingController phoneController;
+  late AuthManager? tokenAuthManager;
   String countryCode = "+90";
   @override
   void initState() {
@@ -23,8 +26,16 @@ class _LoginState extends LoginViewModel with SingleTickerProviderStateMixin {
     userNameController = TextEditingController();
     passwordController = TextEditingController();
     phoneController = TextEditingController();
+    tokenAuthManager = readToken;
   }
 
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
+
+  AuthManager get readToken => context.read<AuthManager>();
   @override
   void dispose() {
     // TODO: implement dispose
@@ -40,7 +51,6 @@ class _LoginState extends LoginViewModel with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -216,9 +226,9 @@ class _LoginState extends LoginViewModel with SingleTickerProviderStateMixin {
                   if (_tabController.index == 0) {
                     print("username: ${userNameController.text}");
                     print("password: ${passwordController.text}");
-                    fetchLogin(
-                        userNameController.text, passwordController.text);
-                    Navigator.pushReplacement(context,
+                    fetchLogin(tokenAuthManager, userNameController.text,
+                        passwordController.text);
+                    Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   } else {
                     print("phone: $countryCode${phoneController.text}");

@@ -5,10 +5,13 @@ class CacheManager {
   final String _tokenKey = "token";
   final String _initialKey = "initial";
   Future<String?> getToken() async {
-    return await storage.read(key: _tokenKey);
+    String? token = await storage.read(key: _tokenKey);
+    print(token);
+    return token;
   }
 
   Future<void> setToken(String token) async {
+    print("storing token ${token}");
     await storage.write(key: _tokenKey, value: token);
   }
 
@@ -18,5 +21,10 @@ class CacheManager {
 
   Future<String?> getInitial() async {
     return await storage.read(key: _initialKey);
+  }
+
+  Future<void> deleteToken() async {
+    print("token deleted!");
+    await storage.delete(key: _tokenKey);
   }
 }

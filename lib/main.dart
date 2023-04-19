@@ -4,10 +4,15 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'Core/AuthManager.dart';
+import 'login/Splash.dart';
+
 void main() {
-  runApp(MultiProvider(providers: [
-    Provider<AuthManager>(create:(context)=>AuthManager(context) )
-  ],child: MyApp(),));
+  runApp(MultiProvider(
+    providers: [
+      Provider<AuthManager>(create: (context) => AuthManager(context))
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +24,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
-      home: SafeArea(child: Login()),
+      home: const SafeArea(child: Splash()),
       theme: ThemeData(
           scaffoldBackgroundColor: const Color.fromRGBO(246, 246, 246, 1)),
     );

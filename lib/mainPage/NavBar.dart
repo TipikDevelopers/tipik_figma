@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tipik_figma/Core/AuthManager.dart';
 import 'package:tipik_figma/degerlendirmeler/degerlendirmeler.dart';
 import 'package:tipik_figma/model/Comment.dart';
 import 'package:tipik_figma/model/News.dart';
@@ -57,10 +59,10 @@ class NavBar extends StatelessWidget {
               ),
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(255, 173, 51, 1),
-                image: DecorationImage(
+                /*image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage('assets/images/tipik.svg'),
-                ),
+                  image: SvgPicture.asset('assets/images/tipik.svg'),
+                ),*/
               ),
             ),
             ListTile(
@@ -195,6 +197,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
               onTap: () {
+                context.read<AuthManager>().deleteToken();
                 Navigator.of(context).pop();
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Login()));

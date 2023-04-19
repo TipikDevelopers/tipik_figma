@@ -10,7 +10,7 @@ class NewsList extends StatelessWidget {
     return SizedBox(
         width: MediaQuery.of(context).size.width - 2,
         child: ListView.builder(
-          padding: EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.only(left: 10),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Container(
@@ -20,11 +20,11 @@ class NewsList extends StatelessWidget {
               height: 210,
 
               child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                borderRadius: const BorderRadius.all(Radius.circular(15.0)),
                 child: ShaderMask(
                   shaderCallback: (bound) {
                     if (index == 0) {
-                      return LinearGradient(
+                      return const LinearGradient(
                           end: FractionalOffset.topRight,
                           begin: FractionalOffset.bottomLeft,
                           colors: [
@@ -37,7 +37,7 @@ class NewsList extends StatelessWidget {
                             0.45
                           ]).createShader(bound);
                     } else if (index == 1) {
-                      return LinearGradient(
+                      return const LinearGradient(
                           end: FractionalOffset.topRight,
                           begin: FractionalOffset.bottomLeft,
                           colors: [
@@ -50,7 +50,7 @@ class NewsList extends StatelessWidget {
                             0.45
                           ]).createShader(bound);
                     } else {
-                      return LinearGradient(
+                      return const LinearGradient(
                           end: FractionalOffset.topRight,
                           begin: FractionalOffset.bottomLeft,
                           colors: [
@@ -75,8 +75,8 @@ class NewsList extends StatelessWidget {
                       imageUrl: newsList![index].urlImage,
                       fit: BoxFit.cover,
                       placeholder: (context, url) =>
-                          CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => Icon(Icons.error),
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => const Icon(Icons.error),
                     ),
                   ),
                 ),
