@@ -33,13 +33,29 @@ class NavBar extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: const Text(
-                "Arda Okyay",
-                style: TextStyle(
-                  fontFamily: 'Comfortaa',
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
+              currentAccountPicture: SizedBox(
+                child: SvgPicture.asset(
+                  'assets/images/tipik.svg',
+                  fit: BoxFit.cover,
+                  width: 90,
+                  height: 120,
                 ),
+              ),
+              //margin: EdgeInsets.only(bottom: 15),
+              accountName: Column(
+                children: [
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    "Arda Okyay",
+                    style: TextStyle(
+                      fontFamily: 'Comfortaa',
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
               accountEmail: const Text(
                 "+90 5396635403",
@@ -47,14 +63,6 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Comfortaa',
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                ),
-              ),
-              currentAccountPicture: SizedBox(
-                child: SvgPicture.asset(
-                  'assets/images/tipik.svg',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
                 ),
               ),
               decoration: const BoxDecoration(

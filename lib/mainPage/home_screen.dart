@@ -54,18 +54,20 @@ class HomePage extends StatelessWidget {
     List<Transaction> transactionList = [
       Transaction(
           companyName: "Aspava",
+          location: "Çankaya / Ankara",
           amount: 15,
           date: DateTime.now(),
           cardNoDigits: 40,
           imgURL:
-              "https://lh5.googleusercontent.com/p/AF1QipPlnu4X5V3X_jVQc50KUWx8xRohUlRcTl1GgX1T"),
+              "https://lh3.googleusercontent.com/p/AF1QipMrnDmt3S5rut1SmIsuoz_vHXzwVjiJIXjZlliI=w1080-h608-p-no-v0"),
       Transaction(
           companyName: "Blue Jay",
+          location: "Çankaya / Ankara",
           amount: 22,
           date: DateTime.now(),
           cardNoDigits: 40,
           imgURL:
-              "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
+              "https://mekanlar.com/img/img177/59792274ebd800dac43e41fdc9441bdf721a68e2_plc_1f87cee2e874554b571ff50fc5858513.jpg")
     ];
     return Scaffold(
       drawer: NavBar(
