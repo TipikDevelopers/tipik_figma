@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../model/Transactions.dart';
 
 class TransactionInfo extends StatelessWidget {
@@ -108,9 +107,17 @@ class TransactionInfo extends StatelessWidget {
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                )
-                              ],
-                            ),
+                                ),
+                              ),
+                              Text(
+                                "**${e.cardNoDigits}",
+                                style: const TextStyle(
+                                  fontFamily: 'Karla',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ],
                           ),
                         ],
                       ),

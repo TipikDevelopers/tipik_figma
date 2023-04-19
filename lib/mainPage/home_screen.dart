@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     AppBar(
                       //leading: Icon(Icons.menu_rounded),
-
+                      toolbarHeight: 58,
                       centerTitle: true,
                       title: const Text(
                         "Merhaba, Arda",
@@ -116,34 +116,38 @@ class HomePage extends StatelessWidget {
                       elevation: 0,
                       backgroundColor: Colors.transparent,
                       actions: [
-                        IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          cardScreen(cardList: const [])));
-                            },
-                            icon: const Icon(
-                              Icons.credit_card_rounded,
-                              color: Colors.white,
-                            )),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            IconButton(
+                              padding: const EdgeInsets.all(0),
+                              iconSize: 20,
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              cardScreen(cardList: const [])));
+                                },
+                                icon: const Icon(
+                                  Icons.credit_card_rounded,
+                                  color: Colors.white,
+                                  size:10
+                                )),
+                              const Text(
+                              "Kartlarım",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontFamily: "Manrope",
+                                  color: Colors.white,
+                                  fontSize: 7,
+                                  fontWeight: FontWeight.bold),
+                      ),
+                          ],
+                        ),
                       ],
                     ),
-                    // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!!
-                    Container(
-                      padding: EdgeInsets.only(top: 1),
-                      alignment: Alignment.centerRight,
-                      child: const Text(
-                        "Kartlarım",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                            fontFamily: "Manrope",
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                    // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!
                     const SizedBox(
                       height: 5,
                     ),
