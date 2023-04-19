@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
-      home: const SafeArea(child: Splash()),
-      theme: ThemeData(
-          //scaffoldBackgroundColor: const Color.fromRGBO(246, 246, 246, 1)
-          scaffoldBackgroundColor: Colors.blue),
-    );
+        home: const SafeArea(child: Splash()),
+        theme: ThemeData(
+            scaffoldBackgroundColor: const Color.fromRGBO(246, 246, 246, 1)
+            //scaffoldBackgroundColor: Colors.blue),
+            ));
   }
 }

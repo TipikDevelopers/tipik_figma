@@ -114,7 +114,7 @@ class NewsList extends StatelessWidget {
                           child: Text(
                             newsList![index].description,
                             style: const TextStyle(
-                                fontWeight: FontWeight.w300,
+                                fontWeight: FontWeight.w600,
                                 color: Colors.white,
                                 fontSize: 10,
                                 fontFamily: 'Manrope'),

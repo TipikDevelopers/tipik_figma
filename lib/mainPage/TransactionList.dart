@@ -31,10 +31,11 @@ class TransactionInfo extends StatelessWidget {
                     Container(
                       //padding: EdgeInsets.all(0),
                       height: 90 / 844 * screenHeight,
-                      width: 87/358 * screenWidth,
+                      width: 77 / 358 * screenWidth,
                       decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(10),
-                          bottomLeft: Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              bottomLeft: Radius.circular(10)),
                           image: DecorationImage(
                               image: NetworkImage(e.imgURL, scale: 1),
                               fit: BoxFit.cover)),
@@ -43,34 +44,34 @@ class TransactionInfo extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             child: Text(
                               e.companyName,
+                              textAlign: TextAlign.left,
                               style: const TextStyle(
                                 fontFamily: 'Quicksand',
                                 fontSize: 15,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w600,
                               ),
-                              textAlign: TextAlign.left,
                             ),
                           ),
-                          Container(                           
+                          Container(
                             child: Text(
                               e.location +
                                   "\n" +
                                   DateFormat.yMMMMd().format(e.date),
-                                  textAlign: TextAlign.left,
-                                  style: const TextStyle(
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(
                                   fontFamily: 'Quicksand',
                                   fontSize: 10,
-                                  fontWeight: FontWeight.w900),
+                                  fontWeight: FontWeight.w300),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -79,14 +80,32 @@ class TransactionInfo extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                color: const Color.fromRGBO(118, 177, 145, 1),
-                                width: 30 / 390 * screenWidth,
-                                height: 22 / 844 * screenHeight,
-                                child: Center(
-                                    child: Image.network(
-                                        "https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: const Color.fromRGBO(118, 177, 145, 1),
+                                ),
+                                //color: const Color.fromRGBO(118, 177, 145, 1),
+                                width: 37 / 390 * screenWidth,
+                                height: 33 / 844 * screenHeight,
+                                child: SizedBox(
+                                  height: 11 / 844 * screenHeight,
+                                  width: 28 / 390 * screenWidth,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Center(
+                                        child: Image.network(
+                                            "https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                                  ),
+                                ),
                               ),
-                              Text("**${e.cardNoDigits}")
+                              Text(
+                                "**${e.cardNoDigits}",
+                                style: TextStyle(
+                                  fontFamily: 'Manrope',
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
                             ],
                           ),
                         ],
