@@ -83,11 +83,10 @@ class HomePage extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                    top: -115/844*MediaQuery.of(context).size.height,
-                    left: -37.6/844*MediaQuery.of(context).size.height,
-                    child: SvgPicture.asset("assets/images/Ellipse.svg",
-                    width: size.aspectRatio* size.height *570/390,
-                    height: size.aspectRatio* size.height * (330/432),),),
+                    top:0,
+                    left:0,
+                    child: SvgPicture.asset("assets/images/HalfElipse.svg",
+                    width: size.width),),
                 Container(
                   margin: const EdgeInsets.only(top:20,right: 10),
                   child: Column(
@@ -145,8 +144,8 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: 20/546*(size.height),
                       ),
                       Container(
                         margin: const EdgeInsets.only(bottom: 0),
