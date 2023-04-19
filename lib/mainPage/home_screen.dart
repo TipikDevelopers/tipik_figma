@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                     child: SvgPicture.asset("assets/images/HalfElipse.svg",
                     width: size.width),),
                 Container(
-                  margin: const EdgeInsets.only(top:20,right: 10),
+                  margin: const EdgeInsets.only(top: 20, right: 10),
                   child: Column(
                     children: [
                       AppBar(
@@ -114,22 +114,22 @@ class HomePage extends StatelessWidget {
                                   height: 20,
                                   width: 20,
                                   child: IconButton(
-                                    padding: const EdgeInsets.all(0),
-                                    iconSize: 20,
+                                      padding: const EdgeInsets.all(0),
+                                      iconSize: 20,
                                       onPressed: () {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    cardScreen(cardList: const [])));
+                                                    cardScreen(
+                                                        cardList: const [])));
                                       },
                                       icon: const Icon(
-                                        Icons.credit_card_rounded,
-                                        color: Colors.white,
-                                        size:20
-                                      )),
+                                          Icons.credit_card_rounded,
+                                          color: Colors.white,
+                                          size: 20)),
                                 ),
-                                  const Text(
+                                const Text(
                                   "Kartlarım",
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -137,7 +137,7 @@ class HomePage extends StatelessWidget {
                                       color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold),
-                                                ),
+                                ),
                               ],
                             ),
                           ),
@@ -207,19 +207,21 @@ class HomePage extends StatelessWidget {
                                                     CrossAxisAlignment.center,
                                                 children: <Widget>[
                                                   Stack(
-                                                      alignment: Alignment.center,
+                                                      alignment:
+                                                          Alignment.center,
                                                       children: <Widget>[
                                                         Positioned(
                                                             child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(40.0),
+                                                                  .circular(
+                                                                      40.0),
                                                           child: Stack(
                                                             children: [
                                                               SizedBox(
                                                                 height: 320,
-                                                                child:
-                                                                    Image.network(
+                                                                child: Image
+                                                                    .network(
                                                                   'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020',
                                                                   fit: BoxFit
                                                                       .cover,
@@ -241,8 +243,7 @@ class HomePage extends StatelessWidget {
                                                                             .transparent,
                                                                         Colors
                                                                             .black
-                                                                            .withOpacity(
-                                                                                1),
+                                                                            .withOpacity(1),
                                                                       ],
                                                                     ),
                                                                   ),
@@ -270,7 +271,8 @@ class HomePage extends StatelessWidget {
                                                                   left: 40,
                                                                   right: 40,
                                                                 ),
-                                                                child: const Text(
+                                                                child:
+                                                                    const Text(
                                                                   'Bilkent \nYork',
                                                                   textAlign:
                                                                       TextAlign
@@ -294,7 +296,8 @@ class HomePage extends StatelessWidget {
                                                                   left: 40,
                                                                   right: 40,
                                                                 ),
-                                                                child: const Text(
+                                                                child:
+                                                                    const Text(
                                                                   'Ankara/Çankaya',
                                                                   textAlign:
                                                                       TextAlign
@@ -411,7 +414,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                
+
                       TransactionInfo(transactionList: transactionList)
                     ],
                   ),
