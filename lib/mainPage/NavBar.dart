@@ -81,7 +81,7 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Manrope',
                   fontSize: 24,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               onTap: () {
@@ -103,7 +103,7 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Manrope',
                   fontSize: 20,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               onTap: () {}, //TODO
@@ -121,7 +121,7 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Manrope',
                   fontSize: 20,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ),
@@ -133,7 +133,7 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Manrope',
                   fontSize: 20,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               onTap: () {
@@ -166,11 +166,12 @@ class NavBar extends StatelessWidget {
               leading: SvgPicture.asset('assets/images/News.svg'),
               title: const Text(
                 "Haberler/Kampanyalar",
+                //textAlign: TextAlign.left,
                 style: TextStyle(
                   fontFamily: 'Manrope',
                   fontSize: 20,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -184,7 +185,7 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Manrope',
                   fontSize: 20,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               onTap: () => {}, //TODO
@@ -201,7 +202,7 @@ class NavBar extends StatelessWidget {
                   fontFamily: 'Manrope',
                   fontSize: 20,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               onTap: () {

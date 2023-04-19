@@ -13,6 +13,8 @@ import 'NavBar.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
     List<Comment> comments = [
       Comment(
