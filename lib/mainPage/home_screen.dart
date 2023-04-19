@@ -13,8 +13,7 @@ import 'NavBar.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    final Size size = MediaQuery.of(context).size;
     MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
     List<Comment> comments = [
       Comment(
@@ -85,10 +84,10 @@ class HomePage extends StatelessWidget {
               children: [
                 Positioned(
                     top: -115/844*MediaQuery.of(context).size.height,
-                    left: -37.6/390*MediaQuery.of(context).size.width,
+                    left: -37.6/844*MediaQuery.of(context).size.height,
                     child: SvgPicture.asset("assets/images/Ellipse.svg",
-                    width: MediaQuery.of(context).size.width*570/390,
-                    height: MediaQuery.of(context).size.width* (330/432),),),
+                    width: size.aspectRatio* size.height *570/390,
+                    height: size.aspectRatio* size.height * (330/432),),),
                 Container(
                   margin: const EdgeInsets.only(top:20,right: 10),
                   child: Column(
