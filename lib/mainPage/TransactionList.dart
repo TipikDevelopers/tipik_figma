@@ -23,75 +23,76 @@ class TransactionInfo extends StatelessWidget {
                 bottom: 15,
               ),
               child: Material(
-                shadowColor: Color.fromRGBO(0, 0, 0, 0.247),
+                shadowColor: const Color.fromRGBO(0, 0, 0, 0.247),
                 borderRadius: BorderRadius.circular(10),
                 elevation: 13,
-                child: ListTile(
-                  contentPadding: EdgeInsets.all(0),
-                  title: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Text(
-                      e.companyName,
-                      style: TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 15,
-                        fontWeight: FontWeight.w800,
-                      ),
+                child: Row(
+                  children: [
+                    Container(
+                      //padding: EdgeInsets.all(0),
+                      height: 90 / 844 * screenHeight,
+                      width: 70,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              image: NetworkImage(e.imgURL, scale: 1),
+                              fit: BoxFit.cover)),
                     ),
-                  ),
-                  leading: Container(
-                    //padding: EdgeInsets.all(0),
-                    height: 90 / 844 * screenHeight,
-                    width: 70,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            image: NetworkImage(e.imgURL, scale: 1),
-                            fit: BoxFit.cover)),
-                  ),
-                  subtitle: Padding(
-                    padding: EdgeInsets.only(bottom: 6),
-                    child: Text(
-                      e.location + "\n" + DateFormat.yMMMMd().format(e.date),
-                      style: const TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 10,
-                          fontWeight: FontWeight.w900),
-                    ),
-                  ),
-                  trailing: SizedBox(
-                    height: 70,
-                    width: 70,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Column(
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              color: Color.fromRGBO(118, 177, 145, 1),
-                              width: 30 / 390 * screenWidth,
-                              height: 22 / 844 * screenHeight,
-                              child: Center(
-                                  child: Image.network(
-                                      "https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
-                            )
-                          ],
+                        Container(
+                          padding: const EdgeInsets.only(top: 6),
+                          child: Text(
+                            e.companyName,
+                            style: const TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
                         ),
-                        SizedBox(
-                          width: 0.1,
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: Text(
+                            e.location +
+                                "\n" +
+                                DateFormat.yMMMMd().format(e.date),
+                            style: const TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w900),
+                          ),
                         ),
-                        Text(
-                          "${e.amount}₺",
-                          textAlign: TextAlign.right,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins Medium'),
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width*0.335,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          color: const Color.fromRGBO(118, 177, 145, 1),
+                          width: 30 / 390 * screenWidth,
+                          height: 22 / 844 * screenHeight,
+                          child: Center(
+                              child: Image.network(
+                                  "https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
                         )
                       ],
                     ),
-                  ),
+                    const SizedBox(
+                      width: 0.1,
+                    ),
+                    Text(
+                      "${e.amount}₺",
+                      textAlign: TextAlign.right,
+                      style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Poppins Medium'),
+                    )
+                  ],
                 ),
               ),
             );

@@ -56,6 +56,7 @@ class HomePage extends StatelessWidget {
           companyName: "Aspava",
           location: "Çankaya / Ankara",
           amount: 15,
+          location:"Ankara/Çankaya",
           date: DateTime.now(),
           cardNoDigits: 40,
           imgURL:
@@ -66,6 +67,7 @@ class HomePage extends StatelessWidget {
           amount: 22,
           date: DateTime.now(),
           cardNoDigits: 40,
+          location:"Ankara/Çankaya",
           imgURL:
               "https://mekanlar.com/img/img177/59792274ebd800dac43e41fdc9441bdf721a68e2_plc_1f87cee2e874554b571ff50fc5858513.jpg")
     ];

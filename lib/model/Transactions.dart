@@ -1,5 +1,6 @@
 class Transaction {
   String companyName;
+  String location;
   int amount;
   DateTime date;
   bool isVisa;
@@ -7,6 +8,7 @@ class Transaction {
   String imgURL;
   String location;
   Transaction({
+    required this.location,
     required this.companyName,
     required this.amount,
     required this.date,
