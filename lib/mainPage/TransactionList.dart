@@ -76,48 +76,55 @@ class TransactionInfo extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: const Color.fromRGBO(118, 177, 145, 1),
-                                ),
-                                //color: const Color.fromRGBO(118, 177, 145, 1),
-                                width: 37 / 390 * screenWidth,
-                                height: 33 / 844 * screenHeight,
-                                child: SizedBox(
-                                  height: 11 / 844 * screenHeight,
-                                  width: 28 / 390 * screenWidth,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Center(
-                                        child: Image.network(
-                                            "https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color:
+                                        const Color.fromRGBO(118, 177, 145, 1),
+                                  ),
+                                  //color: const Color.fromRGBO(118, 177, 145, 1),
+                                  width: 37 / 390 * screenWidth,
+                                  height: 33 / 844 * screenHeight,
+                                  child: SizedBox(
+                                    height: 11 / 844 * screenHeight,
+                                    width: 28 / 390 * screenWidth,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Center(
+                                          child: Image.network(
+                                              "https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Text(
-                                "**${e.cardNoDigits}",
-                                style: TextStyle(
-                                  fontFamily: 'Manrope',
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )
-                            ],
+                                Text(
+                                  "**${e.cardNoDigits}",
+                                  style: TextStyle(
+                                    fontFamily: 'Manrope',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    Text(
-                      "${e.amount}₺",
-                      textAlign: TextAlign.right,
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins Medium'),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Text(
+                        "${e.amount}₺",
+                        textAlign: TextAlign.right,
+                        style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Poppins'),
+                      ),
                     )
                   ],
                 ),
