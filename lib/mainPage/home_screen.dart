@@ -55,6 +55,7 @@ class HomePage extends StatelessWidget {
       Transaction(
           companyName: "Aspava",
           amount: 15,
+          location:"Ankara/Çankaya",
           date: DateTime.now(),
           cardNoDigits: 40,
           imgURL:
@@ -64,6 +65,7 @@ class HomePage extends StatelessWidget {
           amount: 22,
           date: DateTime.now(),
           cardNoDigits: 40,
+          location:"Ankara/Çankaya",
           imgURL:
               "https://upload-isinolsun-com.mncdn.com/company/2022/9/18/532372420220918014014309.jpg")
     ];
