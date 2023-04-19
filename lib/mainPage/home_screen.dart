@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                     child: SvgPicture.asset("assets/images/HalfElipse.svg",
                     width: size.width),),
                 Container(
-                  margin: const EdgeInsets.only(top:20,right: 10),
+                  margin: const EdgeInsets.only(top:20,),
                   child: Column(
                     children: [
                       AppBar(
@@ -385,10 +385,10 @@ class HomePage extends StatelessWidget {
                         height: 210,
                         child: NewsList(newsList: newsList),
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       Container(
                         margin: const EdgeInsets.only(
-                            bottom: 0, top: 0, left: 15, right: 10),
+                            bottom: 0, top: 0, left: 0, right: 0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
