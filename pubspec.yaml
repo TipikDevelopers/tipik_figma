@@ -111,6 +111,8 @@ flutter:
      - family: Quicksand
        fonts:
          - asset: fonts/Quicksand-VariableFont_wght.ttf
+         - asset: fonts/Quicksand-SemiBold.ttf
+         - asset: fonts/Quicksand-Light.ttf
      - family: Comfortaa
        fonts:
         - asset: fonts/Comfortaa-VariableFont_wght.ttf
@@ -123,6 +125,8 @@ flutter:
      - family: Manrope
        fonts:
          - asset: fonts/Manrope-VariableFont_wght.ttf
+         - asset: fonts/Manrope-ExtraBold.ttf
+         - asset: fonts/Manrope-SemiBold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
