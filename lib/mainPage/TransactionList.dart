@@ -100,7 +100,7 @@ class TransactionInfo extends StatelessWidget {
                               ),
                               Text(
                                 "**${e.cardNoDigits}",
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Manrope',
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold,

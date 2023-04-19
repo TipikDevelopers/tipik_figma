@@ -91,6 +91,7 @@ flutter:
     - assets/images/geri.svg
     - assets/images/VectorstarEmpty.svg
     - assets/images/VectorstarBold.svg
+    - assets/images/Ellipse.svg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -127,9 +128,6 @@ flutter:
          - asset: fonts/Manrope-VariableFont_wght.ttf
          - asset: fonts/Manrope-ExtraBold.ttf
          - asset: fonts/Manrope-SemiBold.ttf
-     - family: Karla
-       fonts:
-         - asset: fonts/Karla.bold
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

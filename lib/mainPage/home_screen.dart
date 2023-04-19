@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tipik_figma/mainPage/NewsList.dart';
 import 'package:tipik_figma/mainPage/comments.dart';
 import '../creditCard/cardScreen.dart';
@@ -81,301 +82,263 @@ class HomePage extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                    top: -50,
-                    left: -45,
-                    child: Container(
-                      height: 230,
-                      width: 480,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(220),
-                            bottomRight: Radius.circular(220)),
-                        gradient: LinearGradient(
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromRGBO(253, 200, 48, 1),
-                            Color.fromRGBO(234, 115, 53, 1)
-                          ],
+                    top: -115/844*MediaQuery.of(context).size.height,
+                    left: -37.6/390*MediaQuery.of(context).size.width,
+                    child: SvgPicture.asset("assets/images/Ellipse.svg",
+                    width: MediaQuery.of(context).size.width*570/390,
+                    height: MediaQuery.of(context).size.width* (330/432),),),
+                Container(
+                  margin: const EdgeInsets.only(top:20,right: 10),
+                  child: Column(
+                    children: [
+                      AppBar(
+                        //leading: Icon(Icons.menu_rounded),
+                        toolbarHeight: 35,
+                        centerTitle: true,
+                        title: const Text(
+                          "Merhaba, Arda",
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontFamily: 'Comfortaa',
+                              fontWeight: FontWeight.w300),
                         ),
-                      ),
-                    )),
-                Column(
-                  children: [
-                    AppBar(
-                      //leading: Icon(Icons.menu_rounded),
-                      toolbarHeight: 58,
-                      centerTitle: true,
-                      title: const Text(
-                        "Merhaba, Arda",
-                        style: TextStyle(
-                            fontSize: 17,
-                            fontFamily: 'Comfortaa',
-                            fontWeight: FontWeight.w300),
-                      ),
-                      elevation: 0,
-                      backgroundColor: Colors.transparent,
-                      actions: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            IconButton(
-                              padding: const EdgeInsets.all(0),
-                              iconSize: 20,
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              cardScreen(cardList: const [])));
-                                },
-                                icon: const Icon(
-                                  Icons.credit_card_rounded,
-                                  color: Colors.white,
-                                  size:10
-                                )),
-                              const Text(
-                              "Kartlarım",
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                  fontFamily: "Manrope",
-                                  color: Colors.white,
-                                  fontSize: 7,
-                                  fontWeight: FontWeight.bold),
-                      ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 0),
-                      width: double.infinity,
-                      child: const Text(
-                        "172,50 ₺",
-                        style: TextStyle(
-                          fontSize: 35,
-                          color: Colors.white,
-                          fontFamily: 'Poppins Bold',
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    const Text(
-                      "Bu ay bağışladınız",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontFamily: 'Comfortaa'),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(
-                          right: 15, left: 15, top: 5, bottom: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            "Değerlendirmeleriniz",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'Comfortaa'),
+                        elevation: 0,
+                        backgroundColor: Colors.transparent,
+                        actions: [
+                          SizedBox(
+                            height: 25,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                  width: 20,
+                                  child: IconButton(
+                                    padding: const EdgeInsets.all(0),
+                                    iconSize: 20,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    cardScreen(cardList: const [])));
+                                      },
+                                      icon: const Icon(
+                                        Icons.credit_card_rounded,
+                                        color: Colors.white,
+                                        size:20
+                                      )),
+                                ),
+                                  const Text(
+                                  "Kartlarım",
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                      fontFamily: "Manrope",
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold),
+                                                ),
+                              ],
+                            ),
                           ),
-                          TextButton(
-                              onPressed: () => {
-                                    showModalBottomSheet<void>(
-                                        context: context,
-                                        isScrollControlled: true,
-                                        shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(40.0),
-                                          ),
-                                        ),
-                                        builder: (BuildContext context) {
-                                          return Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.90,
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: <Widget>[
-                                                Stack(
-                                                    alignment: Alignment.center,
-                                                    children: <Widget>[
-                                                      Positioned(
-                                                          child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(40.0),
-                                                        child: Stack(
-                                                          children: [
-                                                            SizedBox(
-                                                              height: 320,
-                                                              child:
-                                                                  Image.network(
-                                                                'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020',
-                                                                fit: BoxFit
-                                                                    .cover,
-                                                              ),
-                                                            ),
-                                                            Positioned.fill(
-                                                              child:
-                                                                  DecoratedBox(
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  gradient:
-                                                                      LinearGradient(
-                                                                    begin: Alignment
-                                                                        .topCenter,
-                                                                    end: Alignment
-                                                                        .bottomCenter,
-                                                                    colors: [
-                                                                      Colors
-                                                                          .transparent,
-                                                                      Colors
-                                                                          .black
-                                                                          .withOpacity(
-                                                                              1),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      )),
-                                                      Positioned(
-                                                        top: 60,
-                                                        child: Column(
-                                                          children: <Widget>[
-                                                            const CircleAvatar(
-                                                              radius:
-                                                                  50, // set the radius of the circle
-                                                              backgroundImage:
-                                                                  NetworkImage(
-                                                                      'https://pbs.twimg.com/media/FRM4vdsWYAQojQq?format=png&name=900x900'), // replace with the URL of your image
-                                                            ),
-                                                            Container(
-                                                              margin:
-                                                                  const EdgeInsets
-                                                                      .only(
-                                                                top: 10,
-                                                                left: 40,
-                                                                right: 40,
-                                                              ),
-                                                              child: const Text(
-                                                                'Bilkent \nYork',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: TextStyle(
-                                                                    fontFamily:
-                                                                        'Quicksand',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontSize:
-                                                                        45,
-                                                                    color: Colors
-                                                                        .white),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              margin:
-                                                                  const EdgeInsets
-                                                                      .only(
-                                                                left: 40,
-                                                                right: 40,
-                                                              ),
-                                                              child: const Text(
-                                                                'Ankara/Çankaya',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: TextStyle(
-                                                                    fontFamily:
-                                                                        'Quicksand',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w300,
-                                                                    fontSize:
-                                                                        16,
-                                                                    color: Colors
-                                                                        .white),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ]),
-                                                const SizedBox(height: 10),
-                                                //SleekCircularSlider(),
-                                                /*Container(
-                                                  margin: const EdgeInsets.only(
-                                                    left: 40,
-                                                    right: 40,
-                                                  ),
-                                                  child: const Text(
-                                                    '5',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'Poppins Bold',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 50),
-                                                  ),
-                                                ),*/
-                                                const SizedBox(height: 10),
-                                              ],
-                                            ),
-                                          );
-                                        })
-                                  }, //TODO
-                              child: const Text(
-                                "Hepsini Gör",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Color.fromRGBO(243, 115, 53, 1),
-                                    fontFamily: 'Comfortaa'),
-                              ))
                         ],
                       ),
-                    ),
-                    Container(
+                      // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 0),
+                        width: double.infinity,
+                        child: const Text(
+                          "172,50 ₺",
+                          style: TextStyle(
+                            fontSize: 35,
+                            color: Colors.white,
+                            fontFamily: 'Poppins Bold',
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      const Text(
+                        "Bu ay bağışladınız",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontFamily: 'Comfortaa'),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
                         margin: const EdgeInsets.only(
-                            left: 15, right: 15, bottom: 0),
-                        width: MediaQuery.of(context).size.width - 2,
-                        child: CommentWidget(comments)),
-                    Container(
-                        margin: const EdgeInsets.only(
-                            bottom: 0, top: 20, left: 15, right: 10),
+                            right: 15, left: 15, top: 5, bottom: 5),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
-                              "Haberler & Kampanyalar",
+                              "Değerlendirmeleriniz",
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'Comfortaa'),
                             ),
                             TextButton(
-                                onPressed: () => Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            Habers(newsList: newsList))),
+                                onPressed: () => {
+                                      showModalBottomSheet<void>(
+                                          context: context,
+                                          isScrollControlled: true,
+                                          shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(40.0),
+                                            ),
+                                          ),
+                                          builder: (BuildContext context) {
+                                            return Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.90,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Stack(
+                                                      alignment: Alignment.center,
+                                                      children: <Widget>[
+                                                        Positioned(
+                                                            child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(40.0),
+                                                          child: Stack(
+                                                            children: [
+                                                              SizedBox(
+                                                                height: 320,
+                                                                child:
+                                                                    Image.network(
+                                                                  'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020',
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
+                                                              Positioned.fill(
+                                                                child:
+                                                                    DecoratedBox(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    gradient:
+                                                                        LinearGradient(
+                                                                      begin: Alignment
+                                                                          .topCenter,
+                                                                      end: Alignment
+                                                                          .bottomCenter,
+                                                                      colors: [
+                                                                        Colors
+                                                                            .transparent,
+                                                                        Colors
+                                                                            .black
+                                                                            .withOpacity(
+                                                                                1),
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
+                                                        Positioned(
+                                                          top: 60,
+                                                          child: Column(
+                                                            children: <Widget>[
+                                                              const CircleAvatar(
+                                                                radius:
+                                                                    50, // set the radius of the circle
+                                                                backgroundImage:
+                                                                    NetworkImage(
+                                                                        'https://pbs.twimg.com/media/FRM4vdsWYAQojQq?format=png&name=900x900'), // replace with the URL of your image
+                                                              ),
+                                                              Container(
+                                                                margin:
+                                                                    const EdgeInsets
+                                                                        .only(
+                                                                  top: 10,
+                                                                  left: 40,
+                                                                  right: 40,
+                                                                ),
+                                                                child: const Text(
+                                                                  'Bilkent \nYork',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: TextStyle(
+                                                                      fontFamily:
+                                                                          'Quicksand',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontSize:
+                                                                          45,
+                                                                      color: Colors
+                                                                          .white),
+                                                                ),
+                                                              ),
+                                                              Container(
+                                                                margin:
+                                                                    const EdgeInsets
+                                                                        .only(
+                                                                  left: 40,
+                                                                  right: 40,
+                                                                ),
+                                                                child: const Text(
+                                                                  'Ankara/Çankaya',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: TextStyle(
+                                                                      fontFamily:
+                                                                          'Quicksand',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                      fontSize:
+                                                                          16,
+                                                                      color: Colors
+                                                                          .white),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ]),
+                                                  const SizedBox(height: 10),
+                                                  //SleekCircularSlider(),
+                                                  /*Container(
+                                                    margin: const EdgeInsets.only(
+                                                      left: 40,
+                                                      right: 40,
+                                                    ),
+                                                    child: const Text(
+                                                      '5',
+                                                      textAlign: TextAlign.center,
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Poppins Bold',
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize: 50),
+                                                    ),
+                                                  ),*/
+                                                  const SizedBox(height: 10),
+                                                ],
+                                              ),
+                                            );
+                                          })
+                                    }, //TODO
                                 child: const Text(
                                   "Hepsini Gör",
                                   style: TextStyle(
@@ -384,40 +347,74 @@ class HomePage extends StatelessWidget {
                                       fontFamily: 'Comfortaa'),
                                 ))
                           ],
-                        )),
-                    SizedBox(
-                      height: 210,
-                      child: NewsList(newsList: newsList),
-                    ),
-                    SizedBox(height: 25),
-                    Container(
-                      margin: const EdgeInsets.only(
-                          bottom: 0, top: 0, left: 15, right: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            "Son İşlemleriniz",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'Comfortaa'),
-                          ),
-                          TextButton(
-                              onPressed: () {}, //TODO
-                              child: const Text(
-                                "Hepsini Gör",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Color.fromRGBO(243, 115, 53, 1),
-                                    fontFamily: 'Comfortaa'),
-                              ))
-                        ],
+                        ),
                       ),
-                    ),
-
-                    TransactionInfo(transactionList: transactionList)
-                  ],
+                      Container(
+                          margin: const EdgeInsets.only(
+                              left: 15, right: 15, bottom: 0),
+                          width: MediaQuery.of(context).size.width - 2,
+                          child: CommentWidget(comments)),
+                      Container(
+                          margin: const EdgeInsets.only(
+                              bottom: 0, top: 20, left: 15, right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Haberler & Kampanyalar",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'Comfortaa'),
+                              ),
+                              TextButton(
+                                  onPressed: () => Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Habers(newsList: newsList))),
+                                  child: const Text(
+                                    "Hepsini Gör",
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color.fromRGBO(243, 115, 53, 1),
+                                        fontFamily: 'Comfortaa'),
+                                  ))
+                            ],
+                          )),
+                      SizedBox(
+                        height: 210,
+                        child: NewsList(newsList: newsList),
+                      ),
+                      SizedBox(height: 25),
+                      Container(
+                        margin: const EdgeInsets.only(
+                            bottom: 0, top: 0, left: 15, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Son İşlemleriniz",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Comfortaa'),
+                            ),
+                            TextButton(
+                                onPressed: () {}, //TODO
+                                child: const Text(
+                                  "Hepsini Gör",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromRGBO(243, 115, 53, 1),
+                                      fontFamily: 'Comfortaa'),
+                                ))
+                          ],
+                        ),
+                      ),
+                
+                      TransactionInfo(transactionList: transactionList)
+                    ],
+                  ),
                 ),
               ],
             ),
