@@ -18,25 +18,40 @@ class TransactionInfo extends StatelessWidget {
               width: 360,
               margin: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
               child: Material(
-                shadowColor: Color.fromRGBO(0, 0, 0, 0.25),
+                shadowColor: const Color.fromRGBO(0, 0, 0, 0.25),
                 borderRadius: BorderRadius.circular(10),
                 elevation: 13,
-                child: ListTile(
-                  title: Text(e.companyName),
-                  leading: Container(
+                child: Row(
+                  
+                  children: [
+                    Container(
                     height: 70,
                     width: 70,
+                    margin: const EdgeInsets.all(0),
                     decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
-                            image: NetworkImage(e.imgURL, scale: 1),
-                            fit: BoxFit.cover)),
-                  ),
-                  subtitle: Text(
-                    DateFormat.yMMMMd().format(e.date),
-                    style: const TextStyle(
-                        fontFamily: 'Quicksand', fontWeight: FontWeight.w900),
-                  ),
-                  trailing: SizedBox(
+                          image: NetworkImage(e.imgURL, scale: 1),
+                          fit: BoxFit.cover))),
+                     Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                        Text(e.companyName, 
+                        style: const TextStyle(fontFamily: "Quicksand",fontSize: 15, fontWeight:FontWeight.w600),),
+                        Text(
+                        DateFormat.yMMMMd().format(e.date),
+                        style: const TextStyle(
+                            fontFamily: 'Quicksand', fontWeight: FontWeight.w900,fontSize: 10),
+                        ),
+                        
+                        ],
+                        
+                        ),
+                     ),
+                      SizedBox(width: MediaQuery.of(context).size.width*0.342,),
+                      SizedBox(
                     height: 70,
                     width: 70,
                     child: Row(
@@ -53,7 +68,7 @@ class TransactionInfo extends StatelessWidget {
                                     fontFamily: 'Poppins Medium'))
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 0.4,
                         ),
                         Text(
@@ -66,6 +81,7 @@ class TransactionInfo extends StatelessWidget {
                       ],
                     ),
                   ),
+                  ],
                 ),
               ),
             );
