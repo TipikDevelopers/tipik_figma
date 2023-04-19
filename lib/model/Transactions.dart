@@ -6,7 +6,7 @@ class Transaction {
   bool isVisa;
   int cardNoDigits;
   String imgURL;
-  String location;
+
   Transaction({
     required this.location,
     required this.companyName,
@@ -15,6 +15,5 @@ class Transaction {
     this.isVisa = true,
     required this.cardNoDigits,
     required this.imgURL,
-    required this.location,
   });
 }
