@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
                     width: size.aspectRatio* size.height *570/390,
                     height: size.aspectRatio* size.height * (330/432),),),
                 Container(
-                  margin: const EdgeInsets.only(top: 20, right: 10),
+                  margin: const EdgeInsets.only(top:20,),
                   child: Column(
                     children: [
                       AppBar(
@@ -389,10 +389,10 @@ class HomePage extends StatelessWidget {
                         height: 210,
                         child: NewsList(newsList: newsList),
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       Container(
                         margin: const EdgeInsets.only(
-                            bottom: 0, top: 0, left: 15, right: 10),
+                            bottom: 0, top: 0, left: 0, right: 0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
