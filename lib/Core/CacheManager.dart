@@ -11,7 +11,7 @@ class CacheManager {
   }
 
   Future<void> setToken(String token) async {
-    print("storing token ${token}");
+    print("storing token $token");
     await storage.write(key: _tokenKey, value: token);
   }
 
