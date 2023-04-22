@@ -226,6 +226,7 @@ class _LoginState extends LoginViewModel with SingleTickerProviderStateMixin {
                   if (_tabController.index == 0) {
                     print("username: ${userNameController.text}");
                     print("password: ${passwordController.text}");
+                    tokenAuthManager!.deleteInit();
                     fetchLogin(tokenAuthManager, userNameController.text,
                         passwordController.text);
                     Navigator.push(context,

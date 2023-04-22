@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import 'package:dio/dio.dart';
+import 'package:tipik_figma/login/SMSViewModel.dart';
 
 class SMSScreen extends StatefulWidget {
   final String phoneNum;
@@ -11,7 +13,7 @@ class SMSScreen extends StatefulWidget {
   State<SMSScreen> createState() => _SMSScreenState();
 }
 
-class _SMSScreenState extends State<SMSScreen> {
+class _SMSScreenState extends SMSViewModel {
   bool isTimeOut = false;
   Timer? timer;
   Duration remaining = const Duration(minutes: 1, seconds: 30);
@@ -57,8 +59,8 @@ class _SMSScreenState extends State<SMSScreen> {
     textStyle: const TextStyle(
         fontSize: 20, color: Colors.black, fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
-      color: const  Color.fromRGBO(217, 217, 217, 1),
-      border: Border.all(color:  const Color.fromRGBO(234, 239, 243, 1)),
+      color: const Color.fromRGBO(217, 217, 217, 1),
+      border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1)),
       borderRadius: BorderRadius.circular(20),
     ),
   );
@@ -85,8 +87,8 @@ class _SMSScreenState extends State<SMSScreen> {
             margin: const EdgeInsets.only(top: 80, bottom: 5),
             child: Text(
               widget.phoneNum,
-              style:
-                  const TextStyle(fontSize: 24, decoration: TextDecoration.underline),
+              style: const TextStyle(
+                  fontSize: 24, decoration: TextDecoration.underline),
             ),
           ),
           TextButton(
@@ -100,7 +102,7 @@ class _SMSScreenState extends State<SMSScreen> {
           Container(
             margin: const EdgeInsets.only(top: 50, bottom: 30),
             child: Pinput(
-              length: 5,
+              length: 6,
               onCompleted: (value) => print(value),
               defaultPinTheme: defaultPinTheme,
               focusedPinTheme: focusedPinTheme,
@@ -116,16 +118,16 @@ class _SMSScreenState extends State<SMSScreen> {
           Center(
             child: Container(
               margin: const EdgeInsets.all(30),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    isTimeOut
-                        ? const Icon(Icons.timer_off_outlined)
-                        : const Icon(Icons.timer_outlined),
-                    Text("${remaining.inMinutes}:${remaining.inSeconds.remainder(60)}",
-                        style: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold))
-                  ]),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                isTimeOut
+                    ? const Icon(Icons.timer_off_outlined)
+                    : const Icon(Icons.timer_outlined),
+                Text(
+                    "${remaining.inMinutes}:${remaining.inSeconds.remainder(60)}",
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold))
+              ]),
             ),
           )
         ],

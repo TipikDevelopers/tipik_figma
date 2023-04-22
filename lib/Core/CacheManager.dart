@@ -23,6 +23,10 @@ class CacheManager {
     return await storage.read(key: _initialKey);
   }
 
+  Future<void> deleteInit() async { // for debugging purpose only
+    await storage.delete(key: _initialKey);
+  }
+
   Future<void> deleteToken() async {
     print("token deleted!");
     await storage.delete(key: _tokenKey);
