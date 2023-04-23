@@ -1,18 +1,22 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import './CacheManager.dart';
 
 class AuthManager extends CacheManager {
   BuildContext ctx;
+  String? token;
   bool isLogin;
   bool initial;
   AuthManager(this.ctx, {this.isLogin = false, this.initial = true}) {
+    token = null;
     fetchInit();
     fetchUserToken();
   }
   Future<void> fetchUserToken() async {
-    final token = await getToken();
+    final tempToken = await getToken();
     if (token != null) {
+      token = tempToken;
       isLogin = true;
     }
   }
@@ -25,3 +29,4 @@ class AuthManager extends CacheManager {
     }
   }
 }
+

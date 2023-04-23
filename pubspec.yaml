@@ -92,6 +92,12 @@ flutter:
     - assets/images/VectorstarEmpty.svg
     - assets/images/VectorstarBold.svg
     - assets/images/Ellipse.svg
+    - assets/images/HalfElipse.svg
+    - assets/images/IntroSlider1.png
+    - assets/images/IntroSlider2.png
+    - assets/images/IntroSlider3.png
+    - assets/images/IntroSlider4.png
+    - assets/images/IntroSlider5.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
