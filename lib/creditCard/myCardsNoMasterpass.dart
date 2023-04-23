@@ -102,7 +102,7 @@ class MyCardsNoMasterpass extends StatelessWidget {
                     'Kart takma adı (Örn: Kişisel Kartım)',
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Color.fromRGBO(90, 89, 89, 1),
                         fontSize: 16.0,
                         fontFamily: 'Quicksand',
                         fontWeight: FontWeight.bold),
@@ -134,7 +134,7 @@ class MyCardsNoMasterpass extends StatelessWidget {
                     'Kart numarası',
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Color.fromRGBO(90, 89, 89, 1),
                         fontSize: 16.0,
                         fontFamily: 'Quicksand',
                         fontWeight: FontWeight.bold),
@@ -154,79 +154,38 @@ class MyCardsNoMasterpass extends StatelessWidget {
                       onTapOutside: (event) =>
                           FocusManager.instance.primaryFocus?.unfocus(),
                     )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 25,
-                      width: 272,
-                      margin: EdgeInsets.only(
-                        top: 20,
-                        left: 20,
-                      ),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Kart son kullanma tarihi',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                            fontFamily: 'Quicksand',
-                            fontWeight: FontWeight.bold),
-                      ),
+                Container(
+                  height: 25,
+                  width: 272,
+                  margin: EdgeInsets.only(
+                    top: 20,
+                    left: 20,
+                  ),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Kart son kullanma tarihi (AA/YY)',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        color: Color.fromRGBO(90, 89, 89, 1),
+                        fontSize: 16.0,
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                    height: 25,
+                    width: 358,
+                    margin: EdgeInsets.only(
+                      top: 20,
+                      left: 20,
                     ),
-                    Container(
-                      height: 25,
-                      width: 61,
-                      margin: EdgeInsets.only(
-                        top: 20,
-                      ),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'CVV',
-                        textAlign: TextAlign.end,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                            fontFamily: 'Quicksand',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        height: 25,
-                        width: 169,
-                        margin: EdgeInsets.only(
-                          top: 20,
-                          left: 20,
-                        ),
-                        alignment: Alignment.topLeft,
-                        child: TextField(
-                          controller: cardLastUsage,
-                          decoration: InputDecoration(),
-                          onTapOutside: (event) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                        )),
-                    Container(
-                        height: 25,
-                        width: 61,
-                        margin: EdgeInsets.only(
-                          top: 20,
-                          right: 20,
-                        ),
-                        alignment: Alignment.topLeft,
-                        child: TextField(
-                          controller: cardCVV,
-                          decoration: InputDecoration(),
-                          onTapOutside: (event) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                        )),
-                  ],
-                ),
+                    alignment: Alignment.topLeft,
+                    child: TextField(
+                      controller: cardLastUsage,
+                      decoration: InputDecoration(),
+                      onTapOutside: (event) =>
+                          FocusManager.instance.primaryFocus?.unfocus(),
+                    )),
                 SizedBox(
                   height: 10,
                 ),
@@ -240,12 +199,12 @@ class MyCardsNoMasterpass extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Kart bilgileriniz Masterpass altyapısında saklanır. Kredi kartınızı tanımlanamanız halinde, telefon numaranıza ait bir MasterPass hesabı oluşturulur. Kart bilgileriniz tarafımızca bilinmemektedir.',
-                    textAlign: TextAlign.end,
+                    textAlign: TextAlign.start,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 14.0,
                         fontFamily: 'Quicksand',
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
                 SizedBox(

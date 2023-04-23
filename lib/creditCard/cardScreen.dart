@@ -105,8 +105,8 @@ class cardScreen extends StatelessWidget {
                     width: 358,
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                         colors: [
                           Color.fromRGBO(253, 200, 48, 1),
                           Color.fromRGBO(234, 115, 53, 1)
@@ -143,7 +143,7 @@ class cardScreen extends StatelessWidget {
                   color: Colors.black,
                   fontSize: 32.0,
                   fontFamily: 'Quicksand',
-                  fontWeight: FontWeight.w900),
+                  fontWeight: FontWeight.bold),
             ),
           ),
           const Positioned(
@@ -157,7 +157,7 @@ class cardScreen extends StatelessWidget {
                 color: Colors.black,
                 fontSize: 20.0,
                 fontFamily: 'Quicksand',
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w300,
               ),
             ),
           ),
@@ -219,27 +219,41 @@ class cardScreen extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(height: 50),
-                                SizedBox(
+                                Container(
                                   height: 75,
                                   width: 198,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(22.0),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                  ),
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            Color.fromRGBO(86, 194, 95, 1),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(22.0))),
-                                    child: const Padding(
+                                      backgroundColor:
+                                          Color.fromRGBO(86, 194, 95, 1),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(22.0),
+                                      ),
+                                    ),
+                                    onPressed: () => Navigator.pop(context),
+                                    child: Padding(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         'Kullan',
                                         style: TextStyle(
-                                            fontSize: 30,
-                                            fontFamily: 'Quicksand',
-                                            fontWeight: FontWeight.w700),
+                                          fontSize: 30,
+                                          fontFamily: 'Quicksand',
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
                                     ),
-                                    onPressed: () => Navigator.pop(context),
                                   ),
                                 ),
                                 const SizedBox(height: 10),
@@ -254,7 +268,7 @@ class cardScreen extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontFamily: 'Quicksand',
-                                        fontWeight: FontWeight.w700,
+                                        fontWeight: FontWeight.normal,
                                         fontSize: 15),
                                   ),
                                 ),
@@ -269,7 +283,7 @@ class cardScreen extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontFamily: 'Quicksand',
-                                        fontWeight: FontWeight.w700,
+                                        fontWeight: FontWeight.normal,
                                         fontSize: 15),
                                   ),
                                 ),
