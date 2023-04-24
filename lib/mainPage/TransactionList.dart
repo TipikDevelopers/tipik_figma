@@ -79,6 +79,7 @@ class TransactionInfo extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
+                                // margin: EdgeInsets.all(4),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
                                   color: const Color.fromRGBO(118, 177, 145, 1),
@@ -110,13 +111,16 @@ class TransactionInfo extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Text(
-                      "${e.amount}₺",
-                      textAlign: TextAlign.right,
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins Medium'),
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      child: Text(
+                        "${e.amount}₺",
+                        textAlign: TextAlign.right,
+                        style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Poppins Medium'),
+                      ),
                     )
                   ],
                 ),

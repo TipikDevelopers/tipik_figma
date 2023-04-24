@@ -15,6 +15,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     List<Comment> comments = [
       Comment(
           time: DateTime.now(),
@@ -83,25 +86,34 @@ class HomePage extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                    top: -115/844*MediaQuery.of(context).size.height,
-                    left: -37.6/844*MediaQuery.of(context).size.height,
-                    child: SvgPicture.asset("assets/images/Ellipse.svg",
-                    width: size.aspectRatio* size.height *570/390,
-                    height: size.aspectRatio* size.height * (330/432),),),
+                  top: -screenHeight / 6,
+                  left: -screenWidth / 10.3,
+                  child: SvgPicture.asset(
+                    "assets/images/Ellipse.svg",
+                    width: size.aspectRatio * size.height * 570 / 390,
+                    height: size.aspectRatio * size.height * (330 / 432),
+                  ),
+                ),
                 Container(
-                  margin: const EdgeInsets.only(top:20,),
+                  margin: const EdgeInsets.only(
+                    top: 20,
+                  ),
                   child: Column(
                     children: [
                       AppBar(
                         //leading: Icon(Icons.menu_rounded),
                         toolbarHeight: 35,
+
                         centerTitle: true,
-                        title: const Text(
-                          "Merhaba, Arda",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontFamily: 'Comfortaa',
-                              fontWeight: FontWeight.w300),
+                        title: Container(
+                          padding: EdgeInsets.only(top: 10),
+                          child: const Text(
+                            "Merhaba, Arda",
+                            style: TextStyle(
+                                fontSize: 19,
+                                fontFamily: 'Comfortaa',
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         elevation: 0,
                         backgroundColor: Colors.transparent,
@@ -130,14 +142,17 @@ class HomePage extends StatelessWidget {
                                           color: Colors.white,
                                           size: 20)),
                                 ),
-                                const Text(
-                                  "Kartlarım",
-                                  textAlign: TextAlign.right,
-                                  style: TextStyle(
-                                      fontFamily: "Manrope",
-                                      color: Colors.white,
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
+                                Container(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: const Text(
+                                    "Kartlarım",
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                        fontFamily: "Manrope",
+                                        color: Colors.white,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ],
                             ),
@@ -148,32 +163,41 @@ class HomePage extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 0),
-                        width: double.infinity,
-                        child: const Text(
-                          "172,50 ₺",
-                          style: TextStyle(
-                            fontSize: 35,
-                            color: Colors.white,
-                            fontFamily: 'Poppins Bold',
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 0),
+                            width: double.infinity,
+                            child: const Text(
+                              "172,50 ₺",
+                              style: TextStyle(
+                                fontSize: 43,
+                                color: Colors.white,
+                                fontFamily: 'Poppins Bold',
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                          textAlign: TextAlign.center,
-                        ),
+                          Container(
+                            //padding: EdgeInsets.only(top: ),
+                            child: const Text(
+                              "Bu Ay Bağışladınız",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Comfortaa'),
+                            ),
+                          ),
+                        ],
                       ),
-                      const Text(
-                        "Bu ay bağışladınız",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontFamily: 'Comfortaa'),
-                      ),
+
                       const SizedBox(
                         height: 30,
                       ),
                       Container(
                         margin: const EdgeInsets.only(
-                            right: 15, left: 15, top: 5, bottom: 5),
+                            right: 10, left: 15, top: 5, bottom: 5),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -392,7 +416,7 @@ class HomePage extends StatelessWidget {
                       const SizedBox(height: 25),
                       Container(
                         margin: const EdgeInsets.only(
-                            bottom: 0, top: 0, left: 0, right: 0),
+                            bottom: 0, top: 10, left: 15, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

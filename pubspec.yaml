@@ -92,7 +92,7 @@ flutter:
     - assets/images/VectorstarEmpty.svg
     - assets/images/VectorstarBold.svg
     - assets/images/Ellipse.svg
-    - assets/images/HalfElipse.svg
+    #- assets/images/HalfElipse.svg
     - assets/images/IntroSlider1.png
     - assets/images/IntroSlider2.png
     - assets/images/IntroSlider3.png
