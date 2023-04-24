@@ -30,51 +30,63 @@ class NavBar extends StatelessWidget {
         ),
         backgroundColor: const Color.fromRGBO(255, 173, 51, 1),
         child: ListView(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.only(top: 50, left: 10),
           children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: SizedBox(
-                child: SvgPicture.asset(
-                  'assets/images/tipik.svg',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 120,
-                ),
-              ),
-              //margin: EdgeInsets.only(bottom: 15),
-              accountName: Column(
-                children: [
-                  SizedBox(
-                    height: 16,
+            Row(
+              children: [
+                SizedBox(
+                  child: SvgPicture.asset(
+                    'assets/images/tipik.svg',
+                    fit: BoxFit.cover,
+                    width: 80,
+                    height: 80,
                   ),
-                  Text(
-                    "Arda Okyay",
-                    style: TextStyle(
-                      fontFamily: 'Comfortaa',
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                //margin: EdgeInsets.only(bottom: 15),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      child: Text(
+                        "Arda Okyay",
+                        style: TextStyle(
+                          fontFamily: 'Comfortaa',
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              accountEmail: const Text(
-                "+90 5396635403",
-                style: TextStyle(
-                  fontFamily: 'Comfortaa',
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "+90 5396635403",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 173, 51, 1),
-                /*image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: SvgPicture.asset('assets/images/tipik.svg'),
-                ),*/
-              ),
+              ],
             ),
+            SizedBox(
+              height: 10,
+            ),
+            const Divider(color: Colors.white),
             ListTile(
               leading: SvgPicture.asset('assets/images/kartlar.svg'),
+              // minVerticalPadding: 0,
+
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Kartlarım",
                 style: TextStyle(
@@ -97,6 +109,8 @@ class NavBar extends StatelessWidget {
             const Divider(color: Colors.white),
             ListTile(
               leading: SvgPicture.asset('assets/images/ayarlar.svg'),
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Ayarlar",
                 style: TextStyle(
@@ -115,6 +129,8 @@ class NavBar extends StatelessWidget {
                     context, MaterialPageRoute(builder: (context) => yardim()));
               },
               leading: SvgPicture.asset('assets/images/Yardım.svg'),
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Yardım",
                 style: TextStyle(
@@ -127,6 +143,8 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Deger.svg'),
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Değerlendirmeler",
                 style: TextStyle(
@@ -145,10 +163,10 @@ class NavBar extends StatelessWidget {
                               commentList: commentList,
                             )));
               },
-              trailing: ClipOval(
+              trailing: ClipRect(
                 child: Container(
                   color: Colors.white,
-                  width: 20,
+                  width: 30,
                   height: 20,
                   child: const Center(
                     child: Text(
@@ -164,6 +182,8 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/News.svg'),
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Haberler/Kampanyalar",
                 //textAlign: TextAlign.left,
@@ -179,6 +199,8 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/Islemler.svg'),
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Tüm İşlemlerim",
                 style: TextStyle(
@@ -191,16 +213,18 @@ class NavBar extends StatelessWidget {
               onTap: () => {}, //TODO
             ),
             const SizedBox(
-              height: 50,
+              height: 80,
             ),
             const Divider(color: Colors.white),
             ListTile(
               leading: SvgPicture.asset('assets/images/Cikis.svg'),
+              minLeadingWidth: 5,
+              horizontalTitleGap: 12,
               title: const Text(
                 "Çıkış Yap",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 20,
+                  fontSize: 28,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
