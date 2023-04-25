@@ -95,14 +95,14 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(
-                    top: 20,
+                  margin: EdgeInsets.only(
+                    top: screenHeight / 45,
                   ),
                   child: Column(
                     children: [
                       AppBar(
                         //leading: Icon(Icons.menu_rounded),
-                        toolbarHeight: 35,
+                        toolbarHeight: screenHeight / 20,
 
                         centerTitle: true,
                         title: Container(
@@ -119,13 +119,13 @@ class HomePage extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         actions: [
                           SizedBox(
-                            height: 25,
+                            height: screenHeight / 35,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 SizedBox(
-                                  height: 20,
-                                  width: 20,
+                                  height: screenHeight / 42,
+                                  width: screenWidth / 19,
                                   child: IconButton(
                                       padding: const EdgeInsets.all(0),
                                       iconSize: 20,
@@ -160,8 +160,8 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       // Kartlarım yazısı düzelt!!!!!!!!!!!!!!!!!!!
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: screenHeight / 45,
                       ),
                       Column(
                         children: [

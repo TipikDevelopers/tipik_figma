@@ -16,6 +16,8 @@ class NavBar extends StatelessWidget {
   const NavBar({required this.commentList, required this.newsList});
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return ClipRRect(
       borderRadius: const BorderRadius.only(
         topRight: Radius.circular(60.0),
@@ -91,7 +93,7 @@ class NavBar extends StatelessWidget {
                 "Kartlarım",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 24,
+                  fontSize: 22,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
@@ -115,7 +117,7 @@ class NavBar extends StatelessWidget {
                 "Ayarlar",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
@@ -135,7 +137,7 @@ class NavBar extends StatelessWidget {
                 "Yardım",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
@@ -149,7 +151,7 @@ class NavBar extends StatelessWidget {
                 "Değerlendirmeler",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
@@ -163,19 +165,30 @@ class NavBar extends StatelessWidget {
                               commentList: commentList,
                             )));
               },
-              trailing: ClipRect(
-                child: Container(
+              trailing: Container(
+                // margin: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 7,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(15),
                   color: Colors.white,
-                  width: 30,
-                  height: 20,
-                  child: const Center(
-                    child: Text(
-                      '2',
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 173, 51, 1),
-                        fontSize: 12,
-                      ),
-                    ),
+                ),
+                //color: const Color.fromRGBO(118, 177, 145, 1),
+                width: 40 / 390 * screenWidth,
+                height: 28 / 844 * screenHeight,
+                child: Text(
+                  "1",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Karla',
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromRGBO(212, 169, 103, 1),
                   ),
                 ),
               ),
@@ -189,7 +202,7 @@ class NavBar extends StatelessWidget {
                 //textAlign: TextAlign.left,
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
@@ -205,7 +218,7 @@ class NavBar extends StatelessWidget {
                 "Tüm İşlemlerim",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
@@ -224,7 +237,7 @@ class NavBar extends StatelessWidget {
                 "Çıkış Yap",
                 style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 28,
+                  fontSize: 27,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                 ),
