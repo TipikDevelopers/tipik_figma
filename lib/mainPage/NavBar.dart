@@ -44,7 +44,7 @@ class NavBar extends StatelessWidget {
                     height: 80,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 //margin: EdgeInsets.only(bottom: 15),
@@ -52,7 +52,7 @@ class NavBar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      child: Text(
+                      child: const Text(
                         "Arda Okyay",
                         style: TextStyle(
                           fontFamily: 'Comfortaa',
@@ -62,10 +62,10 @@ class NavBar extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       "+90 5396635403",
                       textAlign: TextAlign.left,
                       style: TextStyle(

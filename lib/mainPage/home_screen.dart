@@ -143,7 +143,7 @@ class HomePage extends StatelessWidget {
                                           size: 20)),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.only(right: 10),
+                                  padding: const EdgeInsets.only(right: 10),
                                   child: const Text(
                                     "Kartlarım",
                                     textAlign: TextAlign.right,

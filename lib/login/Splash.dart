@@ -20,7 +20,7 @@ class _SplashState extends State<Splash> {
   Future controlToApp() async {
     await readAuth.fetchUserToken();
     String? first = await readAuth.getInitial();
-    if(first == null){Navigator.of(context).push(MaterialPageRoute(builder: ((context) => SliderIntro())));}
+    if(first == null){Navigator.of(context).push(MaterialPageRoute(builder: ((context) => Scaffold(body: SliderIntro()))));}
     else if (readAuth.isLogin) {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: ((context) => HomePage())));

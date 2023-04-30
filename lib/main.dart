@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: const SafeArea(child: Splash()),
         theme: ThemeData(
             scaffoldBackgroundColor: const Color.fromRGBO(246, 246, 246, 1)
