@@ -7,8 +7,22 @@ class telLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+        SizedBox(
+          height: 350,
+          width: 350,
+          child: Image.asset("assets/images/LoginLogo.png"),
+        ),
+        Container(
+          margin: EdgeInsets.all(25),
+          child: const Text("Hoşgeldin",style: TextStyle(fontFamily: "Comfortaa",fontSize: 32),),
+        ),
+        Text("Devam etmek için telefon numaranı gir.")
+      ]),
+
     );
   }
 }

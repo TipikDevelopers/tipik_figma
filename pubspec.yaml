@@ -98,8 +98,9 @@ flutter:
     - assets/images/IntroSlider3.png
     - assets/images/IntroSlider4.png
     - assets/images/IntroSlider5.png
-
-
+    - assets/images/DashedRing.svg
+    - assets/images/LogoTipik.svg
+    - assets/images/LoginLogo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

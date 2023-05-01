@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tipik_figma/Core/AuthManager.dart';
 import 'package:provider/provider.dart';
+import 'package:tipik_figma/login/FirstInstall.dart';
 import 'package:tipik_figma/login/introslider/FirstIntro.dart';
 import 'package:tipik_figma/login/login_screen.dart';
 import 'package:tipik_figma/mainPage/home_screen.dart';
@@ -20,7 +21,7 @@ class _SplashState extends State<Splash> {
   Future controlToApp() async {
     await readAuth.fetchUserToken();
     String? first = await readAuth.getInitial();
-    if(first == null){Navigator.of(context).push(MaterialPageRoute(builder: ((context) => Scaffold(body: SliderIntro()))));}
+    if(first == null){Navigator.of(context).push(MaterialPageRoute(builder: ((context) => const Scaffold(body: FirstPage()))));}
     else if (readAuth.isLogin) {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: ((context) => HomePage())));
