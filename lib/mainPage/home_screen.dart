@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tipik_figma/mainPage/NewsList.dart';
 import 'package:tipik_figma/mainPage/comments.dart';
 import '../creditCard/cardScreen.dart';
+import '../creditCard/myCards.dart';
 import '../model/Comment.dart';
 import '../model/News.dart';
 import '../model/Transactions.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final hasCards = false;
     MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
 
     double screenWidth = MediaQuery.of(context).size.width;
@@ -130,12 +132,21 @@ class HomePage extends StatelessWidget {
                                       padding: const EdgeInsets.all(0),
                                       iconSize: 20,
                                       onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    cardScreen(
-                                                        cardList: const [])));
+                                        //Öykü değiştirdi, kart durumuna göre gidilecek rotayı belirliyor.
+                                        if (hasCards) {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      cardScreen(
+                                                          cardList: const [])));
+                                        } else {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => MyCards(
+                                                      cardList: const [])));
+                                        }
                                       },
                                       icon: const Icon(
                                           Icons.credit_card_rounded,

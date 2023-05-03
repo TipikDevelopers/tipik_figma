@@ -44,7 +44,7 @@ class cardScreen extends StatelessWidget {
               height: 200,
               width: 308,
               child: Opacity(
-                opacity: 0.5,
+                opacity: 0.8,
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
@@ -70,7 +70,7 @@ class cardScreen extends StatelessWidget {
             height: 200,
             width: 342,
             child: Opacity(
-              opacity: 0.5,
+              opacity: 0.3,
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),

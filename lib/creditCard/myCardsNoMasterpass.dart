@@ -1,11 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyCardsNoMasterpass extends StatelessWidget {
+class MyCardsNoMasterpass extends StatefulWidget {
+  @override
+  State<MyCardsNoMasterpass> createState() => _MyCardsNoMasterpassState();
+}
+
+class _MyCardsNoMasterpassState extends State<MyCardsNoMasterpass> {
   final cardNickname = TextEditingController();
   final cardNumber = TextEditingController();
   final cardLastUsage = TextEditingController();
   final cardCVV = TextEditingController();
+  bool accountAgreement = false;
+  bool sozlesme = false;
 
   @override
   Widget build(BuildContext context) {
@@ -215,16 +222,26 @@ class MyCardsNoMasterpass extends StatelessWidget {
                     height: 30,
                     width: 323,
                     margin: EdgeInsets.only(
-                      top: 20,
-                      left: 20,
+                      left: 10,
                     ),
                     alignment: Alignment.topLeft,
                     child: Row(
                       children: [
-                        /*Checkbox(
-                          value: false,
-                          onChanged: () {},
-                        ),*/
+                        Theme(
+                          data: ThemeData(
+                            unselectedWidgetColor: Color.fromRGBO(0, 96, 179,
+                                1), // set the border color of the checkbox
+                          ),
+                          child: Checkbox(
+                            value:
+                                false, // set the initial value of the checkbox
+                            onChanged: (bool? value) {
+                              setState(() {
+                                accountAgreement = value!;
+                              });
+                            },
+                          ),
+                        ),
                         Text(
                           'Masterpass hesabı oluşturulmasını onaylıyorum.',
                           textAlign: TextAlign.start,
@@ -238,18 +255,29 @@ class MyCardsNoMasterpass extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 72,
+                    height: 40,
                     width: 323,
                     margin: EdgeInsets.only(
-                      left: 20,
+                      left: 10,
                     ),
                     alignment: Alignment.topLeft,
                     child: Row(
                       children: [
-                        /*Checkbox(
-        value: false,
-        onChanged: () {},
-      ),*/
+                        Theme(
+                          data: ThemeData(
+                            unselectedWidgetColor:
+                                Color.fromRGBO(0, 96, 179, 1),
+                          ),
+                          child: Checkbox(
+                            value:
+                                false, // set the initial value of the checkbox
+                            onChanged: (bool? value) {
+                              setState(() {
+                                sozlesme = value!;
+                              });
+                            },
+                          ),
+                        ),
                         Expanded(
                           child: Text(
                             'Masterpass kullanıcı sözleşmesini okudum ve kabul ediyorum.',
@@ -263,6 +291,57 @@ class MyCardsNoMasterpass extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  Container(
+                    height: 72,
+                    width: 323,
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: Container(
+                      child: const Image(
+                        width: 134,
+                        height: 61,
+                        image: NetworkImage(
+                            'https://www.masterpassturkiye.com/files/01.png'),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 75,
+                    width: 198,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromRGBO(86, 194, 95, 1),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(22.0),
+                        ),
+                      ),
+                      onPressed: () => Navigator.pop(context),
+                      child: Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Text(
+                          'Kullan',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: 'Quicksand',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
