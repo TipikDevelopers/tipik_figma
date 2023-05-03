@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:card_swiper/card_swiper.dart';
 
 class MyCards extends StatefulWidget {
   List<int> cardList;
@@ -37,6 +38,17 @@ class _MyCardsState extends State<MyCards> {
             centerTitle: true,
           ),
         ),
-        body: Container());
+        body: Container(
+            child: Swiper(
+          itemHeight: 30,
+          itemBuilder: (BuildContext context, int index) {
+            return new Image.network(
+              "http://via.placeholder.com/288x188",
+            );
+          },
+          itemCount: 10,
+          viewportFraction: 0.8,
+          scale: 0.9,
+        )));
   }
 }
