@@ -182,7 +182,7 @@ class HomePage extends StatelessWidget {
                             child: const Text(
                               "172,50 ₺",
                               style: TextStyle(
-                                fontSize: 43,
+                                fontSize: 30,
                                 color: Colors.white,
                                 fontFamily: 'Poppins Bold',
                               ),
