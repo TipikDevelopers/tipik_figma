@@ -17,7 +17,7 @@ class _MyCardsNoMasterpassState extends State<MyCardsNoMasterpass> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    double screenHeight = MediaQuery.of(context).size.height - 200;
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(70.0),
