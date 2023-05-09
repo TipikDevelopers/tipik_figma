@@ -7,9 +7,11 @@ import '../creditCard/myCards.dart';
 import '../model/Comment.dart';
 import '../model/News.dart';
 import '../model/Transactions.dart';
+import '../nfcTagPage/CircularSlider.dart';
 import './TransactionList.dart';
 import '../haberler/haberler.dart';
 import 'NavBar.dart';
+//import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -248,19 +250,41 @@ class HomePage extends StatelessWidget {
                                                       children: <Widget>[
                                                         Positioned(
                                                             child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
+                                                          borderRadius: const BorderRadius
+                                                                  .only(
+                                                              topLeft: Radius
+                                                                  .circular(40),
+                                                              topRight: Radius
+                                                                  .circular(40),
+                                                              bottomLeft: Radius
+                                                                  .circular(90),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          90)),
                                                           child: Stack(
                                                             children: [
-                                                              SizedBox(
-                                                                height: 320,
-                                                                child: Image
-                                                                    .network(
-                                                                  'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020',
-                                                                  fit: BoxFit
-                                                                      .cover,
+                                                              Container(
+                                                                height:
+                                                                    screenHeight *
+                                                                        450 /
+                                                                        844,
+                                                                decoration:
+                                                                    const BoxDecoration(
+                                                                  image:
+                                                                      DecorationImage(
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                    image: NetworkImage(
+                                                                        'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020'),
+                                                                  ),
+                                                                  borderRadius: BorderRadius.only(
+                                                                      bottomLeft:
+                                                                          Radius.circular(
+                                                                              90),
+                                                                      bottomRight:
+                                                                          Radius.circular(
+                                                                              90)),
                                                                 ),
                                                               ),
                                                               Positioned.fill(
@@ -354,6 +378,14 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         ),
                                                       ]),
+                                                  Container(
+                                                    alignment: Alignment.center,
+                                                    child: SizedBox(
+                                                      height: 200,
+                                                      width: 200,
+                                                      child: CircularSlider(),
+                                                    ),
+                                                  ),
                                                   const SizedBox(height: 10),
                                                   //SleekCircularSlider(),
                                                   /*Container(

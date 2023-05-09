@@ -33,6 +33,7 @@ dependencies:
   flutter_svg: any
   curved_navigation_bar: ^1.0.3
   image_gradient: ^0.0.2
+  sleek_circular_slider : ^1.1.0
 
 
 
@@ -141,4 +142,3 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-sleek_circular_slider : ^lastest_version
