@@ -378,14 +378,16 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         ),
                                                       ]),
-                                                  Container(
-                                                    alignment: Alignment.center,
+                                                  Positioned(
+                                                    top: 100,
+                                                    left: 100,
                                                     child: SizedBox(
                                                       height: 200,
                                                       width: 200,
                                                       child: CircularSlider(),
                                                     ),
                                                   ),
+
                                                   const SizedBox(height: 10),
                                                   //SleekCircularSlider(),
                                                   /*Container(
@@ -404,7 +406,6 @@ class HomePage extends StatelessWidget {
                                                           fontSize: 50),
                                                     ),
                                                   ),*/
-                                                  const SizedBox(height: 10),
                                                 ],
                                               ),
                                             );
