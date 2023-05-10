@@ -245,6 +245,7 @@ class HomePage extends StatelessWidget {
                                                     CrossAxisAlignment.center,
                                                 children: <Widget>[
                                                   Stack(
+                                                      clipBehavior: Clip.none,
                                                       alignment:
                                                           Alignment.center,
                                                       children: <Widget>[
@@ -263,6 +264,8 @@ class HomePage extends StatelessWidget {
                                                                       .circular(
                                                                           90)),
                                                           child: Stack(
+                                                            clipBehavior:
+                                                                Clip.none,
                                                             children: [
                                                               Container(
                                                                 height:
@@ -377,35 +380,106 @@ class HomePage extends StatelessWidget {
                                                             ],
                                                           ),
                                                         ),
+                                                        Positioned(
+                                                            top: 330,
+                                                            left: 100,
+                                                            child:
+                                                                CircularSlider()),
                                                       ]),
-                                                  Positioned(
-                                                    top: 100,
-                                                    left: 100,
-                                                    child: SizedBox(
-                                                      height: 200,
-                                                      width: 200,
-                                                      child: CircularSlider(),
+
+                                                  // const SizedBox(height: 10),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        top: 130),
+                                                    child: Center(
+                                                      child: Column(
+                                                        children: [
+                                                          Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .star_border_rounded,
+                                                                size: 50,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        253,
+                                                                        200,
+                                                                        48,
+                                                                        1),
+                                                              ),
+                                                              Icon(
+                                                                Icons
+                                                                    .star_border_rounded,
+                                                                size: 50,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        253,
+                                                                        200,
+                                                                        48,
+                                                                        1),
+                                                              ),
+                                                              Icon(
+                                                                Icons
+                                                                    .star_border_rounded,
+                                                                size: 50,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        253,
+                                                                        200,
+                                                                        48,
+                                                                        1),
+                                                              ),
+                                                              Icon(
+                                                                Icons
+                                                                    .star_border_rounded,
+                                                                size: 50,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        253,
+                                                                        200,
+                                                                        48,
+                                                                        1),
+                                                              ),
+                                                              Icon(
+                                                                Icons
+                                                                    .star_border_rounded,
+                                                                size: 50,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        253,
+                                                                        200,
+                                                                        48,
+                                                                        1),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          TextButton(
+                                                              onPressed: () {},
+                                                              child: Text(
+                                                                "Yorum yapmak için dokunun",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontFamily:
+                                                                      'Quicksand',
+                                                                  fontSize: 12,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  color: Color
+                                                                      .fromRGBO(
+                                                                          118,
+                                                                          118,
+                                                                          118,
+                                                                          1),
+                                                                ),
+                                                              )),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
-
-                                                  const SizedBox(height: 10),
-                                                  //SleekCircularSlider(),
-                                                  /*Container(
-                                                    margin: const EdgeInsets.only(
-                                                      left: 40,
-                                                      right: 40,
-                                                    ),
-                                                    child: const Text(
-                                                      '5',
-                                                      textAlign: TextAlign.center,
-                                                      style: TextStyle(
-                                                          fontFamily:
-                                                              'Poppins Bold',
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          fontSize: 50),
-                                                    ),
-                                                  ),*/
                                                 ],
                                               ),
                                             );
