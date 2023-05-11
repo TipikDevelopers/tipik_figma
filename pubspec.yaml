@@ -104,6 +104,8 @@ flutter:
     - assets/images/DashedRing.svg
     - assets/images/LogoTipik.svg
     - assets/images/LoginLogo.png
+    - assets/images/Vectorstarbig.svg
+    - assets/images/Arrow 1ok.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

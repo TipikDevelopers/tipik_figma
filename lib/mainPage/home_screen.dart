@@ -224,6 +224,8 @@ class HomePage extends StatelessWidget {
                             TextButton(
                                 onPressed: () => {
                                       showModalBottomSheet<void>(
+                                          backgroundColor:
+                                              Color.fromRGBO(245, 245, 245, 1),
                                           context: context,
                                           isScrollControlled: true,
                                           shape: const RoundedRectangleBorder(
@@ -270,7 +272,7 @@ class HomePage extends StatelessWidget {
                                                               Container(
                                                                 height:
                                                                     screenHeight *
-                                                                        450 /
+                                                                        400 /
                                                                         844,
                                                                 decoration:
                                                                     const BoxDecoration(
@@ -381,101 +383,300 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         ),
                                                         Positioned(
-                                                            top: 330,
+                                                            top: 300,
                                                             left: 100,
                                                             child:
                                                                 CircularSlider()),
                                                       ]),
-
-                                                  // const SizedBox(height: 10),
+                                                  const SizedBox(height: 20),
                                                   Container(
                                                     padding: EdgeInsets.only(
                                                         top: 130),
                                                     child: Center(
-                                                      child: Column(
+                                                      child: Stack(
                                                         children: [
-                                                          Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
+                                                          Column(
                                                             children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .star_border_rounded,
-                                                                size: 50,
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        253,
-                                                                        200,
-                                                                        48,
-                                                                        1),
+                                                              Row(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                children: [
+                                                                  GestureDetector(
+                                                                    child: SvgPicture
+                                                                        .asset(
+                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    onTap:
+                                                                        () {},
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width: 5,
+                                                                  ),
+                                                                  GestureDetector(
+                                                                    child: SvgPicture
+                                                                        .asset(
+                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    onTap:
+                                                                        () {},
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width: 5,
+                                                                  ),
+                                                                  GestureDetector(
+                                                                    child: SvgPicture
+                                                                        .asset(
+                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    onTap:
+                                                                        () {},
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width: 5,
+                                                                  ),
+                                                                  GestureDetector(
+                                                                    child: SvgPicture
+                                                                        .asset(
+                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    onTap:
+                                                                        () {},
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width: 5,
+                                                                  ),
+                                                                  GestureDetector(
+                                                                    child: SvgPicture
+                                                                        .asset(
+                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    onTap:
+                                                                        () {},
+                                                                  ),
+                                                                ],
                                                               ),
-                                                              Icon(
-                                                                Icons
-                                                                    .star_border_rounded,
-                                                                size: 50,
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        253,
-                                                                        200,
-                                                                        48,
-                                                                        1),
+                                                              SizedBox(
+                                                                height: 5,
                                                               ),
-                                                              Icon(
-                                                                Icons
-                                                                    .star_border_rounded,
-                                                                size: 50,
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        253,
-                                                                        200,
-                                                                        48,
-                                                                        1),
+                                                              GestureDetector(
+                                                                onTap: () {},
+                                                                child: Text(
+                                                                  "Yorum yapmak için dokunun",
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: Color
+                                                                        .fromRGBO(
+                                                                            118,
+                                                                            118,
+                                                                            118,
+                                                                            1),
+                                                                    fontFamily:
+                                                                        'Quicksand',
+                                                                    fontSize:
+                                                                        12,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                                ),
                                                               ),
-                                                              Icon(
-                                                                Icons
-                                                                    .star_border_rounded,
-                                                                size: 50,
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        253,
-                                                                        200,
-                                                                        48,
-                                                                        1),
+                                                              SizedBox(
+                                                                height: 5,
                                                               ),
-                                                              Icon(
-                                                                Icons
-                                                                    .star_border_rounded,
-                                                                size: 50,
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        253,
-                                                                        200,
-                                                                        48,
-                                                                        1),
-                                                              ),
+                                                              GestureDetector(
+                                                                child:
+                                                                    Container(
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .center,
+                                                                  height: 60 /
+                                                                      844 *
+                                                                      screenHeight,
+                                                                  width: 300 /
+                                                                      344 *
+                                                                      screenWidth,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            20),
+                                                                    color: Color
+                                                                        .fromRGBO(
+                                                                            86,
+                                                                            194,
+                                                                            95,
+                                                                            1),
+                                                                  ),
+                                                                  child: Row(
+                                                                    children: [
+                                                                      Container(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              20,
+                                                                        ),
+                                                                      ),
+                                                                      Container(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          children: [
+                                                                            Container(
+                                                                              // margin: EdgeInsets.all(4),
+                                                                              decoration: BoxDecoration(
+                                                                                borderRadius: BorderRadius.circular(5),
+                                                                                color: const Color.fromRGBO(118, 177, 145, 1),
+                                                                              ),
+                                                                              //color: const Color.fromRGBO(118, 177, 145, 1),
+                                                                              width: 37 / 390 * screenWidth,
+                                                                              height: 33 / 844 * screenHeight,
+                                                                              child: SizedBox(
+                                                                                height: 11 / 844 * screenHeight,
+                                                                                width: 28 / 390 * screenWidth,
+                                                                                child: Padding(
+                                                                                  padding: const EdgeInsets.all(4.0),
+                                                                                  child: Center(child: Image.network("https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Text(
+                                                                              "**40",
+                                                                              style: const TextStyle(
+                                                                                fontFamily: 'Manrope',
+                                                                                fontSize: 11,
+                                                                                fontWeight: FontWeight.bold,
+                                                                              ),
+                                                                            )
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            30,
+                                                                      ),
+                                                                      Container(
+                                                                        child:
+                                                                            Text(
+                                                                          "Onaylıyorum",
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontFamily:
+                                                                                'Comfortaa',
+                                                                            fontSize:
+                                                                                26,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            color:
+                                                                                Colors.white,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              )
+
+                                                              /* Positioned(
+                                                                top: 140,
+                                                                child:
+                                                                    TextButton(
+                                                                        onPressed:
+                                                                            () {},
+                                                                        child:
+                                                                            Text(
+                                                                          "Yorum yapmak için dokunun",
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontFamily:
+                                                                                'Quicksand',
+                                                                            fontSize:
+                                                                                12,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                            color: Color.fromRGBO(
+                                                                                118,
+                                                                                118,
+                                                                                118,
+                                                                                1),
+                                                                          ),
+                                                                        )),
+                                                              ),*/
+                                                              /* Container(
+                                                                height: 10 /
+                                                                    844 *
+                                                                    screenHeight,
+                                                                child:
+                                                                    ElevatedButton(
+                                                                  onPressed: () {},
+                                                                  child: Row(
+                                                                    children: [
+                                                                      Column(
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment
+                                                                                .center,
+                                                                        children: [
+                                                                          Container(
+                                                                            // margin: EdgeInsets.all(4),
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              borderRadius:
+                                                                                  BorderRadius.circular(5),
+                                                                              color: const Color.fromRGBO(
+                                                                                  118,
+                                                                                  177,
+                                                                                  145,
+                                                                                  1),
+                                                                            ),
+                                                                            //color: const Color.fromRGBO(118, 177, 145, 1),
+                                                                            width: 37 /
+                                                                                390 *
+                                                                                screenWidth,
+                                                                            height: 10 /
+                                                                                844 *
+                                                                                screenHeight,
+                                                                            child:
+                                                                                SizedBox(
+                                                                              height: 11 /
+                                                                                  844 *
+                                                                                  screenHeight,
+                                                                              width: 28 /
+                                                                                  390 *
+                                                                                  screenWidth,
+                                                                              child:
+                                                                                  Padding(
+                                                                                padding:
+                                                                                    const EdgeInsets.all(4.0),
+                                                                                child:
+                                                                                    Center(child: Image.network("https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          Text(
+                                                                            "**40",
+                                                                            style:
+                                                                                const TextStyle(
+                                                                              fontFamily:
+                                                                                  'Manrope',
+                                                                              fontSize:
+                                                                                  11,
+                                                                              fontWeight:
+                                                                                  FontWeight.bold,
+                                                                            ),
+                                                                          )
+                                                                        ],
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              )*/
                                                             ],
                                                           ),
-                                                          TextButton(
-                                                              onPressed: () {},
-                                                              child: Text(
-                                                                "Yorum yapmak için dokunun",
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontFamily:
-                                                                      'Quicksand',
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  color: Color
-                                                                      .fromRGBO(
-                                                                          118,
-                                                                          118,
-                                                                          118,
-                                                                          1),
-                                                                ),
-                                                              )),
                                                         ],
                                                       ),
                                                     ),
