@@ -272,7 +272,7 @@ class HomePage extends StatelessWidget {
                                                               Container(
                                                                 height:
                                                                     screenHeight *
-                                                                        400 /
+                                                                        350 /
                                                                         844,
                                                                 decoration:
                                                                     const BoxDecoration(
@@ -318,7 +318,7 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         )),
                                                         Positioned(
-                                                          top: 60,
+                                                          top: 30,
                                                           child: Column(
                                                             children: <Widget>[
                                                               const CircleAvatar(
@@ -332,7 +332,6 @@ class HomePage extends StatelessWidget {
                                                                 margin:
                                                                     const EdgeInsets
                                                                         .only(
-                                                                  top: 10,
                                                                   left: 40,
                                                                   right: 40,
                                                                 ),
@@ -383,7 +382,7 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         ),
                                                         Positioned(
-                                                            top: 300,
+                                                            top: 260,
                                                             left: 100,
                                                             child:
                                                                 CircularSlider()),
@@ -406,9 +405,15 @@ class HomePage extends StatelessWidget {
                                                                         .min,
                                                                 children: [
                                                                   GestureDetector(
-                                                                    child: SvgPicture
-                                                                        .asset(
-                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    child:
+                                                                        Container(
+                                                                      height:
+                                                                          45,
+                                                                      width: 45,
+                                                                      child: SvgPicture
+                                                                          .asset(
+                                                                              "assets/images/Vectorstarbig.svg"),
+                                                                    ),
                                                                     onTap:
                                                                         () {},
                                                                   ),
@@ -416,9 +421,15 @@ class HomePage extends StatelessWidget {
                                                                     width: 5,
                                                                   ),
                                                                   GestureDetector(
-                                                                    child: SvgPicture
-                                                                        .asset(
-                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    child:
+                                                                        Container(
+                                                                      height:
+                                                                          45,
+                                                                      width: 45,
+                                                                      child: SvgPicture
+                                                                          .asset(
+                                                                              "assets/images/Vectorstarbig.svg"),
+                                                                    ),
                                                                     onTap:
                                                                         () {},
                                                                   ),
@@ -426,9 +437,15 @@ class HomePage extends StatelessWidget {
                                                                     width: 5,
                                                                   ),
                                                                   GestureDetector(
-                                                                    child: SvgPicture
-                                                                        .asset(
-                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    child:
+                                                                        Container(
+                                                                      height:
+                                                                          45,
+                                                                      width: 45,
+                                                                      child: SvgPicture
+                                                                          .asset(
+                                                                              "assets/images/Vectorstarbig.svg"),
+                                                                    ),
                                                                     onTap:
                                                                         () {},
                                                                   ),
@@ -436,9 +453,15 @@ class HomePage extends StatelessWidget {
                                                                     width: 5,
                                                                   ),
                                                                   GestureDetector(
-                                                                    child: SvgPicture
-                                                                        .asset(
-                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    child:
+                                                                        Container(
+                                                                      height:
+                                                                          45,
+                                                                      width: 45,
+                                                                      child: SvgPicture
+                                                                          .asset(
+                                                                              "assets/images/Vectorstarbig.svg"),
+                                                                    ),
                                                                     onTap:
                                                                         () {},
                                                                   ),
@@ -446,9 +469,15 @@ class HomePage extends StatelessWidget {
                                                                     width: 5,
                                                                   ),
                                                                   GestureDetector(
-                                                                    child: SvgPicture
-                                                                        .asset(
-                                                                            "assets/images/Vectorstarbig.svg"),
+                                                                    child:
+                                                                        Container(
+                                                                      height:
+                                                                          45,
+                                                                      width: 45,
+                                                                      child: SvgPicture
+                                                                          .asset(
+                                                                              "assets/images/Vectorstarbig.svg"),
+                                                                    ),
                                                                     onTap:
                                                                         () {},
                                                                   ),
@@ -480,7 +509,7 @@ class HomePage extends StatelessWidget {
                                                                 ),
                                                               ),
                                                               SizedBox(
-                                                                height: 5,
+                                                                height: 30,
                                                               ),
                                                               GestureDetector(
                                                                 child:
@@ -488,7 +517,7 @@ class HomePage extends StatelessWidget {
                                                                   alignment:
                                                                       Alignment
                                                                           .center,
-                                                                  height: 60 /
+                                                                  height: 80 /
                                                                       844 *
                                                                       screenHeight,
                                                                   width: 300 /
@@ -496,16 +525,31 @@ class HomePage extends StatelessWidget {
                                                                       screenWidth,
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            20),
-                                                                    color: Color
-                                                                        .fromRGBO(
-                                                                            86,
-                                                                            194,
-                                                                            95,
-                                                                            1),
-                                                                  ),
+                                                                          boxShadow: [
+                                                                        BoxShadow(
+                                                                          offset: Offset(
+                                                                              0,
+                                                                              4),
+                                                                          blurRadius:
+                                                                              2,
+                                                                          color: Colors
+                                                                              .black
+                                                                              .withOpacity(0.3),
+                                                                        )
+                                                                      ],
+                                                                          borderRadius: BorderRadius.circular(
+                                                                              20),
+                                                                          gradient:
+                                                                              LinearGradient(
+                                                                            colors: [
+                                                                              Colors.white,
+                                                                              Color.fromRGBO(86, 194, 95, 2)
+                                                                            ],
+                                                                            stops: [
+                                                                              0.2,
+                                                                              0.2
+                                                                            ],
+                                                                          )),
                                                                   child: Row(
                                                                     children: [
                                                                       Container(
@@ -577,9 +621,36 @@ class HomePage extends StatelessWidget {
                                                                           ),
                                                                         ),
                                                                       ),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            20,
+                                                                      ),
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                              'assets/images/Arrow 1ok.svg')
                                                                     ],
                                                                   ),
                                                                 ),
+                                                              ),
+                                                              SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Text(
+                                                                "Onayladığınızda 5,00₺ seçili kartınızdan ödeme alınacaktır.",
+                                                                style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Quicksand',
+                                                                    fontSize:
+                                                                        10,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    color: Color
+                                                                        .fromRGBO(
+                                                                            153,
+                                                                            153,
+                                                                            153,
+                                                                            1)),
                                                               )
 
                                                               /* Positioned(
