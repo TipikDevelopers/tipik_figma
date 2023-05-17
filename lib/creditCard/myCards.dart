@@ -3,6 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:tipik_figma/creditCard/myCardsNoMasterpass.dart';
 
+class Control {
+  int currentIndex = 0;
+
+  void next() {
+    currentIndex++;
+    // Notify listeners or update the state as needed
+  }
+
+  void previous() {
+    currentIndex--;
+    // Notify listeners or update the state as needed
+  }
+
+  void move(int index) {
+    currentIndex = index;
+    // Notify listeners or update the state as needed
+  }
+}
+
 class MyCards extends StatefulWidget {
   List<int> cardList;
   MyCards({required this.cardList});
@@ -24,6 +43,14 @@ class _MyCardsState extends State<MyCards> {
     ),
   ];
   List<Widget> texts = [];
+  SwiperController? swController;
+
+  @override
+  void initState() {
+    super.initState();
+    swController = SwiperController();
+  }
+
   @override
   Widget build(BuildContext context) {
     int currIndex = 0;
@@ -59,7 +86,8 @@ class _MyCardsState extends State<MyCards> {
               width: screenWidth,
               height: screenHeight - 120,
               child: Swiper(
-                //loop: false,
+                controller: swController,
+                loop: false,
                 itemHeight: screenHeight,
                 //itemWidth: screenWidth - 30,
                 itemBuilder: (BuildContext context, int index) {
