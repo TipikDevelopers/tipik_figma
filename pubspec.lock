@@ -486,6 +486,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sleek_circular_slider:
+    dependency: "direct main"
+    description:
+      name: sleek_circular_slider
+      sha256: "0ffc925c3c23caa4da910bf7cefe6f68cd19f718816ea7da7a22a92970a3223f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0+web"
   smart_auth:
     dependency: transitive
     description:

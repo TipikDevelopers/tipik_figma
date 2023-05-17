@@ -10,7 +10,12 @@ class TextAnimated extends StatefulWidget {
   final String title;
   final bool isFirst, isLast;
   final String description;
-  const TextAnimated({Key? key, required this.title, required this.description,required this.isFirst, required this.isLast})
+  const TextAnimated(
+      {Key? key,
+      required this.title,
+      required this.description,
+      required this.isFirst,
+      required this.isLast})
       : super(key: key);
   @override
   State<TextAnimated> createState() => TextAnimatedState();
@@ -31,7 +36,7 @@ class TextAnimatedState extends State<TextAnimated>
         vsync: this, duration: const Duration(milliseconds: 1000));
     _opacityAnimation =
         Tween<double>(begin: 0, end: 1).animate(_animationController);
-    if(widget.isFirst) {
+    if (widget.isFirst) {
       _animationController.forward();
     }
   }
@@ -54,23 +59,30 @@ class TextAnimatedState extends State<TextAnimated>
               Text(widget.title,
                   textAlign: TextAlign.center,
                   style:
-                      const TextStyle(fontFamily: "Comfortaa", fontSize: 30)),
+                      const TextStyle(fontFamily: "Comfortaa", fontSize: 27)),
               Text(
                 widget.description,
-                style: const TextStyle(fontFamily: "Quicksand", fontSize: 20),
+                style: const TextStyle(fontFamily: "Quicksand", fontSize: 15),
                 textAlign: TextAlign.center,
               ),
-              if (widget.isLast) Container(
-                margin: const EdgeInsets.only(top: 15),
-                height: 45,
-                width: 200,
-                child: ElevatedButton(onPressed: (){
-                  //context.read<AuthManager>().setInitial();
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-                },
-                  style: ElevatedButton.styleFrom(backgroundColor: const Color.fromRGBO(243, 115, 53, 1),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
-                 child: const Icon(Icons.arrow_forward)),
-              )
+              if (widget.isLast)
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  height: 45,
+                  width: 200,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        //context.read<AuthManager>().setInitial();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromRGBO(243, 115, 53, 1),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15))),
+                      child: const Icon(Icons.arrow_forward)),
+                )
             ],
           ),
         );

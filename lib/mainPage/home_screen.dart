@@ -7,9 +7,11 @@ import '../creditCard/myCards.dart';
 import '../model/Comment.dart';
 import '../model/News.dart';
 import '../model/Transactions.dart';
+import '../nfcTagPage/CircularSlider.dart';
 import './TransactionList.dart';
 import '../haberler/haberler.dart';
 import 'NavBar.dart';
+//import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -182,7 +184,7 @@ class HomePage extends StatelessWidget {
                             child: const Text(
                               "172,50 ₺",
                               style: TextStyle(
-                                fontSize: 43,
+                                fontSize: 30,
                                 color: Colors.white,
                                 fontFamily: 'Poppins Bold',
                               ),
@@ -222,6 +224,8 @@ class HomePage extends StatelessWidget {
                             TextButton(
                                 onPressed: () => {
                                       showModalBottomSheet<void>(
+                                          backgroundColor:
+                                              Color.fromRGBO(245, 245, 245, 1),
                                           context: context,
                                           isScrollControlled: true,
                                           shape: const RoundedRectangleBorder(
@@ -243,45 +247,84 @@ class HomePage extends StatelessWidget {
                                                     CrossAxisAlignment.center,
                                                 children: <Widget>[
                                                   Stack(
+                                                      //clipBehavior: Clip.none,
                                                       alignment:
                                                           Alignment.center,
                                                       children: <Widget>[
                                                         Positioned(
                                                             child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
+                                                          borderRadius: const BorderRadius
+                                                                  .only(
+                                                              topLeft: Radius
+                                                                  .circular(40),
+                                                              topRight: Radius
+                                                                  .circular(40),
+                                                              bottomLeft: Radius
+                                                                  .circular(90),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          90)),
                                                           child: Stack(
+                                                            //clipBehavior:
+                                                            //  Clip.none,
                                                             children: [
-                                                              SizedBox(
-                                                                height: 320,
-                                                                child: Image
-                                                                    .network(
-                                                                  'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020',
-                                                                  fit: BoxFit
-                                                                      .cover,
+                                                              Container(
+                                                                height:
+                                                                    screenHeight *
+                                                                        0.9,
+                                                                child:
+                                                                    Container(
+                                                                  height:
+                                                                      screenHeight *
+                                                                          380 /
+                                                                          844,
+                                                                  decoration:
+                                                                      const BoxDecoration(
+                                                                    image:
+                                                                        DecorationImage(
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                      image: NetworkImage(
+                                                                          'https://lh3.googleusercontent.com/p/AF1QipP8TXQ7fbGd5fzpDUmgCs0JM1ML3Q3x5xjQFc8Z=s1360-w1360-h1020'),
+                                                                    ),
+                                                                    borderRadius: BorderRadius.only(
+                                                                        bottomLeft:
+                                                                            Radius.circular(
+                                                                                90),
+                                                                        bottomRight:
+                                                                            Radius.circular(90)),
+                                                                  ),
                                                                 ),
                                                               ),
-                                                              Positioned.fill(
-                                                                child:
-                                                                    DecoratedBox(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    gradient:
-                                                                        LinearGradient(
-                                                                      begin: Alignment
-                                                                          .topCenter,
-                                                                      end: Alignment
-                                                                          .bottomCenter,
-                                                                      colors: [
-                                                                        Colors
-                                                                            .transparent,
-                                                                        Colors
-                                                                            .black
-                                                                            .withOpacity(1),
-                                                                      ],
-                                                                    ),
+                                                              Container(
+                                                                height:
+                                                                    screenHeight *
+                                                                        380 /
+                                                                        844,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  borderRadius: BorderRadius.only(
+                                                                      bottomLeft:
+                                                                          Radius.circular(
+                                                                              90),
+                                                                      bottomRight:
+                                                                          Radius.circular(
+                                                                              90)),
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    begin: Alignment
+                                                                        .topCenter,
+                                                                    end: Alignment
+                                                                        .bottomCenter,
+                                                                    colors: [
+                                                                      Colors
+                                                                          .transparent,
+                                                                      Colors
+                                                                          .black
+                                                                          .withOpacity(
+                                                                              1),
+                                                                    ],
                                                                   ),
                                                                 ),
                                                               ),
@@ -289,7 +332,7 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         )),
                                                         Positioned(
-                                                          top: 60,
+                                                          top: 30,
                                                           child: Column(
                                                             children: <Widget>[
                                                               const CircleAvatar(
@@ -303,7 +346,6 @@ class HomePage extends StatelessWidget {
                                                                 margin:
                                                                     const EdgeInsets
                                                                         .only(
-                                                                  top: 10,
                                                                   left: 40,
                                                                   right: 40,
                                                                 ),
@@ -353,26 +395,263 @@ class HomePage extends StatelessWidget {
                                                             ],
                                                           ),
                                                         ),
+                                                        Positioned(
+                                                            top: 260,
+                                                            left: 100,
+                                                            child:
+                                                                CircularSlider()),
+                                                        Container(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: 430),
+                                                          child: Center(
+                                                            child: Stack(
+                                                              children: [
+                                                                Column(
+                                                                  children: [
+                                                                    Row(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .min,
+                                                                      children: [
+                                                                        GestureDetector(
+                                                                          child:
+                                                                              Container(
+                                                                            height:
+                                                                                45,
+                                                                            width:
+                                                                                45,
+                                                                            child:
+                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+                                                                          ),
+                                                                          onTap:
+                                                                              () {},
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                              5,
+                                                                        ),
+                                                                        GestureDetector(
+                                                                          child:
+                                                                              Container(
+                                                                            height:
+                                                                                45,
+                                                                            width:
+                                                                                45,
+                                                                            child:
+                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+                                                                          ),
+                                                                          onTap:
+                                                                              () {},
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                              5,
+                                                                        ),
+                                                                        GestureDetector(
+                                                                          child:
+                                                                              Container(
+                                                                            height:
+                                                                                45,
+                                                                            width:
+                                                                                45,
+                                                                            child:
+                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+                                                                          ),
+                                                                          onTap:
+                                                                              () {},
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                              5,
+                                                                        ),
+                                                                        GestureDetector(
+                                                                          child:
+                                                                              Container(
+                                                                            height:
+                                                                                45,
+                                                                            width:
+                                                                                45,
+                                                                            child:
+                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+                                                                          ),
+                                                                          onTap:
+                                                                              () {},
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                              5,
+                                                                        ),
+                                                                        GestureDetector(
+                                                                          child:
+                                                                              Container(
+                                                                            height:
+                                                                                45,
+                                                                            width:
+                                                                                45,
+                                                                            child:
+                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+                                                                          ),
+                                                                          onTap:
+                                                                              () {},
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height: 5,
+                                                                    ),
+                                                                    GestureDetector(
+                                                                      onTap:
+                                                                          () {},
+                                                                      child:
+                                                                          Text(
+                                                                        "Yorum yapmak için dokunun",
+                                                                        style:
+                                                                            TextStyle(
+                                                                          color: Color.fromRGBO(
+                                                                              118,
+                                                                              118,
+                                                                              118,
+                                                                              1),
+                                                                          fontFamily:
+                                                                              'Quicksand',
+                                                                          fontSize:
+                                                                              12,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height:
+                                                                          30,
+                                                                    ),
+                                                                    GestureDetector(
+                                                                      child:
+                                                                          Container(
+                                                                        alignment:
+                                                                            Alignment.center,
+                                                                        height: 80 /
+                                                                            844 *
+                                                                            screenHeight,
+                                                                        width: 300 /
+                                                                            344 *
+                                                                            screenWidth,
+                                                                        decoration: BoxDecoration(
+                                                                            boxShadow: [
+                                                                              BoxShadow(
+                                                                                offset: Offset(0, 4),
+                                                                                blurRadius: 2,
+                                                                                color: Colors.black.withOpacity(0.3),
+                                                                              )
+                                                                            ],
+                                                                            borderRadius: BorderRadius.circular(20),
+                                                                            gradient: LinearGradient(
+                                                                              colors: [
+                                                                                Colors.white,
+                                                                                Color.fromRGBO(86, 194, 95, 2)
+                                                                              ],
+                                                                              stops: [
+                                                                                0.2,
+                                                                                0.2
+                                                                              ],
+                                                                            )),
+                                                                        child:
+                                                                            Row(
+                                                                          children: [
+                                                                            Container(
+                                                                              color: Colors.white,
+                                                                              child: SizedBox(
+                                                                                width: 20,
+                                                                              ),
+                                                                            ),
+                                                                            Container(
+                                                                              color: Colors.white,
+                                                                              child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                children: [
+                                                                                  Container(
+                                                                                    // margin: EdgeInsets.all(4),
+                                                                                    decoration: BoxDecoration(
+                                                                                      borderRadius: BorderRadius.circular(5),
+                                                                                      color: const Color.fromRGBO(118, 177, 145, 1),
+                                                                                    ),
+                                                                                    //color: const Color.fromRGBO(118, 177, 145, 1),
+                                                                                    width: 37 / 390 * screenWidth,
+                                                                                    height: 33 / 844 * screenHeight,
+                                                                                    child: SizedBox(
+                                                                                      height: 11 / 844 * screenHeight,
+                                                                                      width: 28 / 390 * screenWidth,
+                                                                                      child: Padding(
+                                                                                        padding: const EdgeInsets.all(4.0),
+                                                                                        child: Center(child: Image.network("https://americassbdc.org/wp-content/uploads/2021/05/Visa-logo-white.png")),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    "**40",
+                                                                                    style: const TextStyle(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      fontSize: 11,
+                                                                                      fontWeight: FontWeight.bold,
+                                                                                    ),
+                                                                                  )
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 30,
+                                                                            ),
+                                                                            Container(
+                                                                              child: Text(
+                                                                                "Onaylıyorum",
+                                                                                textAlign: TextAlign.center,
+                                                                                style: TextStyle(
+                                                                                  fontFamily: 'Comfortaa',
+                                                                                  fontSize: 26,
+                                                                                  fontWeight: FontWeight.bold,
+                                                                                  color: Colors.white,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 20,
+                                                                            ),
+                                                                            SvgPicture.asset('assets/images/Arrow 1ok.svg')
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height: 5,
+                                                                    ),
+                                                                    Text(
+                                                                      "Onayladığınızda 5,00₺ seçili kartınızdan ödeme alınacaktır.",
+                                                                      style: TextStyle(
+                                                                          fontFamily:
+                                                                              'Quicksand',
+                                                                          fontSize:
+                                                                              10,
+                                                                          fontWeight: FontWeight
+                                                                              .w400,
+                                                                          color: Color.fromRGBO(
+                                                                              153,
+                                                                              153,
+                                                                              153,
+                                                                              1)),
+                                                                    )
+                                                                  ],
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                            height: 20),
                                                       ]),
-                                                  const SizedBox(height: 10),
-                                                  //SleekCircularSlider(),
-                                                  /*Container(
-                                                    margin: const EdgeInsets.only(
-                                                      left: 40,
-                                                      right: 40,
-                                                    ),
-                                                    child: const Text(
-                                                      '5',
-                                                      textAlign: TextAlign.center,
-                                                      style: TextStyle(
-                                                          fontFamily:
-                                                              'Poppins Bold',
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          fontSize: 50),
-                                                    ),
-                                                  ),*/
-                                                  const SizedBox(height: 10),
                                                 ],
                                               ),
                                             );

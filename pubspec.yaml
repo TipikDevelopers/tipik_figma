@@ -33,6 +33,7 @@ dependencies:
   flutter_svg: any
   curved_navigation_bar: ^1.0.3
   image_gradient: ^0.0.2
+  sleek_circular_slider : ^1.1.0
 
 
 
@@ -103,6 +104,8 @@ flutter:
     - assets/images/DashedRing.svg
     - assets/images/LogoTipik.svg
     - assets/images/LoginLogo.png
+    - assets/images/Vectorstarbig.svg
+    - assets/images/Arrow 1ok.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -141,4 +144,3 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-sleek_circular_slider : ^lastest_version

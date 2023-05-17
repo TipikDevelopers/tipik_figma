@@ -74,14 +74,14 @@ class _SliderIntroState extends State<SliderIntro> {
             children: [
               Image.asset(pageList[index].assetImage),
               const SizedBox(
-                height: 25,
+                height: 10,
               ),
               TextAnimated(
                 title: pageList[index].title,
                 description: pageList[index].description,
                 isFirst: index == 0,
                 key: keys[index],
-                isLast: index == pageList.length-1,
+                isLast: index == pageList.length - 1,
               )
             ],
           ),
