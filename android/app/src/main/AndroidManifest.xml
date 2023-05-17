@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tipik_figma">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="tipik_figma"
         android:name="${applicationName}"

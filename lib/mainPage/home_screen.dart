@@ -248,8 +248,7 @@ class HomePage extends StatelessWidget {
                                                 children: <Widget>[
                                                   Stack(
                                                       //clipBehavior: Clip.none,
-                                                      alignment:
-                                                          Alignment.center,
+
                                                       children: <Widget>[
                                                         Positioned(
                                                             child: ClipRRect(
@@ -272,12 +271,13 @@ class HomePage extends StatelessWidget {
                                                               Container(
                                                                 height:
                                                                     screenHeight *
-                                                                        0.9,
+                                                                        380 /
+                                                                        844,
                                                                 child:
                                                                     Container(
                                                                   height:
                                                                       screenHeight *
-                                                                          380 /
+                                                                          340 /
                                                                           844,
                                                                   decoration:
                                                                       const BoxDecoration(
@@ -332,6 +332,7 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         )),
                                                         Positioned(
+                                                          left: 80,
                                                           top: 30,
                                                           child: Column(
                                                             children: <Widget>[

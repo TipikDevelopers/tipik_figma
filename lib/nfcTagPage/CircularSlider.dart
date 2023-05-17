@@ -7,7 +7,7 @@ class CircularSlider extends StatelessWidget {
     appearance: CircularSliderAppearance(
         size: 200,
         //startAngle: -180,
-        //angleRange: 180,
+        // angleRange: 180,
         //spinnerMode: true,
         customWidths: CustomSliderWidths(
             progressBarWidth: 20, trackWidth: 15, handlerSize: 8),
