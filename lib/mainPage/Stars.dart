@@ -9,13 +9,13 @@ class Stars extends StatefulWidget {
 }
 
 class _StarsState extends State<Stars> {
+  bool first = false;
+  bool second = false;
+  bool third = false;
+  bool forth = false;
+  bool fifth = false;
   @override
   Widget build(BuildContext context) {
-    bool first = false;
-    bool second = false;
-    bool third = false;
-    bool forth = false;
-    bool fifth = false;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
@@ -25,13 +25,13 @@ class _StarsState extends State<Stars> {
             height: 45,
             width: 45,
             child: first == true
-                ? SvgPicture.asset("assets/images/Vectorstarbig.svg")
-                : SvgPicture.asset("assets/images/VectorstarFilled.svg"),
+                ? SvgPicture.asset("assets/images/VectorstarFilled.svg")
+                : SvgPicture.asset("assets/images/Vectorstarbig.svg"),
           ),
           onTap: () {
             setState(() {
               print("mem");
-              first = !first;
+              first = true;
             });
           },
         ),
@@ -42,7 +42,9 @@ class _StarsState extends State<Stars> {
           child: Container(
             height: 45,
             width: 45,
-            child: SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+            child: second == true
+                ? SvgPicture.asset("assets/images/VectorstarFilled.svg")
+                : SvgPicture.asset("assets/images/Vectorstarbig.svg"),
           ),
           onTap: () {
             setState(() {
@@ -58,7 +60,9 @@ class _StarsState extends State<Stars> {
           child: Container(
             height: 45,
             width: 45,
-            child: SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+            child: third == true
+                ? SvgPicture.asset("assets/images/VectorstarFilled.svg")
+                : SvgPicture.asset("assets/images/Vectorstarbig.svg"),
           ),
           onTap: () {
             setState(() {
@@ -75,7 +79,9 @@ class _StarsState extends State<Stars> {
           child: Container(
             height: 45,
             width: 45,
-            child: SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+            child: forth == true
+                ? SvgPicture.asset("assets/images/VectorstarFilled.svg")
+                : SvgPicture.asset("assets/images/Vectorstarbig.svg"),
           ),
           onTap: () {
             setState(() {
@@ -93,14 +99,18 @@ class _StarsState extends State<Stars> {
           child: Container(
             height: 45,
             width: 45,
-            child: SvgPicture.asset("assets/images/Vectorstarbig.svg"),
+            child: fifth == true
+                ? SvgPicture.asset("assets/images/VectorstarFilled.svg")
+                : SvgPicture.asset("assets/images/Vectorstarbig.svg"),
           ),
           onTap: () {
-            first = true;
-            second = true;
-            third = true;
-            forth = true;
-            fifth = true;
+            setState(() {
+              first = true;
+              second = true;
+              third = true;
+              forth = true;
+              fifth = true;
+            });
           },
         ),
       ],
