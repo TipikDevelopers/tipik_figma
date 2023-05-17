@@ -6,8 +6,8 @@ class CircularSlider extends StatelessWidget {
   Widget slider = SleekCircularSlider(
     appearance: CircularSliderAppearance(
         size: 200,
-        //startAngle: -180,
-        // angleRange: 180,
+        startAngle: 165,
+        angleRange: 209.88,
         //spinnerMode: true,
         customWidths: CustomSliderWidths(
             progressBarWidth: 20, trackWidth: 15, handlerSize: 8),
@@ -24,6 +24,7 @@ class CircularSlider extends StatelessWidget {
         ),
         infoProperties: InfoProperties(
           mainLabelStyle: TextStyle(
+            // textBaseline: TextBaseline.alphabetic,
             fontFamily: 'Poppins',
             fontSize: 50,
             fontWeight: FontWeight.w600,
@@ -45,48 +46,63 @@ class CircularSlider extends StatelessWidget {
     innerWidget: (percentage) {
       return Center(
         child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //crossAxisAlignment: CrossAxisAlignment,
           children: [
             SizedBox(
-              height: 30,
+              height: 25,
             ),
-            Text(
-              '₺',
-              style: TextStyle(
-                  fontSize: 40,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.normal),
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  '${percentage.toInt()}',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 55,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  ',00',
-                  style: TextStyle(
+            Container(
+              //color: Colors.blueGrey,
+              padding: EdgeInsets.all(0),
+              height: 37,
+              child: Text(
+                '₺',
+                style: TextStyle(
                     fontSize: 40,
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                  ),
-                  // textAlign: TextAlign.center,
-                )
-              ],
+                    fontWeight: FontWeight.normal),
+              ),
             ),
-            Text(
-              "Bahşiş Miktarı",
-              style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: 'Comfortaa',
-                  fontWeight: FontWeight.w500),
+            Container(
+              //color: Colors.red,
+              height: 68,
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    '${percentage.toInt()}',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: percentage.toInt() < 10 ? 70 : 60,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    ',00',
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                    ),
+                    // textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 20,
+              child: Text(
+                "Bahşiş Miktarı",
+                style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: 'Comfortaa',
+                    fontWeight: FontWeight.w600),
+              ),
             )
           ],
         ),

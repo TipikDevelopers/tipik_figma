@@ -11,6 +11,7 @@ import '../nfcTagPage/CircularSlider.dart';
 import './TransactionList.dart';
 import '../haberler/haberler.dart';
 import 'NavBar.dart';
+import 'Stars.dart';
 //import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class HomePage extends StatelessWidget {
@@ -397,113 +398,20 @@ class HomePage extends StatelessWidget {
                                                           ),
                                                         ),
                                                         Positioned(
-                                                            top: 260,
+                                                            top: 280,
                                                             left: 100,
                                                             child:
                                                                 CircularSlider()),
                                                         Container(
                                                           padding:
                                                               EdgeInsets.only(
-                                                                  top: 430),
+                                                                  top: 440),
                                                           child: Center(
                                                             child: Stack(
                                                               children: [
                                                                 Column(
                                                                   children: [
-                                                                    Row(
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .min,
-                                                                      children: [
-                                                                        GestureDetector(
-                                                                          child:
-                                                                              Container(
-                                                                            height:
-                                                                                45,
-                                                                            width:
-                                                                                45,
-                                                                            child:
-                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
-                                                                          ),
-                                                                          onTap:
-                                                                              () {},
-                                                                        ),
-                                                                        SizedBox(
-                                                                          width:
-                                                                              5,
-                                                                        ),
-                                                                        GestureDetector(
-                                                                          child:
-                                                                              Container(
-                                                                            height:
-                                                                                45,
-                                                                            width:
-                                                                                45,
-                                                                            child:
-                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
-                                                                          ),
-                                                                          onTap:
-                                                                              () {},
-                                                                        ),
-                                                                        SizedBox(
-                                                                          width:
-                                                                              5,
-                                                                        ),
-                                                                        GestureDetector(
-                                                                          child:
-                                                                              Container(
-                                                                            height:
-                                                                                45,
-                                                                            width:
-                                                                                45,
-                                                                            child:
-                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
-                                                                          ),
-                                                                          onTap:
-                                                                              () {},
-                                                                        ),
-                                                                        SizedBox(
-                                                                          width:
-                                                                              5,
-                                                                        ),
-                                                                        GestureDetector(
-                                                                          child:
-                                                                              Container(
-                                                                            height:
-                                                                                45,
-                                                                            width:
-                                                                                45,
-                                                                            child:
-                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
-                                                                          ),
-                                                                          onTap:
-                                                                              () {},
-                                                                        ),
-                                                                        SizedBox(
-                                                                          width:
-                                                                              5,
-                                                                        ),
-                                                                        GestureDetector(
-                                                                          child:
-                                                                              Container(
-                                                                            height:
-                                                                                45,
-                                                                            width:
-                                                                                45,
-                                                                            child:
-                                                                                SvgPicture.asset("assets/images/Vectorstarbig.svg"),
-                                                                          ),
-                                                                          onTap:
-                                                                              () {},
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                    SizedBox(
-                                                                      height: 5,
-                                                                    ),
+                                                                    Stars(),
                                                                     GestureDetector(
                                                                       onTap:
                                                                           () {},
@@ -522,13 +430,13 @@ class HomePage extends StatelessWidget {
                                                                           fontSize:
                                                                               12,
                                                                           fontWeight:
-                                                                              FontWeight.w500,
+                                                                              FontWeight.w600,
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     SizedBox(
                                                                       height:
-                                                                          30,
+                                                                          20,
                                                                     ),
                                                                     GestureDetector(
                                                                       child:
@@ -612,7 +520,7 @@ class HomePage extends StatelessWidget {
                                                                                 textAlign: TextAlign.center,
                                                                                 style: TextStyle(
                                                                                   fontFamily: 'Comfortaa',
-                                                                                  fontSize: 26,
+                                                                                  fontSize: 24,
                                                                                   fontWeight: FontWeight.bold,
                                                                                   color: Colors.white,
                                                                                 ),
