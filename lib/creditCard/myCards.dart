@@ -27,6 +27,7 @@ class _MyCardsState extends State<MyCards> {
   @override
   Widget build(BuildContext context) {
     int currIndex = 0;
+    SwiperController? swController = SwiperController();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -59,7 +60,8 @@ class _MyCardsState extends State<MyCards> {
               width: screenWidth,
               height: screenHeight - 120,
               child: Swiper(
-                //loop: false,
+                controller: swController,
+                loop: false,
                 itemHeight: screenHeight,
                 //itemWidth: screenWidth - 30,
                 itemBuilder: (BuildContext context, int index) {
@@ -547,5 +549,24 @@ class _NewCardState extends State<NewCard> {
         ),
       ),
     );
+  }
+}
+
+class SwiperController {
+  int currentIndex = 0;
+
+  void next() {
+    currentIndex++;
+    // Notify listeners or update the state as needed
+  }
+
+  void previous() {
+    currentIndex--;
+    // Notify listeners or update the state as needed
+  }
+
+  void move(int index) {
+    currentIndex = index;
+    // Notify listeners or update the state as needed
   }
 }
