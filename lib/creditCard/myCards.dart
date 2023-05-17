@@ -55,11 +55,13 @@ class _MyCardsState extends State<MyCards> {
         ),
         body: Column(children: [
           Container(
-              margin: EdgeInsets.only(top: 50),
+              //margin: EdgeInsets.only(top: 50),
               width: screenWidth,
-              height: 600,
+              height: screenHeight - 120,
               child: Swiper(
-                itemWidth: screenWidth - 30,
+                //loop: false,
+                itemHeight: screenHeight,
+                //itemWidth: screenWidth - 30,
                 itemBuilder: (BuildContext context, int index) {
                   if (index < cardList.length) {
                     return cardList[index];
@@ -67,7 +69,7 @@ class _MyCardsState extends State<MyCards> {
                     return NewCard();
                 },
                 itemCount: cardList.length + 1,
-                viewportFraction: 0.7,
+                viewportFraction: 1,
                 scale: 0.5,
                 onIndexChanged: (int index) {
                   setState(() {
@@ -91,28 +93,33 @@ class CreditCard extends StatelessWidget {
     //BURAYA TEXTVIEWLAR VS DE EKLENEBİLİR, BÖYLECE HER KART İÇİN İNPUT GİRME KISMI AÇILIR
     return Stack(
       children: [
-        Container(
-          height: 200,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(15.0),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(0, 3),
-              ),
-            ],
+        Positioned(
+          top: 50,
+          left: 30,
+          child: Container(
+            height: 200,
+            width: MediaQuery.of(context).size.width - 60,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(15.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            // Add your child widget here
           ),
-          // Add your child widget here
         ),
         Positioned(
-          top: 0,
-          left: 0,
-          right: 0,
+          top: 50,
+          left: 30,
           child: Container(
             height: 45,
+            width: MediaQuery.of(context).size.width - 60,
             color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -134,11 +141,20 @@ class CreditCard extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          top: 200,
+        /* Positioned(
+          top: 260,
           height: 200,
-          left: 0,
-          right: 0,
+          left: 30,
+          right: 30,
+          child: CustomPaint(
+            painter: ArrowPainter(),
+          ),
+        ),*/
+        Positioned(
+          top: 260,
+          height: 200,
+          left: 30,
+          right: 30,
           child: Container(
             margin: const EdgeInsets.only(
               top: 50,
@@ -154,16 +170,51 @@ class CreditCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 320,
+          top: 360,
           height: 200,
-          left: 0,
-          right: 0,
+          left: 30,
+          right: 30,
           child: Container(
             margin: const EdgeInsets.only(
               top: 20,
             ),
             child: const Text(
               "Ödemelerinizde farklı bir kart kullanmak için seçili kartınızı sağa veya sola kaydırarak değiştirebilirsiniz.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 450,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: const Icon(
+              Icons.close,
+              color: Color.fromRGBO(85, 85, 85, 1),
+              //onPressed: (),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 560,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: const Text(
+              "Kredi kartını sil",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: 'Quicksand',
@@ -194,10 +245,10 @@ class _NewCardState extends State<NewCard> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.only(top: 15),
+        padding: EdgeInsets.only(top: 50),
         height: MediaQuery.of(context).size.height - 200,
-        width: MediaQuery.of(context).size.width - 50,
-        color: Color.fromRGBO(235, 235, 235, 1),
+        /*width: MediaQuery.of(context).size.width - 50,*/
+        //color: Color.fromRGBO(235, 235, 235, 1),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

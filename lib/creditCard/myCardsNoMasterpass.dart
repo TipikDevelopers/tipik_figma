@@ -371,3 +371,67 @@ class LinePainter extends CustomPainter {
     return true;
   }
 }
+
+class ArrowPainter extends CustomPainter {
+  ArrowPainter() {
+    print("oldum");
+  }
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint();
+    paint.color = Color.fromRGBO(89, 89, 89, 1);
+    paint.strokeCap = StrokeCap.round;
+    paint.strokeWidth = 1;
+    canvas.drawLine(Offset(15, 20), Offset(350, 20), paint);
+
+// Draw the arrowhead
+    final arrowPath = Path();
+    arrowPath.moveTo(350, 20);
+    arrowPath.lineTo(340, 15);
+    arrowPath.lineTo(340, 25);
+    arrowPath.close();
+    canvas.drawPath(arrowPath, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class DoubleArrowPainter extends CustomPainter {
+  ArrowPainter() {
+    print("oldum");
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint();
+    paint.color = Color.fromRGBO(89, 89, 89, 1);
+    paint.strokeCap = StrokeCap.round;
+    paint.strokeWidth = 1;
+    // Draw the first arrowhead
+    final arrowPath1 = Path();
+    arrowPath1.moveTo(15, 20);
+    arrowPath1.lineTo(5, 15);
+    arrowPath1.lineTo(5, 25);
+    arrowPath1.close();
+    canvas.drawPath(arrowPath1, paint);
+
+    // Draw the arrow body
+    canvas.drawLine(Offset(15, 20), Offset(350, 20), paint);
+
+    // Draw the second arrowhead
+    final arrowPath2 = Path();
+    arrowPath2.moveTo(350, 20);
+    arrowPath2.lineTo(360, 15);
+    arrowPath2.lineTo(360, 25);
+    arrowPath2.close();
+    canvas.drawPath(arrowPath2, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+}
