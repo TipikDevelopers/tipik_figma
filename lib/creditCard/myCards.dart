@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:card_swiper/card_swiper.dart';
+//import 'package:card_swiper/card_swiper.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:tipik_figma/creditCard/myCardsNoMasterpass.dart';
 
 class Control {
@@ -44,6 +45,22 @@ class _MyCardsState extends State<MyCards> {
   ];
   List<Widget> texts = [];
   SwiperController? swController;
+  SwiperController _swiperController = SwiperController();
+
+  List<String> text1List = [
+    'Şu anda ödemeleriniz için bu kart seçilidir. Tipik ödemelerinizde bu kart kullanılacaktır.',
+    'Şu anda ödemeleriniz için bu kart seçilidir. Tipik ödemelerinizde bu kart kullanılacaktır.',
+    'Şu anda ödemeleriniz için bu kart seçilidir. Tipik ödemelerinizde bu kart kullanılacaktır.'
+  ];
+  List<String> text2List = [
+    'Ödemelerinizde farklı bir kart kullanmak için seçili kartınızı sağa veya sola kaydırarak değiştirebilirsiniz.',
+    'Ödemelerinizde farklı bir kart kullanmak için seçili kartınızı sağa veya sola kaydırarak değiştirebilirsiniz.',
+    'Ödemelerinizde farklı bir kart kullanmak için seçili kartınızı sağa veya sola kaydırarak değiştirebilirsiniz.'
+  ];
+  String currText1 =
+      'Şu anda ödemeleriniz için bu kart seçilidir. Tipik ödemelerinizde bu kart kullanılacaktır.'; // Initialize with the initial text value
+  String currText2 =
+      'Ödemelerinizde farklı bir kart kullanmak için seçili kartınızı sağa veya sola kaydırarak değiştirebilirsiniz.';
 
   @override
   void initState() {
@@ -84,7 +101,7 @@ class _MyCardsState extends State<MyCards> {
           Container(
               //margin: EdgeInsets.only(top: 50),
               width: screenWidth,
-              height: screenHeight - 120,
+              height: screenHeight - 130,
               child: Swiper(
                 controller: swController,
                 loop: false,
@@ -92,7 +109,13 @@ class _MyCardsState extends State<MyCards> {
                 //itemWidth: screenWidth - 30,
                 itemBuilder: (BuildContext context, int index) {
                   if (index < cardList.length) {
-                    return cardList[index];
+                    return Stack(
+                      children: [
+                        cardList[index],
+                        TextViewScreen(cInd: index),
+                      ],
+                    );
+                    //return cardList[index];
                   } else
                     return NewCard();
                 },
@@ -106,6 +129,109 @@ class _MyCardsState extends State<MyCards> {
                 },
               )),
         ]));
+  }
+
+  void _updateTextWidgets(int index) {
+    setState(() {
+      if (index < cardList.length) {
+        currText1 = text1List[index];
+        currText2 = text2List[index];
+      }
+    });
+  }
+}
+
+class TextViewScreen extends StatelessWidget {
+  final int cInd;
+  const TextViewScreen({Key? key, required this.cInd}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Positioned(
+          top: 260,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: CustomPaint(
+            painter: ArrowPainter(cInd: cInd),
+          ),
+        ),
+        Positioned(
+          top: 260,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 50,
+            ),
+            child: Text(
+              'Şu anda ödemeleriniz için bu kart seçilidir. Tipik ödemelerinizde bu kart kullanılacaktır.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 360,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: Text(
+              'Ödemelerinizde farklı bir kart kullanmak için seçili kartınızı sağa veya sola kaydırarak değiştirebilirsiniz.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 450,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: const Icon(
+              Icons.close,
+              color: Color.fromRGBO(85, 85, 85, 1),
+              //onPressed: (),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 560,
+          height: 200,
+          left: 30,
+          right: 30,
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: const Text(
+              "Kredi kartını sil",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -178,7 +304,7 @@ class CreditCard extends StatelessWidget {
             painter: ArrowPainter(),
           ),
         ),*/
-        Positioned(
+        /* Positioned(
           top: 260,
           height: 200,
           left: 30,
@@ -250,7 +376,7 @@ class CreditCard extends StatelessWidget {
                   fontSize: 15),
             ),
           ),
-        ),
+        ),*/
       ],
     );
   }
@@ -309,7 +435,7 @@ class _NewCardState extends State<NewCard> {
                 textBaseline: TextBaseline.alphabetic,
                 children: [
                   CustomPaint(
-                    painter: LinePainter(),
+                    painter: LineWithArrowPainter(),
                   ),
                   Container(
                     height: 25,

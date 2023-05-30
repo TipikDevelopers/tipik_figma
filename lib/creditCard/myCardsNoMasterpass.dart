@@ -372,25 +372,83 @@ class LinePainter extends CustomPainter {
   }
 }
 
-class ArrowPainter extends CustomPainter {
-  ArrowPainter() {
+class LineWithArrowPainter extends CustomPainter {
+  LinePainter() {
     print("oldum");
   }
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
-    paint.color = Color.fromRGBO(89, 89, 89, 1);
+    paint.color = Colors.black;
     paint.strokeCap = StrokeCap.round;
     paint.strokeWidth = 1;
-    canvas.drawLine(Offset(15, 20), Offset(350, 20), paint);
+
+// Draw the arrowhead on the left
+    final arrowPath1 = Path();
+    arrowPath1.moveTo(25, 25); // Adjusted coordinate
+    arrowPath1.lineTo(35, 20); // Adjusted coordinate
+    arrowPath1.lineTo(35, 30); // Adjusted coordinate
+    arrowPath1.close();
+    canvas.drawPath(arrowPath1, paint);
+
+// Draw the line on the left
+    canvas.drawLine(
+        Offset(30, 25), Offset(110, 25), paint); // Adjusted ending point
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class ArrowPainter extends CustomPainter {
+  final int cInd;
+  const ArrowPainter({required this.cInd}) : super();
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (cInd == 0) {
+      final paint = Paint();
+      paint.color = Color.fromRGBO(89, 89, 89, 1);
+      paint.strokeCap = StrokeCap.round;
+      paint.strokeWidth = 1;
+      canvas.drawLine(
+          Offset(10, 20), Offset(350, 20), paint); // Adjusted starting point
 
 // Draw the arrowhead
-    final arrowPath = Path();
-    arrowPath.moveTo(350, 20);
-    arrowPath.lineTo(340, 15);
-    arrowPath.lineTo(340, 25);
-    arrowPath.close();
-    canvas.drawPath(arrowPath, paint);
+      final arrowPath = Path();
+      arrowPath.moveTo(350, 20);
+      arrowPath.lineTo(340, 15);
+      arrowPath.lineTo(340, 25);
+      arrowPath.close();
+      canvas.drawPath(arrowPath, paint);
+    } else {
+      final paint = Paint();
+      paint.color = Color.fromRGBO(89, 89, 89, 1);
+      paint.strokeCap = StrokeCap.round;
+      paint.strokeWidth = 1;
+
+// Draw the first arrowhead
+      final arrowPath1 = Path();
+      arrowPath1.moveTo(10, 20); // Adjusted coordinate
+      arrowPath1.lineTo(20, 15); // Adjusted coordinate
+      arrowPath1.lineTo(20, 25); // Adjusted coordinate
+      arrowPath1.close();
+      canvas.drawPath(arrowPath1, paint);
+
+// Draw the arrow body
+      canvas.drawLine(
+          Offset(20, 20), Offset(355, 20), paint); // Adjusted starting point
+
+// Draw the second arrowhead
+      final arrowPath2 = Path();
+      arrowPath2.moveTo(355, 20); // Adjusted coordinate
+      arrowPath2.lineTo(345, 15); // Adjusted coordinate
+      arrowPath2.lineTo(345, 25); // Adjusted coordinate
+      arrowPath2.close();
+      canvas.drawPath(arrowPath2, paint);
+    }
   }
 
   @override
