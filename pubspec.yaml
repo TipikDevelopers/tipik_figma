@@ -33,7 +33,6 @@ dependencies:
   flutter_svg: any
   curved_navigation_bar: ^1.0.3
   image_gradient: ^0.0.2
-  sleek_circular_slider : ^1.1.0
 
 
 
