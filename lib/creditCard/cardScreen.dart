@@ -178,8 +178,10 @@ class cardScreen extends StatelessWidget {
                 ),
                 elevation: 5, // Set the elevation to 5
               ),
+
+              //Öykü commentledi - normalde if clauseun içinde kalacak. Şimdilik diğer sayfayı da görmek için alttaki buton widgetına konuldu.
               onPressed: () {
-                if (cardList.isNotEmpty) {
+                /* if (cardList.isNotEmpty) {
                   showModalBottomSheet<void>(
                       context: context,
                       isScrollControlled: true,
@@ -292,14 +294,14 @@ class cardScreen extends StatelessWidget {
                           ),
                         );
                       });
-                }
+                }*/
                 //masterpass bulundu
-                else {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MyCardsNoMasterpass()));
-                }
+                // else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyCardsNoMasterpass()));
+                // }
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

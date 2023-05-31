@@ -156,7 +156,28 @@ class HomePage extends StatelessWidget {
                                           color: Colors.white,
                                           size: 20)),
                                 ),
-                                Container(
+                                SizedBox(
+                                  height: screenHeight / 42,
+                                  width: screenWidth / 19,
+                                  child: IconButton(
+                                      padding: const EdgeInsets.all(0),
+                                      iconSize: 20,
+                                      onPressed: () {
+                                        //Öykü değiştirdi, kart durumuna göre gidilecek rotayı belirliyor.
+
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    cardScreen(
+                                                        cardList: const [])));
+                                      },
+                                      icon: const Icon(Icons.arrow_forward,
+                                          color: Colors.white, size: 20)),
+                                ),
+
+                                //Öykü commentledi. Bi üstteki widget kaldırılacak ve bu widgettaki comment açılacak. (iki sayfa da görünsün diye yaptm)
+                                /*Container(
                                   padding: const EdgeInsets.only(right: 10),
                                   child: const Text(
                                     "Kartlarım",
@@ -167,7 +188,7 @@ class HomePage extends StatelessWidget {
                                         fontSize: 10,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                ),
+                                ),*/
                               ],
                             ),
                           ),
