@@ -57,14 +57,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  circular:
-    dependency: "direct main"
-    description:
-      name: circular
-      sha256: "686613f25207264e0f0080d2ce473ec24c1c32ad8daeac7931f715f2d8924290"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.5"
   clock:
     dependency: transitive
     description:
