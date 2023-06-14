@@ -102,6 +102,7 @@ class _MyCardsState extends State<MyCards> {
               //margin: EdgeInsets.only(top: 50),
               width: screenWidth,
               height: screenHeight - 130,
+              color: Color.fromRGBO(235, 235, 235, 1),
               child: Swiper(
                 controller: swController,
                 loop: false,
@@ -395,14 +396,18 @@ class _NewCardState extends State<NewCard> {
   bool accountAgreement = false;
   bool sozlesme = false;
 
+  Color cardCol = Color.fromRGBO(163, 163, 163, 1);
+  Color buttonCol = Color.fromRGBO(69, 99, 71, 1);
+  String buttonText = 'Kutucuğu Onaylayın';
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.only(top: 50),
-        height: MediaQuery.of(context).size.height - 200,
-        /*width: MediaQuery.of(context).size.width - 50,*/
-        //color: Color.fromRGBO(235, 235, 235, 1),
+        padding: EdgeInsets.only(top: 15),
+        height: MediaQuery.of(context).size.height - 120,
+        width: MediaQuery.of(context).size.width,
+        color: Color.fromRGBO(235, 235, 235, 1),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -420,8 +425,7 @@ class _NewCardState extends State<NewCard> {
                     child: Container(
                         height: 210,
                         width: 358,
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(163, 163, 163, 1)),
+                        decoration: BoxDecoration(color: cardCol),
                         alignment: Alignment.center,
                         child: Container()),
                   ),
@@ -661,40 +665,52 @@ class _NewCardState extends State<NewCard> {
                   ),
                 ),
               ),
-              Container(
-                height: 75,
-                width: 198,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(86, 194, 95, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(22.0),
-                    ),
+              Center(
+                child: Container(
+                  height: 58,
+                  width: 278,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
                   ),
-                  onPressed: () => Navigator.pop(context),
-                  child: Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                      'Kullan',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: 'Quicksand',
-                        fontWeight: FontWeight.w700,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: buttonCol,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(22.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        // Update the color values here
+                        cardCol = Color.fromRGBO(219, 68, 110, 1);
+                        buttonCol = Color.fromRGBO(219, 68, 110, 1);
+                        buttonText = 'Kart bilgileri doğrulanamadı.';
+                      });
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        buttonText,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Quicksand',
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
             ],
           ),

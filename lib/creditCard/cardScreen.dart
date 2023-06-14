@@ -94,7 +94,7 @@ class cardScreen extends StatelessWidget {
           ),
           Positioned(
             top: 110,
-            height: 200,
+            height: 210,
             width: 358,
             child: Card(
               shape: RoundedRectangleBorder(
@@ -125,7 +125,7 @@ class cardScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 320,
+            top: 325,
             height: 61,
             width: 268,
             child: Container(
@@ -138,7 +138,7 @@ class cardScreen extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 380,
+            top: 385,
             height: 60,
             width: 349,
             child: Text(

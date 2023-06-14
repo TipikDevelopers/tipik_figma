@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tipik_figma/mainPage/NewsList.dart';
 import 'package:tipik_figma/mainPage/comments.dart';
@@ -17,3 +17,4 @@ class nfcSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {}
 }
+*/

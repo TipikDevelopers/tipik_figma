@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'Utils.dart';
-import 'package:circular/circular.dart';
+//import 'package:circular/circular.dart';
 
 double radius = 50;
 double strokeWidth = 5;
